@@ -23,3 +23,13 @@ export {
   alertVariants,
   type AlertProps,
 } from './components/alert/index.js'
+export {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  type TooltipProviderProps,
+  type TooltipProps,
+  type TooltipTriggerProps,
+  type TooltipContentProps,
+} from './components/tooltip/index.js'
