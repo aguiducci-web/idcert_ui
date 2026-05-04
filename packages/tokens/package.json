@@ -33,7 +33,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup && tsx scripts/build-css.ts",
+    "build": "tsup",
     "dev": "tsup --watch",
     "clean": "rm -rf dist .turbo",
     "typecheck": "tsc --noEmit",
