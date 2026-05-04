@@ -33,3 +33,19 @@ export {
   type TooltipTriggerProps,
   type TooltipContentProps,
 } from './components/tooltip/index.js'
+export {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+  type DialogProps,
+  type DialogTriggerProps,
+  type DialogContentProps,
+  type DialogTitleProps,
+  type DialogDescriptionProps,
+  type DialogCloseProps,
+} from './components/dialog/index.js'
