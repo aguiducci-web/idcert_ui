@@ -365,8 +365,7 @@ git commit -m "chore: add turborepo pipeline config"
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["node_modules", "dist", ".next", ".turbo", "coverage"]
 }
