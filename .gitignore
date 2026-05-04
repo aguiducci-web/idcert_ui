@@ -8,6 +8,7 @@ dist
 out
 storybook-static
 .turbo
+*.tsbuildinfo
 
 # Test
 coverage
