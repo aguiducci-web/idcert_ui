@@ -103,4 +103,28 @@ describe('Dialog', () => {
       expect(ref.current).toBeInstanceOf(HTMLDivElement)
     })
   })
+
+  test('X close button is rendered by default and closes the dialog', async () => {
+    const user = userEvent.setup()
+    render(<Sample />)
+    await user.click(screen.getByText('Open'))
+    await screen.findByRole('dialog')
+    const closeBtn = screen.getByLabelText('Close')
+    await user.click(closeBtn)
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    })
+  })
+
+  test('showCloseButton={false} hides the X close button', async () => {
+    render(
+      <Dialog open>
+        <DialogContent showCloseButton={false}>
+          <DialogTitle>Title</DialogTitle>
+        </DialogContent>
+      </Dialog>,
+    )
+    await screen.findByRole('dialog')
+    expect(screen.queryByLabelText('Close')).not.toBeInTheDocument()
+  })
 })

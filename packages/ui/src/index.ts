@@ -45,6 +45,8 @@ export {
   type DialogProps,
   type DialogTriggerProps,
   type DialogContentProps,
+  type DialogHeaderProps,
+  type DialogFooterProps,
   type DialogTitleProps,
   type DialogDescriptionProps,
   type DialogCloseProps,

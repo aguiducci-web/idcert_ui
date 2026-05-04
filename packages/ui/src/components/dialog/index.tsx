@@ -40,7 +40,7 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps
           {children}
           {showCloseButton && (
             <BaseDialog.Close
-              className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
+              className="absolute right-4 top-4 rounded-sm p-2 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
               aria-label="Close"
             >
               <X aria-hidden="true" className="h-4 w-4" />
@@ -52,7 +52,9 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps
   },
 )
 
-export const DialogHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+export type DialogHeaderProps = React.HTMLAttributes<HTMLDivElement>
+
+export const DialogHeader = React.forwardRef<HTMLDivElement, DialogHeaderProps>(
   function DialogHeader({ className, ...props }, ref) {
     return (
       <div
@@ -64,7 +66,9 @@ export const DialogHeader = React.forwardRef<HTMLDivElement, React.HTMLAttribute
   },
 )
 
-export const DialogFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+export type DialogFooterProps = React.HTMLAttributes<HTMLDivElement>
+
+export const DialogFooter = React.forwardRef<HTMLDivElement, DialogFooterProps>(
   function DialogFooter({ className, ...props }, ref) {
     return (
       <div
