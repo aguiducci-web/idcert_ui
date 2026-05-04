@@ -1450,8 +1450,17 @@ git commit -m "feat(ui): add Button component with variants"
 
 ```ts
 import { defineConfig } from 'tsup'
-import { copyFileSync, mkdirSync } from 'node:fs'
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+
+const USE_CLIENT = '"use client";\n'
+
+function prependUseClient(filePath: string): void {
+  const content = readFileSync(filePath, 'utf8')
+  if (!content.startsWith(USE_CLIENT)) {
+    writeFileSync(filePath, USE_CLIENT + content, 'utf8')
+  }
+}
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -1462,15 +1471,20 @@ export default defineConfig({
   clean: true,
   external: ['react', 'react-dom', 'next', 'next-themes'],
   treeshake: true,
-  banner: { js: '"use client";' },
   async onSuccess() {
     const dist = resolve('dist')
     mkdirSync(dist, { recursive: true })
     copyFileSync('src/styles/globals.css', resolve(dist, 'styles.css'))
     console.log('✓ copied globals.css to dist/styles.css')
+
+    prependUseClient(resolve(dist, 'index.js'))
+    prependUseClient(resolve(dist, 'index.cjs'))
+    console.log('✓ prepended "use client" directive to bundle entries')
   },
 })
 ```
+
+**Note:** the original spec used `banner: { js: '"use client";' }`, but rollup strips module-level directives during bundling (warning: "Module level directives cause errors when bundled"). The `onSuccess` post-build prepend is the reliable workaround.
 
 - [ ] **Step 2: Build the package**
 
