@@ -1020,7 +1020,8 @@ git commit -m "feat(tailwind-config): add shared tailwind preset"
   "extends": "@idcert/tsconfig/react-library.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "types": ["@testing-library/jest-dom"]
   },
   "include": ["src/**/*"]
 }
