@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "idcert.io React component library",
   "type": "module",
-  "sideEffects": ["**/*.css"],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -16,7 +18,11 @@
       "default": "./tailwind.preset.js"
     }
   },
-  "files": ["dist", "tailwind.preset.js", "tailwind.preset.d.ts"],
+  "files": [
+    "dist",
+    "tailwind.preset.js",
+    "tailwind.preset.d.ts"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -33,11 +39,14 @@
     "react-dom": ">=18"
   },
   "peerDependenciesMeta": {
-    "next": { "optional": true }
+    "next": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-beta.0",
     "@idcert/tokens": "workspace:*",
+    "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.453.0",
