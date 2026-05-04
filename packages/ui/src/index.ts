@@ -13,3 +13,4 @@ export { Grid, type GridProps } from './components/grid/index.js'
 export {
   Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter,
 } from './components/card/index.js'
+export { Divider, type DividerProps } from './components/divider/index.js'
