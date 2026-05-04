@@ -56,4 +56,16 @@ describe('Alert', () => {
     render(<Alert ref={ref}>x</Alert>)
     expect(ref.current).toBeInstanceOf(HTMLDivElement)
   })
+
+  test('AlertTitle forwards ref', () => {
+    const ref = { current: null as HTMLHeadingElement | null }
+    render(<AlertTitle ref={ref}>Title</AlertTitle>)
+    expect(ref.current).toBeInstanceOf(HTMLHeadingElement)
+  })
+
+  test('AlertDescription forwards ref', () => {
+    const ref = { current: null as HTMLDivElement | null }
+    render(<AlertDescription ref={ref}>Body</AlertDescription>)
+    expect(ref.current).toBeInstanceOf(HTMLDivElement)
+  })
 })

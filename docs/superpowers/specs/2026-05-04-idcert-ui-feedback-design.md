@@ -50,7 +50,7 @@ cva-driven, mirroring the existing `Button` variant pattern:
 | `warning` | non-blocking warning | `AlertTriangle` |
 | `destructive` | error / failure | `XCircle` |
 
-Icons opt-in via boolean prop or a custom `icon` ReactNode. Sub-components: `AlertTitle` (h5) and `AlertDescription` (p).
+Icons opt-in via boolean prop or a custom `icon` ReactNode. Sub-components: `AlertTitle` (h5) and `AlertDescription` (div).
 
 ### Spinner
 
