@@ -4,3 +4,4 @@ export { Button, buttonVariants, type ButtonProps } from './components/button/in
 export { Input, type InputProps } from './components/input/index.js'
 export { Textarea, type TextareaProps } from './components/textarea/index.js'
 export { Label, type LabelProps } from './components/label/index.js'
+export { Checkbox, type CheckboxProps } from './components/checkbox/index.js'
