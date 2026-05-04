@@ -9,3 +9,4 @@ export { Radio, RadioGroup, type RadioProps, type RadioGroupProps } from './comp
 export { Switch, type SwitchProps } from './components/switch/index.js'
 export { Container, containerVariants, type ContainerProps } from './components/container/index.js'
 export { Stack, HStack, VStack, type StackProps } from './components/stack/index.js'
+export { Grid, type GridProps } from './components/grid/index.js'
