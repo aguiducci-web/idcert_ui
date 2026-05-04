@@ -20,6 +20,7 @@
     "release": "turbo run build --filter=./packages/* && changeset publish"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
     "@changesets/cli": "^2.27.9",
     "@eslint/js": "^9.13.0",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
@@ -28,6 +29,7 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.11.0",
+    "publint": "^0.2.12",
     "turbo": "^2.2.3",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.11.0"
