@@ -36,4 +36,10 @@ describe('Spinner', () => {
     render(<Spinner className="custom-class" />)
     expect(screen.getByRole('status')).toHaveClass('custom-class')
   })
+
+  test('forwards ref to outer span', () => {
+    const ref = { current: null as HTMLSpanElement | null }
+    render(<Spinner ref={ref} />)
+    expect(ref.current).toBeInstanceOf(HTMLSpanElement)
+  })
 })
