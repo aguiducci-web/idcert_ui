@@ -12,16 +12,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles.css": "./dist/styles.css",
-    "./tailwind": {
-      "types": "./tailwind.preset.d.ts",
-      "default": "./tailwind.preset.js"
-    }
+    "./styles.css": "./dist/styles.css"
   },
   "files": [
-    "dist",
-    "tailwind.preset.js",
-    "tailwind.preset.d.ts"
+    "dist"
   ],
   "scripts": {
     "build": "tsup",

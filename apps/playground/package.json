@@ -9,7 +9,7 @@
     "start": "next start",
     "clean": "rm -rf .next .turbo",
     "typecheck": "tsc --noEmit",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@idcert/tailwind-config": "workspace:*",
