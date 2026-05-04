@@ -15,6 +15,14 @@ const config: StorybookConfig = {
     check: false,
     reactDocgen: 'react-docgen-typescript',
   },
+  webpackFinal: async (config) => {
+    config.resolve = config.resolve ?? {}
+    config.resolve.extensionAlias = {
+      ...(config.resolve.extensionAlias ?? {}),
+      '.js': ['.tsx', '.ts', '.js'],
+    }
+    return config
+  },
 }
 
 export default config

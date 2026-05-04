@@ -168,6 +168,9 @@ importers:
       '@idcert/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@storybook/react':
+        specifier: ^8.3.6
+        version: 8.6.18(@storybook/test@8.6.18(storybook@8.6.18(prettier@2.8.8)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.6.18(prettier@2.8.8))(typescript@5.9.3)
       '@testing-library/jest-dom':
         specifier: ^6.6.2
         version: 6.9.1
