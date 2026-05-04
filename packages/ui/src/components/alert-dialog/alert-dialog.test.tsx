@@ -32,6 +32,12 @@ function Sample({ onAction, onCancel, open }: { onAction?: () => void; onCancel?
 }
 
 describe('AlertDialog', () => {
+  test('trigger renders, content hidden initially', () => {
+    render(<Sample />)
+    expect(screen.getByText('Delete')).toBeInTheDocument()
+    expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument()
+  })
+
   test('opens on trigger click', async () => {
     const user = userEvent.setup()
     render(<Sample />)
@@ -88,5 +94,19 @@ describe('AlertDialog', () => {
     const cancel = screen.getByText('Cancel')
     // outline button uses border class via Button variant="outline"
     expect(cancel).toHaveClass('border')
+  })
+
+  test('AlertDialogContent forwards ref to popup div', async () => {
+    const ref = { current: null as HTMLDivElement | null }
+    render(
+      <AlertDialog open>
+        <AlertDialogContent ref={ref}>
+          <AlertDialogTitle>X</AlertDialogTitle>
+        </AlertDialogContent>
+      </AlertDialog>,
+    )
+    await waitFor(() => {
+      expect(ref.current).toBeInstanceOf(HTMLDivElement)
+    })
   })
 })

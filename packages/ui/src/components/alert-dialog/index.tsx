@@ -98,7 +98,7 @@ export const AlertDialogDescription = React.forwardRef<HTMLParagraphElement, Ale
   },
 )
 
-export type AlertDialogActionProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+export type AlertDialogActionProps = React.ComponentProps<typeof BaseAlertDialog.Close>
 
 export const AlertDialogAction = React.forwardRef<HTMLButtonElement, AlertDialogActionProps>(
   function AlertDialogAction({ className, ...props }, ref) {
@@ -112,7 +112,7 @@ export const AlertDialogAction = React.forwardRef<HTMLButtonElement, AlertDialog
   },
 )
 
-export type AlertDialogCancelProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+export type AlertDialogCancelProps = React.ComponentProps<typeof BaseAlertDialog.Close>
 
 export const AlertDialogCancel = React.forwardRef<HTMLButtonElement, AlertDialogCancelProps>(
   function AlertDialogCancel({ className, ...props }, ref) {
