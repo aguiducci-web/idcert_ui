@@ -14,3 +14,4 @@ export {
   Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter,
 } from './components/card/index.js'
 export { Divider, type DividerProps } from './components/divider/index.js'
+export { Separator, type SeparatorProps } from './components/separator/index.js'
