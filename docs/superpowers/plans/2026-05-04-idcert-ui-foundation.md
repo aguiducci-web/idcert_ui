@@ -1766,17 +1766,29 @@ export default {
 }
 ```
 
-- [ ] **Step 6: Install + verify Storybook starts**
+- [ ] **Step 6: Install + verify Storybook builds**
 
 Run:
 ```bash
 pnpm install
-pnpm --filter @idcert/storybook dev
+pnpm --filter @idcert/storybook build
 ```
 
-Expected: Storybook starts on `http://localhost:6006`. No stories yet (Button story added next task).
+Expected: static site emitted to `apps/storybook/storybook-static/`. No stories yet (Button story added next task).
 
-Stop with Ctrl+C after verifying.
+**Known compatibility fix:** `@storybook/nextjs@8.6.x` ships with `webpack@5.106` which expects parser hooks not present in Next 14.2's bundled `webpack@5.90`. Pin webpack to match Next's version via `pnpm.overrides` in root `package.json`:
+
+```json
+{
+  "pnpm": {
+    "overrides": {
+      "webpack": "5.90.0"
+    }
+  }
+}
+```
+
+This is required for the build to succeed.
 
 - [ ] **Step 7: Commit**
 
