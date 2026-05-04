@@ -22,14 +22,14 @@
 
 ### Headless primitives — Base UI
 
-`@base-ui-components/react` is added as a runtime dependency of `@idcert/ui` for the first time. The package powers `Dialog`, `AlertDialog`, and `Tooltip`. It ships its own focus-trap, anchor positioning (Floating UI), and ARIA wiring — we wrap and style, never re-implement.
+`@base-ui/react` is added as a runtime dependency of `@idcert/ui` for the first time. The package powers `Dialog`, `AlertDialog`, and `Tooltip`. It ships its own focus-trap, anchor positioning (Floating UI), and ARIA wiring — we wrap and style, never re-implement.
 
 Subpath imports are used per Base UI convention:
 
 ```ts
-import { Dialog as BaseDialog } from '@base-ui-components/react/dialog'
-import { AlertDialog as BaseAlertDialog } from '@base-ui-components/react/alert-dialog'
-import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip'
+import { Dialog as BaseDialog } from '@base-ui/react/dialog'
+import { AlertDialog as BaseAlertDialog } from '@base-ui/react/alert-dialog'
+import { Tooltip as BaseTooltip } from '@base-ui/react/tooltip'
 ```
 
 ### Animations — CSS-only
@@ -122,7 +122,7 @@ Brings repo total from ~70 to ~102.
 
 ```jsonc
 "dependencies": {
-  "@base-ui-components/react": "^1.0.0", // first add
+  "@base-ui/react": "^1.0.0", // first add
   // ...existing
 }
 ```

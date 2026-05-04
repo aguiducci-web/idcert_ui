@@ -4,9 +4,9 @@
 
 **Goal:** Add 5 components (Alert, Dialog, AlertDialog, Tooltip, Spinner) to `@idcert/ui`, introducing Base UI as the headless primitive layer. Each component is TDD'd. Plan ends with a `0.3.0` changeset.
 
-**Architecture:** Base UI (`@base-ui-components/react`) powers Dialog, AlertDialog, and Tooltip. We wrap and style — never re-implement focus traps, anchor positioning, or ARIA wiring. Alert and Spinner are pure CSS/lucide custom components. Animations are CSS-only via `tailwindcss-animate` driven by Base UI `data-state` attributes.
+**Architecture:** Base UI (`@base-ui/react`) powers Dialog, AlertDialog, and Tooltip. We wrap and style — never re-implement focus traps, anchor positioning, or ARIA wiring. Alert and Spinner are pure CSS/lucide custom components. Animations are CSS-only via `tailwindcss-animate` driven by Base UI `data-state` attributes.
 
-**Tech Stack:** React 18+, TypeScript 5.6+, Tailwind 3.4+ + `tailwindcss-animate`, `@base-ui-components/react` v1, `class-variance-authority`, `clsx` + `tailwind-merge`, `lucide-react`. Two new deps in this plan: `@base-ui-components/react` (`@idcert/ui` runtime), `tailwindcss-animate` (`@idcert/tailwind-config`).
+**Tech Stack:** React 18+, TypeScript 5.6+, Tailwind 3.4+ + `tailwindcss-animate`, `@base-ui/react` v1, `class-variance-authority`, `clsx` + `tailwind-merge`, `lucide-react`. Two new deps in this plan: `@base-ui/react` (`@idcert/ui` runtime), `tailwindcss-animate` (`@idcert/tailwind-config`).
 
 **Branch:** `feat/feedback` (branched off `feat/primitives`).
 
@@ -46,7 +46,7 @@ packages/ui/src/components/
 
 Plus modified:
 - `packages/ui/src/index.ts` (barrel re-exports)
-- `packages/ui/package.json` (add `@base-ui-components/react`)
+- `packages/ui/package.json` (add `@base-ui/react`)
 - `packages/tailwind-config/package.json` (add `tailwindcss-animate`)
 - `packages/tailwind-config/src/index.ts` (add plugin + keyframes)
 - `.changeset/v0.3.0-feedback.md` (release note)
@@ -88,10 +88,10 @@ git branch --show-current
 - [ ] **Step 2: Add Base UI to @idcert/ui**
 
 ```bash
-pnpm --filter @idcert/ui add @base-ui-components/react@^1.0.0
+pnpm --filter @idcert/ui add @base-ui/react@^1.0.0
 ```
 
-Verify `packages/ui/package.json` `dependencies` now contains `"@base-ui-components/react": "^1.0.0"`.
+Verify `packages/ui/package.json` `dependencies` now contains `"@base-ui/react": "^1.0.0"`.
 
 - [ ] **Step 3: Add tailwindcss-animate to @idcert/tailwind-config**
 
@@ -692,7 +692,7 @@ git commit -m "feat(ui): add Alert compound (Alert, AlertTitle, AlertDescription
 
 First Base UI integration. `TooltipProvider` is required at app root for delay configuration. We expose Provider, Root, Trigger, and Content.
 
-**Base UI module:** `@base-ui-components/react/tooltip`. Exports a single `Tooltip` namespace with parts: `Tooltip.Provider`, `Tooltip.Root`, `Tooltip.Trigger`, `Tooltip.Portal`, `Tooltip.Positioner`, `Tooltip.Popup`, `Tooltip.Arrow`. Trigger uses Base UI's `render` prop, not `asChild`.
+**Base UI module:** `@base-ui/react/tooltip`. Exports a single `Tooltip` namespace with parts: `Tooltip.Provider`, `Tooltip.Root`, `Tooltip.Trigger`, `Tooltip.Portal`, `Tooltip.Positioner`, `Tooltip.Popup`, `Tooltip.Arrow`. Trigger uses Base UI's `render` prop, not `asChild`.
 
 **Files:**
 - Create: `packages/ui/src/components/tooltip/tooltip.test.tsx`
@@ -794,7 +794,7 @@ Create `packages/ui/src/components/tooltip/index.tsx`:
 'use client'
 
 import * as React from 'react'
-import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip'
+import { Tooltip as BaseTooltip } from '@base-ui/react/tooltip'
 import { cn } from '../../lib/cn.js'
 
 export type TooltipProviderProps = React.ComponentProps<typeof BaseTooltip.Provider>
@@ -986,7 +986,7 @@ git commit -m "feat(ui): add Tooltip compound (Provider, Root, Trigger, Content)
 
 Modal overlay. Compound shape mirrors shadcn for consumer familiarity. Backdrop, focus trap, ESC close, click-outside close — all handled by Base UI.
 
-**Base UI module:** `@base-ui-components/react/dialog`. Parts: `Dialog.Root`, `Dialog.Trigger`, `Dialog.Portal`, `Dialog.Backdrop`, `Dialog.Popup`, `Dialog.Title`, `Dialog.Description`, `Dialog.Close`.
+**Base UI module:** `@base-ui/react/dialog`. Parts: `Dialog.Root`, `Dialog.Trigger`, `Dialog.Portal`, `Dialog.Backdrop`, `Dialog.Popup`, `Dialog.Title`, `Dialog.Description`, `Dialog.Close`.
 
 **Files:**
 - Create: `packages/ui/src/components/dialog/dialog.test.tsx`
@@ -1128,7 +1128,7 @@ Create `packages/ui/src/components/dialog/index.tsx`:
 
 import * as React from 'react'
 import { X } from 'lucide-react'
-import { Dialog as BaseDialog } from '@base-ui-components/react/dialog'
+import { Dialog as BaseDialog } from '@base-ui/react/dialog'
 import { cn } from '../../lib/cn.js'
 
 export type DialogProps = React.ComponentProps<typeof BaseDialog.Root>
@@ -1365,7 +1365,7 @@ git commit -m "feat(ui): add Dialog compound (Base UI)"
 
 Mirrors Dialog 1:1 except: no X close button (per WAI-ARIA alertdialog pattern), `AlertDialogAction` defaults to destructive button, `AlertDialogCancel` defaults to outline.
 
-**Base UI module:** `@base-ui-components/react/alert-dialog`. Parts: `AlertDialog.Root`, `AlertDialog.Trigger`, `AlertDialog.Portal`, `AlertDialog.Backdrop`, `AlertDialog.Popup`, `AlertDialog.Title`, `AlertDialog.Description`, `AlertDialog.Close`.
+**Base UI module:** `@base-ui/react/alert-dialog`. Parts: `AlertDialog.Root`, `AlertDialog.Trigger`, `AlertDialog.Portal`, `AlertDialog.Backdrop`, `AlertDialog.Popup`, `AlertDialog.Title`, `AlertDialog.Description`, `AlertDialog.Close`.
 
 **Files:**
 - Create: `packages/ui/src/components/alert-dialog/alert-dialog.test.tsx`
@@ -1486,7 +1486,7 @@ Create `packages/ui/src/components/alert-dialog/index.tsx`:
 'use client'
 
 import * as React from 'react'
-import { AlertDialog as BaseAlertDialog } from '@base-ui-components/react/alert-dialog'
+import { AlertDialog as BaseAlertDialog } from '@base-ui/react/alert-dialog'
 import { cn } from '../../lib/cn.js'
 import { buttonVariants } from '../button/index.js'
 
@@ -1817,7 +1817,7 @@ Components (`@idcert/ui`):
 - `Spinner` — loading indicator using lucide `Loader2` + Tailwind `animate-spin`. cva size variants (sm/md/lg/xl). Default `aria-label="Loading"`.
 
 Internals:
-- `@base-ui-components/react` added as a runtime dependency of `@idcert/ui`.
+- `@base-ui/react` added as a runtime dependency of `@idcert/ui`.
 - `@idcert/ui` now also re-exports `buttonVariants` (used internally by `AlertDialogAction`/`AlertDialogCancel` to compose Button styles into Base UI close elements).
 
 Tailwind preset (`@idcert/tailwind-config`):
@@ -1855,7 +1855,7 @@ git log --oneline feat/feedback ^feat/primitives | wc -l  # ~7 commits (deps + 5
 
 **Spec coverage:**
 - Spec section "Scope (5 components)" — Alert (Task 2), Dialog (Task 4), AlertDialog (Task 5), Tooltip (Task 3), Spinner (Task 1) all covered.
-- Spec section "Headless primitives — Base UI" — `@base-ui-components/react` added in Task 0; first usage in Tooltip (Task 3); Dialog and AlertDialog in Tasks 4–5.
+- Spec section "Headless primitives — Base UI" — `@base-ui/react` added in Task 0; first usage in Tooltip (Task 3); Dialog and AlertDialog in Tasks 4–5.
 - Spec section "Animations — CSS-only" — `tailwindcss-animate` plugin wired in Task 0; consumed via `data-[state=...]:animate-in` in Tooltip, Dialog, AlertDialog.
 - Spec section "Alert variants" — 5 cva variants (default, info, success, warning, destructive) with default icon mapping in Task 2.
 - Spec section "Dialog & AlertDialog compound shape" — sub-component lists in Tasks 4 and 5 match spec exactly. AlertDialogAction/Cancel default to destructive/outline button variants.
