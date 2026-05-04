@@ -1,0 +1,4 @@
+{
+  "extends": "@idcert/tsconfig/nextjs.json",
+  "include": [".storybook/**/*", "../../packages/ui/src/**/*.stories.tsx"]
+}
