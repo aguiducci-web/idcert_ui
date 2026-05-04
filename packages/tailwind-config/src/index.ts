@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
+import animate from 'tailwindcss-animate'
 
-const preset: Pick<Config, 'darkMode' | 'theme'> = {
+const preset: Pick<Config, 'darkMode' | 'theme' | 'plugins'> = {
   darkMode: 'class',
   theme: {
     extend: {
@@ -47,6 +48,7 @@ const preset: Pick<Config, 'darkMode' | 'theme'> = {
       },
     },
   },
+  plugins: [animate],
 }
 
 export default preset
