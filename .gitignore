@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Builds
+dist
+.next
+out
+storybook-static
+.turbo
+
+# Test
+coverage
+.vitest-cache
+
+# Editor
+.vscode
+.idea
+.DS_Store
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Package artifacts
+*.tgz
+.changeset/.changes.json
