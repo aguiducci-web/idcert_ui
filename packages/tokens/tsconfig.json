@@ -2,8 +2,7 @@
   "extends": "@idcert/tsconfig/base.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src",
-    "incremental": false
+    "rootDir": "src"
   },
   "include": ["src/**/*", "scripts/**/*"]
 }
