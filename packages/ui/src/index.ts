@@ -16,3 +16,10 @@ export {
 export { Divider, type DividerProps } from './components/divider/index.js'
 export { Separator, type SeparatorProps } from './components/separator/index.js'
 export { Spinner, spinnerVariants, type SpinnerProps } from './components/spinner/index.js'
+export {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  alertVariants,
+  type AlertProps,
+} from './components/alert/index.js'
