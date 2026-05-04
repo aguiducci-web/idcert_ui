@@ -830,10 +830,12 @@ export const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentPro
             ref={ref}
             className={cn(
               'z-50 overflow-hidden rounded-md border border-border bg-popover px-3 py-1.5 text-xs text-popover-foreground shadow-md',
-              'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
-              'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
+              'data-[open]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[open]:fade-in-0',
+              'data-[closed]:zoom-out-95 data-[open]:zoom-in-95',
               'data-[side=top]:slide-in-from-bottom-2 data-[side=bottom]:slide-in-from-top-2',
               'data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2',
+              'data-[side=top]:slide-out-to-bottom-2 data-[side=bottom]:slide-out-to-top-2',
+              'data-[side=left]:slide-out-to-right-2 data-[side=right]:slide-out-to-left-2',
               className,
             )}
             {...props}
@@ -861,10 +863,12 @@ Use the safer fallback for now. Update the implementation accordingly.
 // final TooltipContent className (use the fallback)
 className={cn(
   'z-50 overflow-hidden rounded-md border border-border bg-background px-3 py-1.5 text-xs text-foreground shadow-md',
-  'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
-  'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
+  'data-[open]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[open]:fade-in-0',
+  'data-[closed]:zoom-out-95 data-[open]:zoom-in-95',
   'data-[side=top]:slide-in-from-bottom-2 data-[side=bottom]:slide-in-from-top-2',
   'data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2',
+  'data-[side=top]:slide-out-to-bottom-2 data-[side=bottom]:slide-out-to-top-2',
+  'data-[side=left]:slide-out-to-right-2 data-[side=right]:slide-out-to-left-2',
   className,
 )}
 ```
@@ -1148,17 +1152,17 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps
         <BaseDialog.Backdrop
           className={cn(
             'fixed inset-0 z-50 bg-black/50',
-            'data-[state=open]:animate-in data-[state=closed]:animate-out',
-            'data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
+            'data-[open]:animate-in data-[closed]:animate-out',
+            'data-[open]:fade-in-0 data-[closed]:fade-out-0',
           )}
         />
         <BaseDialog.Popup
           ref={ref}
           className={cn(
             'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-border bg-background p-6 shadow-lg sm:rounded-lg',
-            'data-[state=open]:animate-in data-[state=closed]:animate-out',
-            'data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
-            'data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95',
+            'data-[open]:animate-in data-[closed]:animate-out',
+            'data-[open]:fade-in-0 data-[closed]:fade-out-0',
+            'data-[open]:zoom-in-95 data-[closed]:zoom-out-95',
             className,
           )}
           {...props}
@@ -1505,17 +1509,17 @@ export const AlertDialogContent = React.forwardRef<HTMLDivElement, AlertDialogCo
         <BaseAlertDialog.Backdrop
           className={cn(
             'fixed inset-0 z-50 bg-black/50',
-            'data-[state=open]:animate-in data-[state=closed]:animate-out',
-            'data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
+            'data-[open]:animate-in data-[closed]:animate-out',
+            'data-[open]:fade-in-0 data-[closed]:fade-out-0',
           )}
         />
         <BaseAlertDialog.Popup
           ref={ref}
           className={cn(
             'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-border bg-background p-6 shadow-lg sm:rounded-lg',
-            'data-[state=open]:animate-in data-[state=closed]:animate-out',
-            'data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
-            'data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95',
+            'data-[open]:animate-in data-[closed]:animate-out',
+            'data-[open]:fade-in-0 data-[closed]:fade-out-0',
+            'data-[open]:zoom-in-95 data-[closed]:zoom-out-95',
             className,
           )}
           {...props}
@@ -1856,7 +1860,7 @@ git log --oneline feat/feedback ^feat/primitives | wc -l  # ~7 commits (deps + 5
 **Spec coverage:**
 - Spec section "Scope (5 components)" — Alert (Task 2), Dialog (Task 4), AlertDialog (Task 5), Tooltip (Task 3), Spinner (Task 1) all covered.
 - Spec section "Headless primitives — Base UI" — `@base-ui/react` added in Task 0; first usage in Tooltip (Task 3); Dialog and AlertDialog in Tasks 4–5.
-- Spec section "Animations — CSS-only" — `tailwindcss-animate` plugin wired in Task 0; consumed via `data-[state=...]:animate-in` in Tooltip, Dialog, AlertDialog.
+- Spec section "Animations — CSS-only" — `tailwindcss-animate` plugin wired in Task 0; consumed via `data-[open]:animate-in` / `data-[closed]:animate-out` in Tooltip, Dialog, AlertDialog (Base UI 1.4 attribute names).
 - Spec section "Alert variants" — 5 cva variants (default, info, success, warning, destructive) with default icon mapping in Task 2.
 - Spec section "Dialog & AlertDialog compound shape" — sub-component lists in Tasks 4 and 5 match spec exactly. AlertDialogAction/Cancel default to destructive/outline button variants.
 - Spec section "Tooltip" — Provider + Root + Trigger + Content. Default `delay={200}` in Provider.
@@ -1876,7 +1880,7 @@ git log --oneline feat/feedback ^feat/primitives | wc -l  # ~7 commits (deps + 5
 - AlertDialog: 7 prop type names listed; barrel exports match.
 
 **Known forecasted concerns:**
-- Base UI `data-state` semantics: Tooltip, Dialog, and AlertDialog all expose `data-state="open" | "closed"` on their popup elements. The `tailwindcss-animate` plugin's `animate-in` / `animate-out` utilities depend on `data-[state=...]` arbitrary variants. If Base UI v1 changes the attribute name in a minor release, all three components break visually (functional behavior unaffected).
+- Base UI attribute semantics: Base UI 1.4 uses `data-open` / `data-closed` (not `data-state="open" | "closed"`) on popup elements. All three components (Tooltip, Dialog, AlertDialog) use `data-[open]:` / `data-[closed]:` selectors accordingly. If Base UI changes the attribute name in a future release, all three components break visually (functional behavior unaffected).
 - Base UI `Trigger` `render` prop: stories use `<DialogTrigger render={<Button>...</Button>} />` to compose with the existing Button component. If Base UI v1 changes this API to `asChild` (Radix-style), the stories break. Track on first install.
 - Tooltip jsdom flakiness: hover-driven tests rely on `userEvent.hover()` which dispatches pointer events. Some Base UI tooltip implementations require a real pointermove sequence. If tests fail, fall back to `open` controlled prop assertions (already covered by `respects controlled open prop` test).
 - `bg-popover` token: spec calls for a popover token, but the existing tailwind preset has none. Plan uses `bg-background` fallback. Adding a `popover` token belongs in a tokens iteration plan.

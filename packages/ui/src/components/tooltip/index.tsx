@@ -35,6 +35,7 @@ export const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentPro
         <BaseTooltip.Positioner sideOffset={sideOffset}>
           <BaseTooltip.Popup
             ref={ref}
+            role="tooltip"
             className={cn(
               'z-50 overflow-hidden rounded-md border border-border bg-background px-3 py-1.5 text-xs text-foreground shadow-md',
               // Base UI 1.4.1 uses data-open / data-closed (not data-state)
@@ -43,6 +44,8 @@ export const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentPro
               'data-[closed]:zoom-out-95 data-[open]:zoom-in-95',
               'data-[side=top]:slide-in-from-bottom-2 data-[side=bottom]:slide-in-from-top-2',
               'data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2',
+              'data-[side=top]:slide-out-to-bottom-2 data-[side=bottom]:slide-out-to-top-2',
+              'data-[side=left]:slide-out-to-right-2 data-[side=right]:slide-out-to-left-2',
               className,
             )}
             {...props}

@@ -68,4 +68,33 @@ describe('Tooltip', () => {
       expect(screen.getByText('Body')).toHaveClass('custom-class')
     })
   })
+
+  test('TooltipContent forwards ref to popup div', async () => {
+    const ref = { current: null as HTMLDivElement | null }
+    render(
+      <TooltipProvider delay={0}>
+        <Tooltip open>
+          <TooltipTrigger>Trigger</TooltipTrigger>
+          <TooltipContent ref={ref}>Body</TooltipContent>
+        </Tooltip>
+      </TooltipProvider>,
+    )
+    await waitFor(() => {
+      expect(ref.current).toBeInstanceOf(HTMLDivElement)
+    })
+  })
+
+  test('TooltipContent has role tooltip when open', async () => {
+    render(
+      <TooltipProvider delay={0}>
+        <Tooltip open>
+          <TooltipTrigger>Trigger</TooltipTrigger>
+          <TooltipContent>Body</TooltipContent>
+        </Tooltip>
+      </TooltipProvider>,
+    )
+    await waitFor(() => {
+      expect(screen.getByRole('tooltip')).toBeInTheDocument()
+    })
+  })
 })
