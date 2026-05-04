@@ -1705,10 +1705,20 @@ const config: StorybookConfig = {
     check: false,
     reactDocgen: 'react-docgen-typescript',
   },
+  webpackFinal: async (config) => {
+    config.resolve = config.resolve ?? {}
+    config.resolve.extensionAlias = {
+      ...config.resolve.extensionAlias,
+      '.js': ['.tsx', '.ts', '.js'],
+    }
+    return config
+  },
 }
 
 export default config
 ```
+
+**Note:** `webpackFinal` is required so webpack can follow the `./index.js` import specifiers used in TS source. Without it, every story added in Task 16 will fail to resolve component imports.
 
 - [ ] **Step 4: Create `apps/storybook/.storybook/preview.tsx`**
 
