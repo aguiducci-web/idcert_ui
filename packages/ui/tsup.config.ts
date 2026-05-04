@@ -1,5 +1,5 @@
 import { defineConfig } from 'tsup'
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const USE_CLIENT = '"use client";\n'
@@ -22,10 +22,6 @@ export default defineConfig({
   treeshake: true,
   async onSuccess() {
     const dist = resolve('dist')
-    mkdirSync(dist, { recursive: true })
-    copyFileSync('src/styles/globals.css', resolve(dist, 'styles.css'))
-    console.log('✓ copied globals.css to dist/styles.css')
-
     prependUseClient(resolve(dist, 'index.js'))
     prependUseClient(resolve(dist, 'index.cjs'))
     console.log('✓ prepended "use client" directive to bundle entries')

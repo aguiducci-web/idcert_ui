@@ -1,4 +1,7 @@
 {
   "extends": "@idcert/tsconfig/base.json",
-  "include": ["tailwind.preset.ts"]
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"]
 }

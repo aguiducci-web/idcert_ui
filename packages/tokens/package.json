@@ -1,7 +1,22 @@
 {
   "name": "@idcert/tokens",
   "version": "0.0.0",
-  "description": "Design tokens for @idcert/ui",
+  "description": "Design tokens for @idcert/ui (colors, spacing, typography)",
+  "license": "MIT",
+  "author": "idcert.io <aguiducci@idcert.io>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idcert/ui.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://github.com/idcert/ui#readme",
+  "bugs": "https://github.com/idcert/ui/issues",
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "design-system",
+    "idcert"
+  ],
   "type": "module",
   "sideEffects": [
     "dist/styles.css"
@@ -23,6 +38,9 @@
     "clean": "rm -rf dist .turbo",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "devDependencies": {
     "@idcert/tsconfig": "workspace:*",
