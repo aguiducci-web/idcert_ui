@@ -146,3 +146,13 @@ export {
   type FileUploadItemProps,
   type FileUploadError,
 } from './components/file-upload/index.js'
+export {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  type TabsProps,
+  type TabsListProps,
+  type TabsTriggerProps,
+  type TabsContentProps,
+} from './components/tabs/index.js'
