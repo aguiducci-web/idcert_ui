@@ -206,3 +206,21 @@ export {
   type DropdownMenuSubTriggerProps,
   type DropdownMenuSubContentProps,
 } from './components/dropdown-menu/index.js'
+export {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+  SheetClose,
+  type SheetProps,
+  type SheetTriggerProps,
+  type SheetContentProps,
+  type SheetHeaderProps,
+  type SheetFooterProps,
+  type SheetTitleProps,
+  type SheetDescriptionProps,
+  type SheetCloseProps,
+} from './components/sheet/index.js'
