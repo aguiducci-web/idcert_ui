@@ -224,3 +224,17 @@ export {
   type SheetDescriptionProps,
   type SheetCloseProps,
 } from './components/sheet/index.js'
+export {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarActions,
+  NavbarMobileToggle,
+  type NavbarProps,
+  type NavbarBrandProps,
+  type NavbarContentProps,
+  type NavbarItemProps,
+  type NavbarActionsProps,
+  type NavbarMobileToggleProps,
+} from './components/navbar/index.js'
