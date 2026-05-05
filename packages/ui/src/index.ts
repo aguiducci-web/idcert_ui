@@ -90,3 +90,20 @@ export {
   type SelectLabelProps,
   type SelectSeparatorProps,
 } from './components/select/index.js'
+export {
+  MultiSelect,
+  MultiSelectTrigger,
+  MultiSelectChips,
+  MultiSelectContent,
+  MultiSelectList,
+  MultiSelectItem,
+  MultiSelectEmpty,
+  type MultiSelectProps,
+  type MultiSelectTriggerProps,
+  type MultiSelectChipsProps,
+  type MultiSelectContentProps,
+  type MultiSelectListProps,
+  type MultiSelectItemProps,
+  type MultiSelectEmptyProps,
+  type MultiSelectOption,
+} from './components/multi-select/index.js'
