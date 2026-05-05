@@ -268,3 +268,4 @@ export {
   type SidebarRailProps,
   type SidebarInsetProps,
 } from './components/sidebar/index.js'
+export { Badge, badgeVariants, type BadgeProps } from './components/badge/index.js'
