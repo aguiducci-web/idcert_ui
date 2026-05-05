@@ -127,20 +127,20 @@ export default function FormsPage() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Paese</FormLabel>
-                <FormControl>
-                  <Select value={field.value} onValueChange={field.onChange}>
+                <Select value={field.value} onValueChange={field.onChange}>
+                  <FormControl>
                     <SelectTrigger aria-label="Paese">
                       <SelectValue placeholder="Scegli…" />
                     </SelectTrigger>
-                    <SelectContent>
-                      {countries.map((c) => (
-                        <SelectItem key={c.value} value={c.value}>
-                          {c.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </FormControl>
+                  </FormControl>
+                  <SelectContent>
+                    {countries.map((c) => (
+                      <SelectItem key={c.value} value={c.value}>
+                        {c.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -151,28 +151,28 @@ export default function FormsPage() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Lingue</FormLabel>
-                <FormControl>
-                  <MultiSelect
-                    items={languages}
-                    value={field.value}
-                    onValueChange={field.onChange}
-                    placeholder="Seleziona…"
-                  >
+                <MultiSelect
+                  items={languages}
+                  value={field.value}
+                  onValueChange={field.onChange}
+                  placeholder="Seleziona…"
+                >
+                  <FormControl>
                     <MultiSelectTrigger aria-label="Lingue">
                       <MultiSelectChips />
                     </MultiSelectTrigger>
-                    <MultiSelectContent>
-                      <MultiSelectEmpty>Nessun risultato</MultiSelectEmpty>
-                      <MultiSelectList>
-                        {(item) => (
-                          <MultiSelectItem value={item.value}>
-                            {item.label}
-                          </MultiSelectItem>
-                        )}
-                      </MultiSelectList>
-                    </MultiSelectContent>
-                  </MultiSelect>
-                </FormControl>
+                  </FormControl>
+                  <MultiSelectContent>
+                    <MultiSelectEmpty>Nessun risultato</MultiSelectEmpty>
+                    <MultiSelectList>
+                      {(item) => (
+                        <MultiSelectItem value={item.value}>
+                          {item.label}
+                        </MultiSelectItem>
+                      )}
+                    </MultiSelectList>
+                  </MultiSelectContent>
+                </MultiSelect>
                 <FormMessage />
               </FormItem>
             )}

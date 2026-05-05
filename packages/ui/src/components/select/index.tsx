@@ -84,7 +84,7 @@ export const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps
             )}
             {...props}
           >
-            {children}
+            <BaseSelect.List>{children}</BaseSelect.List>
           </BaseSelect.Popup>
         </BaseSelect.Positioner>
       </BaseSelect.Portal>
