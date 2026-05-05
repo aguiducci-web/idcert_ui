@@ -124,3 +124,4 @@ export {
   type FormDescriptionProps,
   type FormMessageProps,
 } from './components/form/index.js'
+export { TimePicker, type TimePickerProps } from './components/time-picker/index.js'
