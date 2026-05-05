@@ -28,8 +28,18 @@ import {
   MultiSelectItem,
   MultiSelectEmpty,
   Slider,
+  DatePicker,
+  DateRangePicker,
+  TimePicker,
+  FileUpload,
+  FileUploadDropzone,
+  FileUploadPrompt,
+  FileUploadButton,
+  FileUploadList,
   type MultiSelectOption,
+  type DateRange,
 } from '@idcert/ui'
+import { it as itLocale } from 'date-fns/locale'
 
 const schema = z.object({
   email: z.string().email('Email non valida'),
@@ -38,6 +48,15 @@ const schema = z.object({
   country: z.string().min(1, 'Obbligatorio'),
   languages: z.array(z.string()).min(1, 'Seleziona almeno una lingua'),
   volume: z.array(z.number()),
+  birthday: z.date({ required_error: 'Obbligatorio' }).optional(),
+  trip: z
+    .object({
+      from: z.date(),
+      to: z.date().optional(),
+    })
+    .optional(),
+  startTime: z.string().optional(),
+  attachments: z.array(z.instanceof(File)).optional(),
 })
 
 type Values = z.infer<typeof schema>
@@ -65,6 +84,10 @@ export default function FormsPage() {
       country: '',
       languages: [],
       volume: [50],
+      birthday: undefined,
+      trip: undefined,
+      startTime: '',
+      attachments: [],
     },
   })
 
@@ -189,6 +212,91 @@ export default function FormsPage() {
                     onValueChange={field.onChange}
                     aria-label="Volume"
                   />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="birthday"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Data di nascita</FormLabel>
+                <FormControl>
+                  <DatePicker
+                    value={field.value as Date | undefined}
+                    onValueChange={field.onChange}
+                    locale={itLocale}
+                    format="dd/MM/yyyy"
+                    aria-label="Data di nascita"
+                    placeholder="Scegli…"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="trip"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Periodo viaggio</FormLabel>
+                <FormControl>
+                  <DateRangePicker
+                    value={field.value as DateRange | undefined}
+                    onValueChange={field.onChange}
+                    locale={itLocale}
+                    format="dd/MM/yyyy"
+                    aria-label="Periodo viaggio"
+                    placeholder="Scegli range…"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="startTime"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Orario inizio</FormLabel>
+                <FormControl>
+                  <TimePicker
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    aria-label="Orario inizio"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="attachments"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Allegati</FormLabel>
+                <FormControl>
+                  <FileUpload
+                    value={field.value as File[]}
+                    onValueChange={field.onChange}
+                    accept="image/*,.pdf"
+                    maxSize={2 * 1024 * 1024}
+                    maxFiles={3}
+                    multiple
+                  >
+                    <FileUploadDropzone>
+                      <FileUploadPrompt>
+                        Trascina file (immagini o PDF, max 2MB) o{' '}
+                        <FileUploadButton>scegli</FileUploadButton>
+                      </FileUploadPrompt>
+                    </FileUploadDropzone>
+                    <FileUploadList />
+                  </FileUpload>
                 </FormControl>
                 <FormMessage />
               </FormItem>
