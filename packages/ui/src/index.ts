@@ -172,3 +172,9 @@ export {
   type BreadcrumbSeparatorProps,
   type BreadcrumbEllipsisProps,
 } from './components/breadcrumb/index.js'
+export {
+  Pagination,
+  getPaginationRange,
+  type PaginationProps,
+  type PaginationRangeItem,
+} from './components/pagination/index.js'
