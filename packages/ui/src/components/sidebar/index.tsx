@@ -249,7 +249,17 @@ export type SidebarGroupProps = React.HTMLAttributes<HTMLDivElement>
 
 export const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
   function SidebarGroup({ className, ...props }, ref) {
-    return <div ref={ref} className={cn('flex flex-col gap-1 p-2', className)} {...props} />
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'flex flex-col gap-1 p-2',
+          'group-data-[collapsible=icon]/sidebar:group-data-[state=collapsed]/sidebar:p-0',
+          className,
+        )}
+        {...props}
+      />
+    )
   },
 )
 
@@ -262,6 +272,7 @@ export const SidebarGroupLabel = React.forwardRef<HTMLDivElement, SidebarGroupLa
         ref={ref}
         className={cn(
           'px-2 text-xs font-medium text-muted-foreground uppercase tracking-wider',
+          'group-data-[collapsible=icon]/sidebar:group-data-[state=collapsed]/sidebar:hidden',
           className,
         )}
         {...props}
@@ -288,7 +299,7 @@ export const SidebarMenuItem = React.forwardRef<HTMLLIElement, SidebarMenuItemPr
 )
 
 const sidebarMenuButtonVariants = cva(
-  'flex w-full items-center gap-2 overflow-hidden rounded-md px-2 text-left text-sm outline-none ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring',
+  'flex w-full items-center gap-2 overflow-hidden rounded-md px-2 text-left text-sm outline-none ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring group-data-[collapsible=icon]/sidebar:group-data-[state=collapsed]/sidebar:!w-8 group-data-[collapsible=icon]/sidebar:group-data-[state=collapsed]/sidebar:justify-center group-data-[collapsible=icon]/sidebar:group-data-[state=collapsed]/sidebar:px-0 group-data-[collapsible=icon]/sidebar:group-data-[state=collapsed]/sidebar:[&>span]:hidden',
   {
     variants: {
       size: {

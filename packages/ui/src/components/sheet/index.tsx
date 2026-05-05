@@ -16,17 +16,17 @@ export type SheetCloseProps = React.ComponentProps<typeof BaseDialog.Close>
 export const SheetClose = BaseDialog.Close
 
 const sheetContentVariants = cva(
-  'fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[closed]:duration-300 data-[open]:duration-500 data-[open]:animate-in data-[closed]:animate-out',
+  'fixed z-50 gap-4 bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out',
   {
     variants: {
       side: {
-        top: 'inset-x-0 top-0 border-b data-[open]:slide-in-from-top data-[closed]:slide-out-to-top',
+        top: 'inset-x-0 top-0 border-b data-[starting-style]:-translate-y-full data-[ending-style]:-translate-y-full',
         right:
-          'inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm data-[open]:slide-in-from-right data-[closed]:slide-out-to-right',
+          'inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm data-[starting-style]:translate-x-full data-[ending-style]:translate-x-full',
         bottom:
-          'inset-x-0 bottom-0 border-t data-[open]:slide-in-from-bottom data-[closed]:slide-out-to-bottom',
+          'inset-x-0 bottom-0 border-t data-[starting-style]:translate-y-full data-[ending-style]:translate-y-full',
         left:
-          'inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm data-[open]:slide-in-from-left data-[closed]:slide-out-to-left',
+          'inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm data-[starting-style]:-translate-x-full data-[ending-style]:-translate-x-full',
       },
     },
     defaultVariants: { side: 'right' },
@@ -47,9 +47,8 @@ export const SheetContent = React.forwardRef<HTMLDivElement, SheetContentProps>(
       <BaseDialog.Portal>
         <BaseDialog.Backdrop
           className={cn(
-            'fixed inset-0 z-50 bg-black/50',
-            'data-[open]:animate-in data-[closed]:animate-out',
-            'data-[open]:fade-in-0 data-[closed]:fade-out-0',
+            'fixed inset-0 z-50 bg-black/50 transition-opacity duration-300',
+            'data-[starting-style]:opacity-0 data-[ending-style]:opacity-0',
           )}
         />
         <BaseDialog.Popup
