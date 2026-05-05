@@ -303,7 +303,21 @@ export default function FormsPage() {
       </Form>
       {submitted && (
         <pre className="mt-6 rounded-md bg-muted p-3 text-xs">
-          {JSON.stringify(submitted, null, 2)}
+          {JSON.stringify(
+            submitted,
+            (_key, value) => {
+              if (value instanceof File) {
+                return {
+                  name: value.name,
+                  size: value.size,
+                  type: value.type,
+                  lastModified: value.lastModified,
+                }
+              }
+              return value
+            },
+            2,
+          )}
         </pre>
       )}
     </main>
