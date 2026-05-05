@@ -223,16 +223,14 @@ export default function FormsPage() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Data di nascita</FormLabel>
-                <FormControl>
-                  <DatePicker
-                    value={field.value as Date | undefined}
-                    onValueChange={field.onChange}
-                    locale={itLocale}
-                    format="dd/MM/yyyy"
-                    aria-label="Data di nascita"
-                    placeholder="Scegli…"
-                  />
-                </FormControl>
+                <DatePicker
+                  value={field.value as Date | undefined}
+                  onValueChange={field.onChange}
+                  locale={itLocale}
+                  format="dd/MM/yyyy"
+                  aria-label="Data di nascita"
+                  placeholder="Scegli…"
+                />
                 <FormMessage />
               </FormItem>
             )}
@@ -243,16 +241,14 @@ export default function FormsPage() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Periodo viaggio</FormLabel>
-                <FormControl>
-                  <DateRangePicker
-                    value={field.value as DateRange | undefined}
-                    onValueChange={field.onChange}
-                    locale={itLocale}
-                    format="dd/MM/yyyy"
-                    aria-label="Periodo viaggio"
-                    placeholder="Scegli range…"
-                  />
-                </FormControl>
+                <DateRangePicker
+                  value={field.value as DateRange | undefined}
+                  onValueChange={field.onChange}
+                  locale={itLocale}
+                  format="dd/MM/yyyy"
+                  aria-label="Periodo viaggio"
+                  placeholder="Scegli range…"
+                />
                 <FormMessage />
               </FormItem>
             )}

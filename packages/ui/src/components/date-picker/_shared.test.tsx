@@ -53,28 +53,32 @@ describe('_shared', () => {
     expect(screen.getByTestId('calendar-stub')).toBeInTheDocument()
   })
 
-  test('dayPickerClassNames defines all calendar slot keys', () => {
+  test('dayPickerClassNames defines all v9 calendar slot keys', () => {
     expect(dayPickerClassNames).toMatchObject({
       root: expect.any(String),
       months: expect.any(String),
       month: expect.any(String),
-      caption: expect.any(String),
+      month_caption: expect.any(String),
       caption_label: expect.any(String),
       nav: expect.any(String),
-      nav_button: expect.any(String),
-      table: expect.any(String),
-      head_row: expect.any(String),
-      head_cell: expect.any(String),
-      row: expect.any(String),
-      cell: expect.any(String),
+      button_previous: expect.any(String),
+      button_next: expect.any(String),
+      chevron: expect.any(String),
+      month_grid: expect.any(String),
+      weekdays: expect.any(String),
+      weekday: expect.any(String),
+      weeks: expect.any(String),
+      week: expect.any(String),
       day: expect.any(String),
-      day_selected: expect.any(String),
-      day_today: expect.any(String),
-      day_disabled: expect.any(String),
-      day_outside: expect.any(String),
-      day_range_start: expect.any(String),
-      day_range_middle: expect.any(String),
-      day_range_end: expect.any(String),
+      day_button: expect.any(String),
+      selected: expect.any(String),
+      today: expect.any(String),
+      disabled: expect.any(String),
+      outside: expect.any(String),
+      hidden: expect.any(String),
+      range_start: expect.any(String),
+      range_middle: expect.any(String),
+      range_end: expect.any(String),
     })
   })
 })

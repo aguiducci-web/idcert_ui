@@ -63,30 +63,35 @@ export function DatePopoverContent({
 
 // Tailwind class mapping for react-day-picker v9 calendar slots.
 // Themed to match our design tokens. Used by DatePicker and DateRangePicker.
+// Keys mirror the v9 `UI`, `DayFlag`, `SelectionState` enums.
 export const dayPickerClassNames: Record<string, string> = {
-  root: 'rdp',
+  root: 'rdp w-fit',
   months: 'flex flex-col gap-4 sm:flex-row',
   month: 'space-y-4',
-  caption: 'flex items-center justify-between px-2',
+  month_caption: 'flex h-9 items-center justify-center px-9',
   caption_label: 'text-sm font-medium',
-  nav: 'flex items-center gap-1',
-  nav_button:
-    'inline-flex h-7 w-7 items-center justify-center rounded-md text-foreground hover:bg-accent hover:text-accent-foreground disabled:opacity-50',
-  nav_button_previous: '',
-  nav_button_next: '',
-  table: 'w-full border-collapse',
-  head_row: 'flex',
-  head_cell: 'w-9 text-center text-xs font-medium text-muted-foreground',
-  row: 'mt-2 flex w-full',
-  cell: 'h-9 w-9 p-0 text-center text-sm relative',
-  day: 'h-9 w-9 rounded-md text-foreground hover:bg-accent hover:text-accent-foreground aria-selected:opacity-100 inline-flex items-center justify-center',
-  day_selected:
-    'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
-  day_today: 'bg-accent text-accent-foreground font-semibold',
-  day_disabled: 'text-muted-foreground opacity-50 pointer-events-none',
-  day_outside: 'text-muted-foreground opacity-50',
-  day_range_start: 'rounded-l-md bg-primary text-primary-foreground',
-  day_range_middle: 'rounded-none bg-accent text-accent-foreground',
-  day_range_end: 'rounded-r-md bg-primary text-primary-foreground',
-  day_hidden: 'invisible',
+  nav: 'absolute inset-x-1 flex items-center justify-between',
+  button_previous:
+    'inline-flex h-7 w-7 items-center justify-center rounded-md text-foreground hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-30',
+  button_next:
+    'inline-flex h-7 w-7 items-center justify-center rounded-md text-foreground hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-30',
+  chevron: 'h-4 w-4 fill-current',
+  month_grid: 'w-full border-collapse',
+  weekdays: 'flex',
+  weekday: 'flex h-9 w-9 items-center justify-center text-xs font-medium text-muted-foreground',
+  weeks: 'flex flex-col gap-1',
+  week: 'flex w-full',
+  day: 'flex h-9 w-9 items-center justify-center p-0 text-sm relative',
+  day_button:
+    'inline-flex h-9 w-9 items-center justify-center rounded-md text-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+  selected:
+    '[&>button]:bg-primary [&>button]:text-primary-foreground [&>button:hover]:bg-primary [&>button:hover]:text-primary-foreground',
+  today: '[&>button]:bg-accent [&>button]:text-accent-foreground [&>button]:font-semibold',
+  outside: '[&>button]:text-muted-foreground [&>button]:opacity-50',
+  disabled: '[&>button]:text-muted-foreground [&>button]:opacity-50 [&>button]:pointer-events-none',
+  hidden: 'invisible',
+  range_start: '[&>button]:rounded-r-none [&>button]:bg-primary [&>button]:text-primary-foreground',
+  range_middle:
+    '[&>button]:rounded-none [&>button]:bg-accent [&>button]:text-accent-foreground',
+  range_end: '[&>button]:rounded-l-none [&>button]:bg-primary [&>button]:text-primary-foreground',
 }
