@@ -125,3 +125,4 @@ export {
   type FormMessageProps,
 } from './components/form/index.js'
 export { TimePicker, type TimePickerProps } from './components/time-picker/index.js'
+export { DatePicker, type DatePickerProps } from './components/date-picker/index.js'
