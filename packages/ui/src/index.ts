@@ -270,3 +270,9 @@ export {
 } from './components/sidebar/index.js'
 export { Badge, badgeVariants, type BadgeProps } from './components/badge/index.js'
 export { Skeleton, type SkeletonProps } from './components/skeleton/index.js'
+export {
+  List,
+  ListItem,
+  type ListProps,
+  type ListItemProps,
+} from './components/list/index.js'
