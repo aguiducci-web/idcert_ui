@@ -318,3 +318,4 @@ export {
   type TableCellProps,
   type TableCaptionProps,
 } from './components/table/index.js'
+export { Portal, type PortalProps } from './components/portal/index.js'
