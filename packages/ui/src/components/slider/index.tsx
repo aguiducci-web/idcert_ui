@@ -13,19 +13,34 @@ export type SliderProps = Omit<
   onValueChange?: (value: number[]) => void
 }
 
+function toArray(v: number | number[] | undefined): number[] | undefined {
+  if (v === undefined) return undefined
+  return Array.isArray(v) ? v : [v]
+}
+
 export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
   function Slider(
     { className, value, defaultValue, onValueChange, disabled, ...props },
     ref,
   ) {
-    const thumbs = value ?? defaultValue ?? [0]
+    const valueArr = toArray(value as number | number[] | undefined)
+    const defaultValueArr = toArray(defaultValue as number | number[] | undefined)
+    const thumbs = valueArr ?? defaultValueArr ?? [0]
+
+    const handleValueChange = React.useMemo(
+      () =>
+        onValueChange
+          ? (v: number | number[]) => onValueChange(Array.isArray(v) ? v : [v])
+          : undefined,
+      [onValueChange],
+    )
 
     return (
       <BaseSlider.Root
         ref={ref}
-        value={value}
-        defaultValue={defaultValue}
-        onValueChange={onValueChange}
+        value={valueArr}
+        defaultValue={defaultValueArr}
+        onValueChange={handleValueChange}
         disabled={disabled}
         className={cn(
           'relative flex w-full touch-none select-none items-center',

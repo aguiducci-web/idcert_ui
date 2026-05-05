@@ -53,4 +53,34 @@ describe('Slider', () => {
     render(<Slider ref={ref} value={[50]} aria-label="Volume" />)
     expect(ref.current).toBeInstanceOf(HTMLDivElement)
   })
+
+  test('accepts a scalar number as value (RHF round-trip safety)', () => {
+    // Base UI 1.4 passes a scalar `number` to onValueChange when the
+    // slider has a single thumb. Consumers that store that value in
+    // state (e.g. RHF Controller) and feed it back as `value` would
+    // crash on `thumbs.map(...)` if we did not normalise.
+    render(
+      <Slider value={42 as unknown as number[]} aria-label="Volume" min={0} max={100} />,
+    )
+    expect(screen.getByRole('slider')).toHaveAttribute('aria-valuenow', '42')
+  })
+
+  test('onValueChange always receives an array, even for single thumb', async () => {
+    const user = userEvent.setup()
+    const onChange = vi.fn()
+    render(
+      <Slider
+        defaultValue={[50]}
+        onValueChange={onChange}
+        min={0}
+        max={100}
+        step={1}
+        aria-label="Volume"
+      />,
+    )
+    await user.tab()
+    await user.keyboard('{ArrowRight}')
+    const lastCall = onChange.mock.calls.at(-1)
+    expect(Array.isArray(lastCall?.[0])).toBe(true)
+  })
 })
