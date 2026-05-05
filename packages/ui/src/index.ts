@@ -126,3 +126,8 @@ export {
 } from './components/form/index.js'
 export { TimePicker, type TimePickerProps } from './components/time-picker/index.js'
 export { DatePicker, type DatePickerProps } from './components/date-picker/index.js'
+export {
+  DateRangePicker,
+  type DateRangePickerProps,
+  type DateRange,
+} from './components/date-range-picker/index.js'
