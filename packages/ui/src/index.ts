@@ -289,3 +289,14 @@ export {
   type EmptyStateActionProps,
 } from './components/empty-state/index.js'
 export { Progress, type ProgressProps } from './components/progress/index.js'
+export {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  AvatarGroup,
+  avatarVariants,
+  type AvatarProps,
+  type AvatarImageProps,
+  type AvatarFallbackProps,
+  type AvatarGroupProps,
+} from './components/avatar/index.js'
