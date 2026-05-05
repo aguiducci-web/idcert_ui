@@ -72,3 +72,21 @@ export {
   type AlertDialogCancelProps,
 } from './components/alert-dialog/index.js'
 export { Slider, type SliderProps } from './components/slider/index.js'
+export {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+  SelectGroup,
+  SelectLabel,
+  SelectSeparator,
+  type SelectProps,
+  type SelectTriggerProps,
+  type SelectValueProps,
+  type SelectContentProps,
+  type SelectItemProps,
+  type SelectGroupProps,
+  type SelectLabelProps,
+  type SelectSeparatorProps,
+} from './components/select/index.js'
