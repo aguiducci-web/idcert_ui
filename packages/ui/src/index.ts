@@ -131,3 +131,18 @@ export {
   type DateRangePickerProps,
   type DateRange,
 } from './components/date-range-picker/index.js'
+export {
+  FileUpload,
+  FileUploadDropzone,
+  FileUploadPrompt,
+  FileUploadButton,
+  FileUploadList,
+  FileUploadItem,
+  type FileUploadProps,
+  type FileUploadDropzoneProps,
+  type FileUploadPromptProps,
+  type FileUploadButtonProps,
+  type FileUploadListProps,
+  type FileUploadItemProps,
+  type FileUploadError,
+} from './components/file-upload/index.js'
