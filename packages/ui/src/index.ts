@@ -300,3 +300,21 @@ export {
   type AvatarFallbackProps,
   type AvatarGroupProps,
 } from './components/avatar/index.js'
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
+  type TableProps,
+  type TableHeaderProps,
+  type TableBodyProps,
+  type TableFooterProps,
+  type TableRowProps,
+  type TableHeadProps,
+  type TableCellProps,
+  type TableCaptionProps,
+} from './components/table/index.js'
