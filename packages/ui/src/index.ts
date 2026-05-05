@@ -71,3 +71,4 @@ export {
   type AlertDialogActionProps,
   type AlertDialogCancelProps,
 } from './components/alert-dialog/index.js'
+export { Slider, type SliderProps } from './components/slider/index.js'
