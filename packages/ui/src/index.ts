@@ -288,3 +288,4 @@ export {
   type EmptyStateDescriptionProps,
   type EmptyStateActionProps,
 } from './components/empty-state/index.js'
+export { Progress, type ProgressProps } from './components/progress/index.js'
