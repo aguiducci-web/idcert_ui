@@ -269,3 +269,4 @@ export {
   type SidebarInsetProps,
 } from './components/sidebar/index.js'
 export { Badge, badgeVariants, type BadgeProps } from './components/badge/index.js'
+export { Skeleton, type SkeletonProps } from './components/skeleton/index.js'
