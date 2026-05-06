@@ -5,6 +5,7 @@ import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { TokenList } from '@/components/docs/TokenList'
 import { TokenGrid } from '@/components/docs/TokenGrid'
+import { PrimitiveColorRamp } from '@/components/docs/PrimitiveColorRamp'
 import { Note } from '@/components/docs/Note'
 import { Warning } from '@/components/docs/Warning'
 
@@ -16,6 +17,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     PropsTable,
     TokenList,
     TokenGrid,
+    PrimitiveColorRamp,
     Note,
     Warning,
     ...components,
