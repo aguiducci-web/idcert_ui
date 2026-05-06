@@ -151,5 +151,33 @@
         "level": 2
       }
     ]
+  },
+  {
+    "slug": "getting-started/theming",
+    "title": "Theming",
+    "description": "Light / dark mode wiring and how to override the design tokens.",
+    "category": "getting-started",
+    "headings": [
+      {
+        "id": "wiring-the-provider",
+        "text": "Wiring the provider",
+        "level": 2
+      },
+      {
+        "id": "reading-and-changing-the-theme",
+        "text": "Reading and changing the theme",
+        "level": 2
+      },
+      {
+        "id": "overriding-tokens-for-a-custom-theme",
+        "text": "Overriding tokens for a custom theme",
+        "level": 2
+      },
+      {
+        "id": "why-css-variables-not-tailwind-classes",
+        "text": "Why CSS variables, not Tailwind classes",
+        "level": 2
+      }
+    ]
   }
 ]

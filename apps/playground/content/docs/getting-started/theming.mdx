@@ -1,0 +1,74 @@
+---
+title: Theming
+description: Light / dark mode wiring and how to override the design tokens.
+category: getting-started
+---
+
+`@idcert/ui` ships a `ThemeProvider` that wraps `next-themes`. It sets a `class="dark"` on `<html>` when dark mode is active; the Tailwind preset has matching `@custom-variant dark (&:where(.dark, .dark *))` so dark-mode utilities work out of the box.
+
+## Wiring the provider
+
+`ThemeProvider` is already part of the standard root layout from [Installation](/docs/getting-started/installation). It accepts the `next-themes` props.
+
+<CodeBlock language="tsx">{`import { ThemeProvider } from '@idcert/ui'
+
+<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  {children}
+</ThemeProvider>`}</CodeBlock>
+
+## Reading and changing the theme
+
+The `useTheme` hook is re-exported from `@idcert/ui`.
+
+<CodeBlock language="tsx">{`'use client'
+
+import { useTheme } from '@idcert/ui'
+import { Button } from '@idcert/ui'
+
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  return (
+    <Button
+      variant="outline"
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+    >
+      {theme === 'dark' ? 'Light' : 'Dark'}
+    </Button>
+  )
+}`}</CodeBlock>
+
+## Overriding tokens for a custom theme
+
+Add a third theme by defining a class selector with the variables you want to override.
+
+<CodeBlock language="css">{`:root {
+  --background: 250 250 250;
+  --foreground: 23 23 23;
+  --primary: 14 165 233;
+  --primary-foreground: 250 250 250;
+  /* ...other semantic tokens */
+}
+
+.dark {
+  --background: 10 10 10;
+  --foreground: 250 250 250;
+  --primary: 56 189 248;
+  --primary-foreground: 12 74 110;
+}
+
+.high-contrast {
+  --background: 0 0 0;
+  --foreground: 255 255 255;
+  --primary: 255 255 0;
+  --primary-foreground: 0 0 0;
+}`}</CodeBlock>
+
+Apply by setting `attribute="data-theme"` on the provider and selecting via `[data-theme="high-contrast"]` instead of `.high-contrast` if you want to support multiple non-light/dark themes side by side.
+
+## Why CSS variables, not Tailwind classes
+
+The semantic layer is a single CSS-variable indirection: components compose `bg-primary` (a Tailwind utility) and that utility resolves through `@theme` to `rgb(var(--primary))`. Result: changing one variable retones the whole library; no Tailwind config edit, no rebuild.
+
+<Warning>
+Don't override colors inside individual component class names (e.g., `<Button className="bg-blue-600">`). It works, but breaks the dark mode pairing because `--primary-foreground` won't follow. Override the variable instead.
+</Warning>
