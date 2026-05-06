@@ -1,0 +1,118 @@
+---
+title: Login form
+description: Email + password + remember-me, validated end-to-end with Zod.
+category: recipes
+---
+
+A login form combines `Form`, `Input`, `Switch`, and `Button` with `react-hook-form` + Zod. The same pattern works for any authenticated workflow: signup, password reset, account settings.
+
+import { Default as LoginForm } from '@idcert/ui/components/form/examples'
+
+<Hero><LoginForm /></Hero>
+
+## Full source
+
+<CodeBlock language="tsx">{`'use client'
+
+import * as React from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+import {
+  Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage,
+  Input, Switch, Button,
+} from '@idcert/ui'
+
+const schema = z.object({
+  email: z.string().email('Enter a valid email'),
+  password: z.string().min(8, 'At least 8 characters'),
+  remember: z.boolean(),
+})
+
+type Values = z.infer<typeof schema>
+
+export function LoginForm() {
+  const form = useForm<Values>({
+    resolver: zodResolver(schema),
+    defaultValues: { email: '', password: '', remember: false },
+  })
+
+  async function onSubmit(values: Values) {
+    // call your auth endpoint
+    await fetch('/api/login', { method: 'POST', body: JSON.stringify(values) })
+  }
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4" noValidate>
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl><Input type="email" autoComplete="email" {...field} /></FormControl>
+              <FormDescription>We'll never share your email.</FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Password</FormLabel>
+              <FormControl><Input type="password" autoComplete="current-password" {...field} /></FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="remember"
+          render={({ field }) => (
+            <FormItem className="flex items-center gap-2 space-y-0">
+              <FormControl>
+                <Switch
+                  checked={field.value}
+                  onChange={(e) => field.onChange(e.target.checked)}
+                />
+              </FormControl>
+              <FormLabel>Remember me</FormLabel>
+            </FormItem>
+          )}
+        />
+        <Button type="submit" disabled={form.formState.isSubmitting}>
+          {form.formState.isSubmitting ? 'Signing in…' : 'Sign in'}
+        </Button>
+      </form>
+    </Form>
+  )
+}`}</CodeBlock>
+
+## Patterns to take away
+
+1. **\`autoComplete\` hints** (`email`, `current-password`) so password managers fill correctly. Add `autoComplete="new-password"` for signup forms instead.
+2. **\`noValidate\`** on `<form>` defers validation entirely to Zod. Without it, the browser native popups fire first and break the error styling.
+3. **Disable on submit** via `form.formState.isSubmitting` to prevent double submission. Combine with the [Loading button pattern](/docs/components/button) for visual feedback.
+4. **Remember me as a Switch, not a Checkbox** — by convention in `@idcert/ui`. The schema field is still a plain `boolean`.
+
+## Server-side error handling
+
+After a failed `/api/login` response, surface the error with `form.setError`:
+
+<CodeBlock language="tsx">{`async function onSubmit(values: Values) {
+  const res = await fetch('/api/login', { method: 'POST', body: JSON.stringify(values) })
+  if (!res.ok) {
+    form.setError('root', { message: 'Invalid credentials.' })
+    return
+  }
+  // navigate to dashboard
+}`}</CodeBlock>
+
+Then render a top-level error if present:
+
+<CodeBlock language="tsx">{`{form.formState.errors.root && (
+  <p className="text-sm text-destructive">{form.formState.errors.root.message}</p>
+)}`}</CodeBlock>

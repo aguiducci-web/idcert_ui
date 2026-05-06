@@ -464,5 +464,28 @@
         "level": 2
       }
     ]
+  },
+  {
+    "slug": "recipes/login-form",
+    "title": "Login form",
+    "description": "Email + password + remember-me, validated end-to-end with Zod.",
+    "category": "recipes",
+    "headings": [
+      {
+        "id": "full-source",
+        "text": "Full source",
+        "level": 2
+      },
+      {
+        "id": "patterns-to-take-away",
+        "text": "Patterns to take away",
+        "level": 2
+      },
+      {
+        "id": "server-side-error-handling",
+        "text": "Server-side error handling",
+        "level": 2
+      }
+    ]
   }
 ]
