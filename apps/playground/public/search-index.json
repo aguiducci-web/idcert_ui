@@ -49,5 +49,28 @@
         "level": 2
       }
     ]
+  },
+  {
+    "slug": "foundations/typography",
+    "title": "Typography",
+    "description": "Font families and the type scale used across @idcert/ui components.",
+    "category": "foundations",
+    "headings": [
+      {
+        "id": "font-tokens",
+        "text": "Font tokens",
+        "level": 2
+      },
+      {
+        "id": "type-scale",
+        "text": "Type scale",
+        "level": 2
+      },
+      {
+        "id": "override-the-default-font",
+        "text": "Override the default font",
+        "level": 2
+      }
+    ]
   }
 ]

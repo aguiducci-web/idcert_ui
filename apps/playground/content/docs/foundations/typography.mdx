@@ -1,0 +1,59 @@
+---
+title: Typography
+description: Font families and the type scale used across @idcert/ui components.
+category: foundations
+---
+
+Typography sits on two CSS variables: `--font-sans` (used everywhere except code) and `--font-mono` (code blocks, prop tables, keyboard hints). The defaults are Inter and JetBrains Mono with system-font fallbacks for environments without web fonts.
+
+## Font tokens
+
+<CodeBlock language="css">{`:root {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, SFMono-Regular, monospace;
+}`}</CodeBlock>
+
+## Type scale
+
+The scale is Tailwind's defaults — there is no proprietary `text-display-2xl` or similar. Components compose the sizes you already know.
+
+<table className="my-6 w-full text-sm">
+  <thead className="border-b border-border">
+    <tr>
+      <th className="px-3 py-2 text-left font-medium">Class</th>
+      <th className="px-3 py-2 text-left font-medium">Size / Line</th>
+      <th className="px-3 py-2 text-left font-medium">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr className="border-b border-border"><td className="px-3 py-2 font-mono">text-xs</td><td className="px-3 py-2 text-muted-foreground">12 / 16</td><td className="px-3 py-2 text-xs">The quick brown fox</td></tr>
+    <tr className="border-b border-border"><td className="px-3 py-2 font-mono">text-sm</td><td className="px-3 py-2 text-muted-foreground">14 / 20</td><td className="px-3 py-2 text-sm">The quick brown fox</td></tr>
+    <tr className="border-b border-border"><td className="px-3 py-2 font-mono">text-base</td><td className="px-3 py-2 text-muted-foreground">16 / 24</td><td className="px-3 py-2 text-base">The quick brown fox</td></tr>
+    <tr className="border-b border-border"><td className="px-3 py-2 font-mono">text-lg</td><td className="px-3 py-2 text-muted-foreground">18 / 28</td><td className="px-3 py-2 text-lg">The quick brown fox</td></tr>
+    <tr className="border-b border-border"><td className="px-3 py-2 font-mono">text-xl</td><td className="px-3 py-2 text-muted-foreground">20 / 28</td><td className="px-3 py-2 text-xl">The quick brown fox</td></tr>
+    <tr className="border-b border-border"><td className="px-3 py-2 font-mono">text-2xl</td><td className="px-3 py-2 text-muted-foreground">24 / 32</td><td className="px-3 py-2 text-2xl">The quick brown fox</td></tr>
+    <tr><td className="px-3 py-2 font-mono">text-3xl</td><td className="px-3 py-2 text-muted-foreground">30 / 36</td><td className="px-3 py-2 text-3xl">The quick brown fox</td></tr>
+  </tbody>
+</table>
+
+## Override the default font
+
+Add an `@font-face` declaration plus override `--font-sans` (or `--font-mono`) in your global CSS.
+
+<CodeBlock language="css">{`:root {
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+}`}</CodeBlock>
+
+If you load fonts via `next/font`, expose its CSS variable on `<html>` and reference it.
+
+<CodeBlock language="tsx">{`import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={inter.variable}>
+      <body>{children}</body>
+    </html>
+  )
+}`}</CodeBlock>
