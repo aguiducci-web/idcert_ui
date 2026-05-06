@@ -1,0 +1,107 @@
+---
+title: Navigation patterns
+description: Compose Navbar, Sidebar, Breadcrumb, Tabs, and Pagination for typical app shells.
+category: recipes
+---
+
+`@idcert/ui` ships five navigation components. They are intentionally orthogonal — no built-in app shell — so any combination is possible without fighting the library.
+
+## Top bar + content (smallest layout)
+
+The simplest authenticated layout: a `Navbar` for global actions (logo, account menu, theme toggle) and the page content below.
+
+<CodeBlock language="tsx">{`import { Navbar, NavbarContent, NavbarItem } from '@idcert/ui'
+
+export function AppLayout({ children }) {
+  return (
+    <>
+      <Navbar>
+        <NavbarContent>
+          <NavbarItem href="/dashboard">Dashboard</NavbarItem>
+          <NavbarItem href="/billing">Billing</NavbarItem>
+          <NavbarItem href="/settings">Settings</NavbarItem>
+        </NavbarContent>
+      </Navbar>
+      <main className="mx-auto max-w-6xl p-6">{children}</main>
+    </>
+  )
+}`}</CodeBlock>
+
+## Sidebar + content
+
+When you have more than ~5 top-level destinations, the navbar becomes cramped. Move secondary nav into a `Sidebar`:
+
+<CodeBlock language="tsx">{`import {
+  SidebarProvider, Sidebar, SidebarContent, SidebarMenu,
+  SidebarMenuButton, SidebarTrigger,
+} from '@idcert/ui'
+import { Home, Users, Settings, FileText } from 'lucide-react'
+
+export function AppLayout({ children }) {
+  return (
+    <SidebarProvider>
+      <Sidebar>
+        <SidebarContent>
+          <SidebarMenu>
+            <SidebarMenuButton><Home /> Dashboard</SidebarMenuButton>
+            <SidebarMenuButton><Users /> Team</SidebarMenuButton>
+            <SidebarMenuButton><FileText /> Invoices</SidebarMenuButton>
+            <SidebarMenuButton><Settings /> Settings</SidebarMenuButton>
+          </SidebarMenu>
+        </SidebarContent>
+      </Sidebar>
+      <main className="flex-1 p-6">
+        <SidebarTrigger className="md:hidden mb-4" />
+        {children}
+      </main>
+    </SidebarProvider>
+  )
+}`}</CodeBlock>
+
+The `SidebarTrigger` is shown only on mobile (`md:hidden`); on desktop the sidebar is permanently expanded.
+
+## Breadcrumb for hierarchical pages
+
+For pages buried more than two levels deep, render a `Breadcrumb` above the page heading:
+
+<CodeBlock language="tsx">{`import {
+  Breadcrumb, BreadcrumbList, BreadcrumbItem,
+  BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage,
+} from '@idcert/ui'
+
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem><BreadcrumbLink href="/projects">Projects</BreadcrumbLink></BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem><BreadcrumbLink href="/projects/alpha">Alpha</BreadcrumbLink></BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem><BreadcrumbPage>Settings</BreadcrumbPage></BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`}</CodeBlock>
+
+The last item uses `BreadcrumbPage` (no `href`) since it's the current page.
+
+## Tabs within a page
+
+For switching between views of the same resource (e.g., a project page with Overview / Tasks / Settings sub-views):
+
+<CodeBlock language="tsx">{`import { Tabs, TabsList, TabsTrigger, TabsContent } from '@idcert/ui'
+
+<Tabs defaultValue="overview">
+  <TabsList>
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="tasks">Tasks</TabsTrigger>
+    <TabsTrigger value="settings">Settings</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview">Overview content…</TabsContent>
+  <TabsContent value="tasks">Tasks content…</TabsContent>
+  <TabsContent value="settings">Settings content…</TabsContent>
+</Tabs>`}</CodeBlock>
+
+For deep-linkable tabs, control the `value` from URL params instead of `defaultValue`.
+
+## Anti-patterns
+
+- **Don't nest a Sidebar inside Tabs**. A Sidebar implies a primary navigation level; if you need different sets of links per tab, make those tabs separate routes.
+- **Don't put primary actions in Breadcrumb**. The breadcrumb is a wayfinder, not a toolbar. Put "Edit" or "Delete" in a button next to the page heading.
+- **Don't combine top Navbar items with Sidebar items**. Pick one — the user's eye should know where global vs. contextual nav lives.

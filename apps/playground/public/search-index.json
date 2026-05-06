@@ -510,5 +510,38 @@
         "level": 2
       }
     ]
+  },
+  {
+    "slug": "recipes/navigation",
+    "title": "Navigation patterns",
+    "description": "Compose Navbar, Sidebar, Breadcrumb, Tabs, and Pagination for typical app shells.",
+    "category": "recipes",
+    "headings": [
+      {
+        "id": "top-bar-content-smallest-layout",
+        "text": "Top bar + content (smallest layout)",
+        "level": 2
+      },
+      {
+        "id": "sidebar-content",
+        "text": "Sidebar + content",
+        "level": 2
+      },
+      {
+        "id": "breadcrumb-for-hierarchical-pages",
+        "text": "Breadcrumb for hierarchical pages",
+        "level": 2
+      },
+      {
+        "id": "tabs-within-a-page",
+        "text": "Tabs within a page",
+        "level": 2
+      },
+      {
+        "id": "anti-patterns",
+        "text": "Anti-patterns",
+        "level": 2
+      }
+    ]
   }
 ]
