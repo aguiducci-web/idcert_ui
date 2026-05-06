@@ -38,7 +38,7 @@ intro
 })
 
 afterAll(async () => {
-  await fs.rm(path.dirname(fixtureDir), { recursive: true, force: true })
+  await fs.rm(path.resolve(__dirname, '__fixtures__'), { recursive: true, force: true })
 })
 
 describe('slugFromContentPath', () => {
