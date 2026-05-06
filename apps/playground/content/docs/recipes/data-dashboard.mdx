@@ -1,0 +1,124 @@
+---
+title: Data dashboard
+description: Table + filter bar + pagination — the standard data-management view.
+category: recipes
+---
+
+A data dashboard combines `Table`, `Input` (search), `Select` (column filter), `Button`, and `Pagination` with local state. For server-driven pagination, swap the local slice for a fetch keyed on the page number.
+
+## Full source
+
+<CodeBlock language="tsx">{`'use client'
+
+import * as React from 'react'
+import {
+  Table, TableHeader, TableBody, TableRow, TableHead, TableCell,
+  Input, Select, SelectTrigger, SelectValue, SelectContent, SelectItem,
+  Button,
+  Pagination, PaginationContent, PaginationItem, PaginationLink,
+  PaginationPrevious, PaginationNext,
+} from '@idcert/ui'
+
+type Invoice = { id: string; status: 'Paid' | 'Pending' | 'Unpaid'; amount: number }
+
+const ALL: Invoice[] = Array.from({ length: 47 }).map((_, i) => ({
+  id: \`INV-\${String(i + 1).padStart(3, '0')}\`,
+  status: (['Paid', 'Pending', 'Unpaid'] as const)[i % 3]!,
+  amount: 100 + i * 17,
+}))
+
+const PAGE_SIZE = 10
+
+export function DataDashboard() {
+  const [search, setSearch] = React.useState('')
+  const [status, setStatus] = React.useState<'all' | Invoice['status']>('all')
+  const [page, setPage] = React.useState(1)
+
+  const filtered = ALL.filter((inv) => {
+    if (status !== 'all' && inv.status !== status) return false
+    if (search && !inv.id.toLowerCase().includes(search.toLowerCase())) return false
+    return true
+  })
+  const pageCount = Math.ceil(filtered.length / PAGE_SIZE)
+  const visible = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center gap-2">
+        <Input
+          placeholder="Search by invoice id…"
+          value={search}
+          onChange={(e) => { setSearch(e.target.value); setPage(1) }}
+          className="max-w-xs"
+        />
+        <Select value={status} onValueChange={(v) => { setStatus(v as never); setPage(1) }}>
+          <SelectTrigger className="w-40"><SelectValue /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All statuses</SelectItem>
+            <SelectItem value="Paid">Paid</SelectItem>
+            <SelectItem value="Pending">Pending</SelectItem>
+            <SelectItem value="Unpaid">Unpaid</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Invoice</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead className="text-right">Amount</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {visible.map((inv) => (
+            <TableRow key={inv.id}>
+              <TableCell className="font-mono">{inv.id}</TableCell>
+              <TableCell>{inv.status}</TableCell>
+              <TableCell className="text-right">\${inv.amount.toFixed(2)}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+
+      <Pagination>
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious onClick={() => setPage(Math.max(1, page - 1))} />
+          </PaginationItem>
+          {Array.from({ length: pageCount }).map((_, i) => (
+            <PaginationItem key={i}>
+              <PaginationLink
+                isActive={page === i + 1}
+                onClick={() => setPage(i + 1)}
+              >
+                {i + 1}
+              </PaginationLink>
+            </PaginationItem>
+          ))}
+          <PaginationItem>
+            <PaginationNext onClick={() => setPage(Math.min(pageCount, page + 1))} />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
+    </div>
+  )
+}`}</CodeBlock>
+
+## Patterns to take away
+
+1. **Reset to page 1** when filters change — otherwise empty pages confuse users.
+2. **Debounce search** for server-side queries — for client-side filter on under 1k rows, native re-render is fast enough.
+3. **`onValueChange` for Select** vs `onChange` for Input — `Select` is a controlled compound, not a native input.
+4. **Pagination with `isActive`** — the active page button has stronger visual weight via `bg-accent`.
+
+## Going server-side
+
+Replace the client-side `filter` + `slice` with a fetch:
+
+<CodeBlock language="tsx">{`React.useEffect(() => {
+  const params = new URLSearchParams({ search, status, page: String(page), pageSize: String(PAGE_SIZE) })
+  fetch(\`/api/invoices?\${params}\`)
+    .then((r) => r.json())
+    .then(setData)
+}, [search, status, page])`}</CodeBlock>
