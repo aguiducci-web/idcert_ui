@@ -21,5 +21,33 @@
         "level": 2
       }
     ]
+  },
+  {
+    "slug": "foundations/colors",
+    "title": "Colors",
+    "description": "Semantic color tokens with light and dark mode mappings, plus the underlying primitive color ramps.",
+    "category": "foundations",
+    "headings": [
+      {
+        "id": "semantic-tokens",
+        "text": "Semantic tokens",
+        "level": 2
+      },
+      {
+        "id": "primitive-ramps",
+        "text": "Primitive ramps",
+        "level": 2
+      },
+      {
+        "id": "override-the-brand-color",
+        "text": "Override the brand color",
+        "level": 2
+      },
+      {
+        "id": "override-the-entire-scale",
+        "text": "Override the entire scale",
+        "level": 2
+      }
+    ]
   }
 ]

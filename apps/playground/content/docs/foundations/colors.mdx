@@ -1,0 +1,45 @@
+---
+title: Colors
+description: Semantic color tokens with light and dark mode mappings, plus the underlying primitive color ramps.
+category: foundations
+---
+
+The `@idcert/ui` color system has two layers: **semantic tokens** that components consume, and **primitives** that semantic tokens reference. Override semantic tokens in your CSS to retheme without touching component code.
+
+## Semantic tokens
+
+Each pair (`X` / `X-foreground`) forms a high-contrast surface. `--background` and `--foreground` are the page baseline; `--primary` and `--primary-foreground` drive the default brand surface. Switching to dark mode via `<ThemeProvider>` swaps the underlying values without changing the variable names.
+
+<TokenGrid scope="color" />
+
+## Primitive ramps
+
+Primitives are the raw palette. They are **not** consumed directly by components — semantic tokens map to specific steps. Click any swatch to copy its hex.
+
+<PrimitiveColorRamp ramp="neutral" />
+<PrimitiveColorRamp ramp="brand" />
+<PrimitiveColorRamp ramp="red" />
+<PrimitiveColorRamp ramp="green" />
+<PrimitiveColorRamp ramp="yellow" />
+
+## Override the brand color
+
+The simplest customization: redirect `--primary` to a different RGB triplet in your global CSS. The triplet format (`R G B` separated by spaces, no commas) is what Tailwind v4 expects so opacity modifiers like `bg-primary/80` continue to work.
+
+<CodeBlock language="css">{`:root {
+  --primary: 14 165 233;            /* sky-500 */
+  --primary-foreground: 250 250 250;
+}
+
+.dark {
+  --primary: 56 189 248;            /* sky-400 — slightly brighter for dark UIs */
+  --primary-foreground: 12 74 110;  /* sky-900 */
+}`}</CodeBlock>
+
+## Override the entire scale
+
+To rebrand fully, mirror the structure in `@idcert/tokens`. Either edit your consumer-side CSS or fork `@idcert/tailwind-config` and re-publish a project preset.
+
+<Note>
+Light/dark variables are scoped under `:root` and `.dark` respectively. The selector `.dark` is applied by `<ThemeProvider>` (via `next-themes`) on the `<html>` element. See the [Theming guide](/docs/getting-started/theming) for the full setup.
+</Note>
