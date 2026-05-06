@@ -12,7 +12,7 @@ function prependUseClient(filePath: string): void {
 }
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: ['src/index.ts', 'src/components/*/*.examples.tsx'],
   format: ['esm', 'cjs'],
   dts: true,
   splitting: true,
@@ -20,6 +20,10 @@ export default defineConfig({
   clean: true,
   external: ['react', 'react-dom', 'next', 'next-themes'],
   treeshake: true,
+  outDir: 'dist',
+  outExtension({ format }) {
+    return { js: format === 'esm' ? '.js' : '.cjs' }
+  },
   async onSuccess() {
     const dist = resolve('dist')
     prependUseClient(resolve(dist, 'index.js'))

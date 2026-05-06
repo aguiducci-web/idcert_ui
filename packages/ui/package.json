@@ -25,6 +25,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./components/*/examples": {
+      "types": "./dist/components/*/*.examples.d.ts",
+      "import": "./dist/components/*/*.examples.js",
+      "require": "./dist/components/*/*.examples.cjs"
     }
   },
   "files": [
