@@ -2,4 +2,6 @@
 @import '@idcert/tokens/styles.css';
 @import '@idcert/tailwind-config/preset.css';
 
+@plugin "@tailwindcss/typography";
+
 @source '../../../packages/ui/src/**/*.{ts,tsx}';
