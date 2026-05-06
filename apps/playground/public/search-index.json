@@ -255,6 +255,59 @@
     ]
   },
   {
+    "slug": "components/table",
+    "title": "Table",
+    "description": "A styled HTML table with header, body, footer, and row selection states.",
+    "category": "data",
+    "headings": [
+      {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "anatomy",
+        "text": "Anatomy",
+        "level": 2
+      },
+      {
+        "id": "sub-component-props",
+        "text": "Sub-component props",
+        "level": 3
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "basic",
+        "text": "Basic",
+        "level": 3
+      },
+      {
+        "id": "with-a-footer",
+        "text": "With a footer",
+        "level": 3
+      },
+      {
+        "id": "selected-row",
+        "text": "Selected row",
+        "level": 3
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "foundations/colors",
     "title": "Colors",
     "description": "Semantic color tokens with light and dark mode mappings, plus the underlying primitive color ramps.",

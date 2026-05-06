@@ -1,0 +1,113 @@
+---
+title: Table
+description: A styled HTML table with header, body, footer, and row selection states.
+component: Table
+package: '@idcert/ui'
+category: data
+status: stable
+whenToUse: |
+  Use Table for tabular data — multiple rows that share the same columns.
+  For a single key-value object, prefer a description list (`<dl>`).
+  For sortable, filterable, paginated data grids, compose Table with `Pagination`,
+  `Input` for search, and `DropdownMenu` for column controls — there is no built-in
+  data-grid abstraction, by design.
+---
+
+import {
+  Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption,
+} from '@idcert/ui'
+import { Default, WithFooter, SelectedRow } from '@idcert/ui/components/table/examples'
+
+<Hero><Default /></Hero>
+
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Anatomy
+
+Mirrors the native HTML table elements with consistent styles.
+
+```
+<Table>
+  <TableCaption />        {/* optional, screen-reader accessible name */}
+  <TableHeader>
+    <TableRow>
+      <TableHead />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell />
+    </TableRow>
+  </TableBody>
+  <TableFooter />         {/* optional */}
+</Table>
+```
+
+### Sub-component props
+
+#### Table
+
+<PropsTable component="Table" />
+
+#### TableHeader
+
+<PropsTable component="TableHeader" />
+
+#### TableRow
+
+<PropsTable component="TableRow" />
+
+#### TableCell
+
+<PropsTable component="TableCell" />
+
+#### TableHead
+
+<PropsTable component="TableHead" />
+
+## Examples
+
+### Basic
+
+<Example name="Default" component="Table"><Default /></Example>
+
+### With a footer
+
+`TableFooter` rows have a `bg-muted/50` background and a top border, ideal for totals.
+
+<Example name="WithFooter" component="Table"><WithFooter /></Example>
+
+### Selected row
+
+Set `data-state="selected"` on `TableRow` to highlight it. This is intentionally CSS-driven so you can derive selection from any state container — local React state, URL params, server-driven flags.
+
+<Example name="SelectedRow" component="Table"><SelectedRow /></Example>
+
+## Tokens
+
+<TokenList component="Table" tokens={[
+  '--border',
+  '--muted',
+  '--muted-foreground',
+  '--foreground',
+]} />
+
+## Accessibility
+
+- Renders semantic table elements (`<table>`, `<thead>`, `<tbody>`, `<tfoot>`, `<tr>`, `<th>`, `<td>`). Screen readers announce row/column relationships natively.
+- For column headers, use `TableHead` (renders `<th scope="col">`). For row headers (e.g., the leftmost identifier column), wrap that cell in a `<th scope="row">` manually — there is no `TableRowHead` component.
+- Provide a `TableCaption` for tables that aren't otherwise labelled. The caption is visually below the table by default; for screen-reader-only context, wrap in `<VisuallyHidden>`.
+- Sortable columns: render a `Button` (variant `ghost`) inside the `TableHead` with the column name and sort icon. Use `aria-sort="ascending" | "descending" | "none"` on the `<th>` so assistive tech announces the state.
+- Selection: pair `data-state="selected"` with `aria-selected="true"` on the row. For multi-select with a checkbox column, the checkbox itself can be the source of truth — `aria-selected` on the row is helpful but not required when the checkbox is announced.
+- Don't make non-cell interactive elements (whole-row clickable). Use a focused button or link in a dedicated cell.
