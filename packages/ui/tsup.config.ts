@@ -1,6 +1,7 @@
 import { defineConfig } from 'tsup'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { globSync } from 'glob'
 
 const USE_CLIENT = '"use client";\n'
 
@@ -19,6 +20,7 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   external: ['react', 'react-dom', 'next', 'next-themes'],
+  noExternal: ['react-hook-form', '@hookform/resolvers', 'zod'],
   treeshake: true,
   outDir: 'dist',
   outExtension({ format }) {
@@ -28,6 +30,8 @@ export default defineConfig({
     const dist = resolve('dist')
     prependUseClient(resolve(dist, 'index.js'))
     prependUseClient(resolve(dist, 'index.cjs'))
-    console.log('✓ prepended "use client" directive to bundle entries')
+    const examples = globSync(resolve(dist, 'components/*/*.examples.{js,cjs}'))
+    for (const file of examples) prependUseClient(file)
+    console.log(`✓ prepended "use client" directive to bundle entries (+${examples.length} examples)`)
   },
 })
