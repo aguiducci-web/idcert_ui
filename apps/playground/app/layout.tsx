@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { ThemeProvider, ToastProvider, Toaster } from '@idcert/ui'
+import { Navbar, NavbarContent, NavbarItem, ThemeProvider, ToastProvider, Toaster } from '@idcert/ui'
 
 export const metadata: Metadata = {
   title: 'idcert-ui playground',
@@ -11,6 +11,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="it" suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased">
+        <Navbar>
+          <NavbarContent>
+            <NavbarItem href="/">Home</NavbarItem>
+            {/* <NavbarItem href="/dashboard">Dashboard</NavbarItem> */}
+            <NavbarItem href="/data">Data</NavbarItem>
+            <NavbarItem href="/forms">Forms</NavbarItem>
+            <NavbarItem href="/utility">Utility</NavbarItem>
+            <NavbarItem href="/navigation">Navigation</NavbarItem>
+          </NavbarContent>
+        </Navbar>
         <ThemeProvider>
           <ToastProvider>
             {children}
