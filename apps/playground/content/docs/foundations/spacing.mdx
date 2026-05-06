@@ -1,0 +1,26 @@
+---
+title: Spacing
+description: The spacing scale derives from Tailwind's 0.25rem step.
+category: foundations
+---
+
+Spacing follows the Tailwind v4 default — every unit is `0.25rem` (4px at the base 16px font size). Components do not introduce custom spacing tokens; they compose `p-*`, `m-*`, `gap-*`, and `space-*` utilities directly. This keeps consumer overrides predictable: any utility you already know works.
+
+## Visual scale
+
+<TokenGrid scope="spacing" />
+
+## Common patterns
+
+- **Form fields** typically pair `space-y-4` between siblings and `gap-2` between label, control, and message.
+- **Cards** use `p-6` interior padding with `gap-4` for stacked content.
+- **Buttons** use `px-4 py-2` (default size), `px-3` (sm), `px-8` (lg), and `h-10 w-10` (icon).
+- **Dialogs** use `p-6` with `gap-4` between header, body, and footer.
+
+## Why no proprietary tokens
+
+A custom spacing scale (`--space-md`, `--space-lg`, etc.) adds friction without buying determinism — Tailwind already enforces a strict scale and rejects arbitrary values. Using its scale directly means consumers can extend with `theme.extend.spacing` in standard fashion.
+
+<Note>
+If you need very large or very small values, use Tailwind's arbitrary syntax (`p-[36px]`, `gap-[0.625rem]`). Don't introduce one-off custom variables — they fragment the system.
+</Note>

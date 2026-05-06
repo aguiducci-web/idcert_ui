@@ -51,6 +51,29 @@
     ]
   },
   {
+    "slug": "foundations/spacing",
+    "title": "Spacing",
+    "description": "The spacing scale derives from Tailwind's 0.25rem step.",
+    "category": "foundations",
+    "headings": [
+      {
+        "id": "visual-scale",
+        "text": "Visual scale",
+        "level": 2
+      },
+      {
+        "id": "common-patterns",
+        "text": "Common patterns",
+        "level": 2
+      },
+      {
+        "id": "why-no-proprietary-tokens",
+        "text": "Why no proprietary tokens",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "foundations/typography",
     "title": "Typography",
     "description": "Font families and the type scale used across @idcert/ui components.",
