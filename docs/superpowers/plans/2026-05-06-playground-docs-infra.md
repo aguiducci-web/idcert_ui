@@ -1105,6 +1105,9 @@ afterAll(async () => {
   await fs.rm(fixtureDir, { recursive: true, force: true })
 })
 
+// NOTE: cleanup is scoped to fixtureDir, not the shared __fixtures__ root,
+// so it does not collide with the static sample.examples.tsx fixture from Task 8.
+
 describe('buildIndex', () => {
   it('produces one entry per MDX with title, description, headings', async () => {
     const entries = await buildIndex(fixtureDir)
