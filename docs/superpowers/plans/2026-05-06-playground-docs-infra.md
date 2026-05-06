@@ -6,7 +6,9 @@
 
 **Architecture:** Next.js 14 app router catch-all route (`app/docs/[...slug]/page.tsx`) loads MDX from `content/docs/**/*.mdx` via dynamic import. `@next/mdx` compiles MDX, custom components are injected via `mdx-components.tsx`. Three build-time scripts emit JSON to `public/`: `props.json` (TypeScript prop metadata), `examples-source.json` (raw source of example exports), `search-index.json` (page metadata + headings). Existing smoke pages move into a non-public route group `(smoke)`.
 
-**Tech Stack:** Next 14, `@next/mdx`, `react-docgen-typescript`, `cmdk`, `shiki`, `rehype-slug`, `rehype-extract-toc`, `remark-mdx-frontmatter`, `gray-matter`, `glob`, `vitest`, `@testing-library/react`, `jsdom`.
+**Tech Stack:** Next 14, `@next/mdx`, `react-docgen-typescript`, `cmdk`, `shiki`, `rehype-slug`, `@stefanprobst/rehype-extract-toc`, `remark-mdx-frontmatter`, `gray-matter`, `glob`, `vitest`, `@testing-library/react`, `jsdom`.
+
+**Note on dep majors:** `vitest` is at 4.x and `shiki` is at 4.x at the time of writing. Plan code uses standard APIs (`defineConfig`, `vi.mock` with factory, `getHighlighter`). If a Task 2 / 11+ step fails due to vitest 4.x API drift, downgrade to `vitest@^2` (the most recent LTS-feeling line) and proceed. Do not block on this.
 
 **Spec reference:** `docs/superpowers/specs/2026-05-06-playground-component-docs-design.md`.
 
@@ -110,7 +112,7 @@ pnpm --filter @idcert/playground add \
   glob \
   remark-mdx-frontmatter \
   rehype-slug \
-  rehype-extract-toc \
+  @stefanprobst/rehype-extract-toc \
   rehype-pretty-code
 
 pnpm --filter @idcert/playground add -D \
@@ -242,8 +244,8 @@ import createMDX from '@next/mdx'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 import rehypeSlug from 'rehype-slug'
-import rehypeExtractToc from 'rehype-extract-toc'
-import rehypeExtractTocExport from 'rehype-extract-toc/mdx'
+import rehypeExtractToc from '@stefanprobst/rehype-extract-toc'
+import rehypeExtractTocExport from '@stefanprobst/rehype-extract-toc/mdx'
 import rehypePrettyCode from 'rehype-pretty-code'
 
 const withMDX = createMDX({
