@@ -1,0 +1,91 @@
+---
+title: Button
+description: Trigger primary actions, form submissions, and links.
+component: Button
+package: '@idcert/ui'
+category: primitives
+status: stable
+whenToUse: |
+  Use Button for actions ("Save", "Delete", "Submit"). For navigation between pages,
+  use a regular `<a>` (or `<Link>`) styled with `variant="link"`. For toggling state,
+  prefer `Switch` or `Checkbox`.
+---
+
+import { Button } from '@idcert/ui'
+import {
+  Default, AllVariants, Sizes, WithIcon, Disabled, Loading, AsLink,
+} from '@idcert/ui/components/button/examples'
+
+<Hero>
+  <Default />
+</Hero>
+
+## Import
+
+<CodeBlock language="tsx">{`import { Button } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Variants
+
+Six visual styles; pick by intent, not by color. `default` is for the primary action on screen, `destructive` for irreversible operations, `outline` and `secondary` for non-primary actions, `ghost` for low-emphasis affordances inside dense UI, and `link` for in-prose actions that look like text links.
+
+<Example name="AllVariants" component="Button"><AllVariants /></Example>
+
+### Sizes
+
+Four sizes. `icon` is square (`h-10 w-10`) and is the only one that expects a single SVG child. Always pair `icon` with an `aria-label`.
+
+<Example name="Sizes" component="Button"><Sizes /></Example>
+
+### With icons
+
+Place a Lucide (or any SVG) icon as the first child. The `[&_svg]:size-4` rule on the button base styles all child SVGs to 16×16 automatically.
+
+<Example name="WithIcon" component="Button"><WithIcon /></Example>
+
+### Disabled
+
+`disabled` removes the button from tab order and grays it out. For a "loading" state where the button should still announce activity to screen readers, prefer the loading example below.
+
+<Example name="Disabled" component="Button"><Disabled /></Example>
+
+### Loading
+
+There is no built-in loading variant — compose with `disabled` plus a spinning icon. Optionally include `aria-live="polite"` on a status node nearby if the action takes more than a second.
+
+<Example name="Loading" component="Button"><Loading /></Example>
+
+### As a link (asChild)
+
+Use `asChild` to render the styles on a different element. The child becomes the rendered tag while inheriting all classes and ARIA props.
+
+<Example name="AsLink" component="Button"><AsLink /></Example>
+
+## API Reference
+
+<PropsTable component="Button" />
+
+## Tokens
+
+<TokenList component="Button" tokens={[
+  '--primary',
+  '--primary-foreground',
+  '--destructive',
+  '--destructive-foreground',
+  '--secondary',
+  '--secondary-foreground',
+  '--accent',
+  '--accent-foreground',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Renders a native `<button>` element by default. Native keyboard activation (`Enter`, `Space`) is preserved automatically.
+- Use `asChild` to compose with other interactive elements (e.g., `<a>` for links, `<Link>` from Next.js). The child element receives the styles and any ARIA props passed to `<Button>`.
+- `disabled` removes the element from tab order. If you need to keep it focusable but inert (e.g., to attach a tooltip explaining why it's disabled), set `aria-disabled="true"` and prevent the click handler manually.
+- The `icon` size variant must be paired with `aria-label` since it has no visible text.
+- The focus ring is `2px` solid `--ring` with a `2px` offset against `--background`. It uses `focus-visible` so it appears for keyboard navigation but not on click — preserve this behaviour when restyling.
+- Do not change the `role` attribute. If you need a toggle, use `Switch` or `ToggleButton` (Plan B addition) instead.

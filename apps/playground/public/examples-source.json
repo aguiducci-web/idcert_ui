@@ -1,5 +1,11 @@
 {
   "Button": {
-    "Default": "export const Default = () => <Button>Click me</Button>"
+    "Default": "export const Default = () => <Button>Click me</Button>",
+    "AllVariants": "export const AllVariants = () => (\n  <div className=\"flex flex-wrap gap-3\">\n    <Button variant=\"default\">Default</Button>\n    <Button variant=\"destructive\">Destructive</Button>\n    <Button variant=\"outline\">Outline</Button>\n    <Button variant=\"secondary\">Secondary</Button>\n    <Button variant=\"ghost\">Ghost</Button>\n    <Button variant=\"link\">Link</Button>\n  </div>\n)",
+    "Sizes": "export const Sizes = () => (\n  <div className=\"flex items-center gap-3\">\n    <Button size=\"sm\">Small</Button>\n    <Button size=\"default\">Default</Button>\n    <Button size=\"lg\">Large</Button>\n    <Button size=\"icon\" aria-label=\"Add\">\n      <Plus />\n    </Button>\n  </div>\n)",
+    "WithIcon": "export const WithIcon = () => (\n  <div className=\"flex flex-wrap gap-3\">\n    <Button>\n      <Plus /> New item\n    </Button>\n    <Button variant=\"destructive\">\n      <Trash /> Delete\n    </Button>\n  </div>\n)",
+    "Disabled": "export const Disabled = () => (\n  <div className=\"flex flex-wrap gap-3\">\n    <Button disabled>Disabled</Button>\n    <Button variant=\"destructive\" disabled>Disabled</Button>\n  </div>\n)",
+    "Loading": "export const Loading = () => (\n  <Button disabled>\n    <Loader2 className=\"animate-spin\" />\n    Saving…\n  </Button>\n)",
+    "AsLink": "export const AsLink = () => (\n  <Button asChild>\n    <a href=\"https://idcert.io\">Open in tab</a>\n  </Button>\n)"
   }
 }
