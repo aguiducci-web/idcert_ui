@@ -1,7 +1,7 @@
 {
   "name": "@idcert/tailwind-config",
-  "version": "0.1.0",
-  "description": "Shared Tailwind preset for @idcert/ui consumers",
+  "version": "0.2.0",
+  "description": "Shared Tailwind v4 preset for @idcert/ui consumers",
   "license": "MIT",
   "author": "idcert.io <aguiducci@idcert.io>",
   "repository": {
@@ -13,39 +13,29 @@
   "bugs": "https://github.com/idcert/ui/issues",
   "keywords": [
     "tailwindcss",
-    "tailwind-preset",
+    "tailwindcss-v4",
     "design-system",
     "idcert"
   ],
   "type": "module",
+  "sideEffects": [
+    "preset.css"
+  ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    "./preset.css": "./preset.css"
   },
   "files": [
-    "dist"
+    "preset.css"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "clean": "rm -rf dist .turbo",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint src"
+    "clean": "rm -rf .turbo",
+    "lint": "echo 'no lint'"
   },
   "engines": {
     "node": ">=18"
   },
   "peerDependencies": {
-    "tailwindcss": ">=3.4"
-  },
-  "devDependencies": {
-    "@idcert/tsconfig": "workspace:*",
-    "tailwindcss": "^3.4.14",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3"
+    "tailwindcss": "^4"
   },
   "dependencies": {
     "tailwindcss-animate": "^1.0.7"

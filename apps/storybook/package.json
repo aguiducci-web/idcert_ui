@@ -26,12 +26,12 @@
     "@storybook/addon-themes": "^8.3.6",
     "@storybook/nextjs": "^8.3.6",
     "@storybook/react": "^8.3.6",
+    "@tailwindcss/postcss": "^4",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "storybook": "^8.3.6",
-    "tailwindcss": "^3.4.14",
+    "tailwindcss": "^4",
     "typescript": "^5.6.3"
   }
 }

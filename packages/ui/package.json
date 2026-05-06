@@ -1,6 +1,6 @@
 {
   "name": "@idcert/ui",
-  "version": "0.10.0",
+  "version": "1.0.0",
   "description": "idcert.io React component library",
   "license": "MIT",
   "author": "idcert.io <aguiducci@idcert.io>",
@@ -50,7 +50,8 @@
     "react-day-picker": "^9",
     "react-dom": ">=18",
     "react-hook-form": "^7",
-    "zod": "^3"
+    "zod": "^3",
+    "@idcert/tailwind-config": "workspace:*"
   },
   "peerDependenciesMeta": {
     "next": {
@@ -80,7 +81,6 @@
   },
   "devDependencies": {
     "@hookform/resolvers": "^3",
-    "@idcert/tailwind-config": "workspace:*",
     "@idcert/tsconfig": "workspace:*",
     "@storybook/react": "^8.3.6",
     "@testing-library/jest-dom": "^6.6.2",

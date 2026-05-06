@@ -1,5 +1,32 @@
 # @idcert/ui
 
+## 1.0.0
+
+### Minor Changes
+
+- Migrate `@idcert/tailwind-config` to Tailwind v4 (CSS-first preset).
+
+  **Breaking changes:**
+
+  - `@idcert/tailwind-config` now ships a CSS file (`preset.css`) instead of a JS preset. Consumers must use Tailwind v4 (`tailwindcss@^4` + `@tailwindcss/postcss`).
+  - The previous `import preset from "@idcert/tailwind-config"` JS export is removed. Replace `tailwind.config.{ts,js}` with a CSS entry that imports the preset:
+
+    ```css
+    @import "tailwindcss";
+    @import "@idcert/tokens/styles.css";
+    @import "@idcert/tailwind-config/preset.css";
+
+    @source "../node_modules/@idcert/ui/dist";
+    ```
+
+  - `peerDependencies.tailwindcss` bumped from `>=3.4` to `^4`.
+  - `@idcert/ui` integration steps updated accordingly (no source changes; bump signals consumer setup change).
+
+### Patch Changes
+
+- Updated dependencies
+  - @idcert/tailwind-config@0.2.0
+
 ## 0.10.0
 
 ### Minor Changes
