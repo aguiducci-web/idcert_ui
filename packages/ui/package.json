@@ -1,6 +1,6 @@
 {
   "name": "@idcert/ui",
-  "version": "0.0.0",
+  "version": "0.10.0",
   "description": "idcert.io React component library",
   "license": "MIT",
   "author": "idcert.io <aguiducci@idcert.io>",

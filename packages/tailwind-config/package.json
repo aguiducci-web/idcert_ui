@@ -1,6 +1,6 @@
 {
   "name": "@idcert/tailwind-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shared Tailwind preset for @idcert/ui consumers",
   "license": "MIT",
   "author": "idcert.io <aguiducci@idcert.io>",

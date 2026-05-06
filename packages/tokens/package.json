@@ -1,6 +1,6 @@
 {
   "name": "@idcert/tokens",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Design tokens for @idcert/ui (colors, spacing, typography)",
   "license": "MIT",
   "author": "idcert.io <aguiducci@idcert.io>",
