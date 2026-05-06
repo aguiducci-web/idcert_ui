@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
 
 export default function Home() {
-  redirect('/docs/_stub')
+  redirect('/docs/getting-started/installation')
 }

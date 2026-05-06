@@ -8,7 +8,7 @@ export function DocsHeader() {
   return (
     <>
       <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-background/80 px-4 backdrop-blur">
-        <Link href="/docs/_stub" className="font-semibold">
+        <Link href="/docs/getting-started/installation" className="font-semibold">
           @idcert/ui
         </Link>
         <div className="flex items-center gap-3">

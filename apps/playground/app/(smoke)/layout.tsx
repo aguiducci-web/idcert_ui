@@ -5,7 +5,7 @@ export default function SmokeLayout({ children }: { children: React.ReactNode })
     <>
       <Navbar>
         <NavbarContent>
-          <NavbarItem href="/docs/_stub">Docs</NavbarItem>
+          <NavbarItem href="/docs/getting-started/installation">Docs</NavbarItem>
           <NavbarItem href="/forms">Forms</NavbarItem>
           <NavbarItem href="/data">Data</NavbarItem>
           <NavbarItem href="/utility">Utility</NavbarItem>

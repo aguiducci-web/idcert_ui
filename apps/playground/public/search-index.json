@@ -1,28 +1,5 @@
 [
   {
-    "slug": "_stub",
-    "title": "Docs Infrastructure Smoke",
-    "description": "Placeholder page validating MDX route loading. Removed in Plan B.",
-    "category": "getting-started",
-    "headings": [
-      {
-        "id": "section-a",
-        "text": "Section A",
-        "level": 2
-      },
-      {
-        "id": "sub-section-a-1",
-        "text": "Sub-section A.1",
-        "level": 3
-      },
-      {
-        "id": "section-b",
-        "text": "Section B",
-        "level": 2
-      }
-    ]
-  },
-  {
     "slug": "components/button",
     "title": "Button",
     "description": "Trigger primary actions, form submissions, and links.",
