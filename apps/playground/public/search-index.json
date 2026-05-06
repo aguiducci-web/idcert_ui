@@ -86,6 +86,64 @@
     ]
   },
   {
+    "slug": "components/dialog",
+    "title": "Dialog",
+    "description": "A modal that interrupts the page to ask for confirmation or input.",
+    "category": "overlays",
+    "headings": [
+      {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "anatomy",
+        "text": "Anatomy",
+        "level": 2
+      },
+      {
+        "id": "sub-component-props",
+        "text": "Sub-component props",
+        "level": 3
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "basic-confirmation",
+        "text": "Basic confirmation",
+        "level": 3
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "no-close-button",
+        "text": "No close button",
+        "level": 3
+      },
+      {
+        "id": "custom-width",
+        "text": "Custom width",
+        "level": 3
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "components/input",
     "title": "Input",
     "description": "Single-line text input.",

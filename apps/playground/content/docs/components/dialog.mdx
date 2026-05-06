@@ -1,0 +1,121 @@
+---
+title: Dialog
+description: A modal that interrupts the page to ask for confirmation or input.
+component: Dialog
+package: '@idcert/ui'
+category: overlays
+status: stable
+whenToUse: |
+  Use Dialog when the user must respond before continuing (confirmations, edits in
+  context). For destructive irreversible actions, prefer `AlertDialog` — it uses
+  stronger focus management and an alert role. For non-modal side panels, use `Sheet`.
+---
+
+import {
+  Dialog, DialogTrigger, DialogContent, DialogHeader,
+  DialogFooter, DialogTitle, DialogDescription, DialogClose,
+} from '@idcert/ui'
+import {
+  Default, Controlled, NoCloseButton, CustomWidth,
+} from '@idcert/ui/components/dialog/examples'
+
+<Hero><Default /></Hero>
+
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Anatomy
+
+Dialog is a compound. Compose:
+
+```
+<Dialog>
+  <DialogTrigger />
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle />
+      <DialogDescription />
+    </DialogHeader>
+    {/* body */}
+    <DialogFooter>
+      <DialogClose />
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+`DialogContent` renders a `Portal` + `Backdrop` + the focused panel. `DialogTitle` and `DialogDescription` are required for accessibility — `Base UI` will warn at runtime if they are missing.
+
+### Sub-component props
+
+#### Dialog
+
+<PropsTable component="Dialog" />
+
+#### DialogContent
+
+<PropsTable component="DialogContent" />
+
+#### DialogTitle
+
+<PropsTable component="DialogTitle" />
+
+#### DialogDescription
+
+<PropsTable component="DialogDescription" />
+
+## Examples
+
+### Basic confirmation
+
+The most common pattern: `DialogTrigger` renders a `Button` via `render={<Button />}`, body has a destructive primary, footer has Cancel + Confirm.
+
+<Example name="Default" component="Dialog"><Default /></Example>
+
+### Controlled
+
+Pass `open` and `onOpenChange` to drive the state from your component. Useful when opening the dialog programmatically (e.g., after a server-side validation failure).
+
+<Example name="Controlled" component="Dialog"><Controlled /></Example>
+
+### No close button
+
+Set `showCloseButton={false}` on `DialogContent` to remove the corner X. Pair with explicit footer actions so the dialog cannot be dismissed by misclick.
+
+<Example name="NoCloseButton" component="Dialog"><NoCloseButton /></Example>
+
+### Custom width
+
+`DialogContent` defaults to `max-w-lg`. Override with any Tailwind width utility on `className`.
+
+<Example name="CustomWidth" component="Dialog"><CustomWidth /></Example>
+
+## Tokens
+
+<TokenList component="Dialog" tokens={[
+  '--background',
+  '--foreground',
+  '--border',
+  '--muted-foreground',
+  '--ring',
+  '--radius-lg',
+]} />
+
+## Accessibility
+
+- Built on Base UI's `Dialog` primitive. Inherits ARIA roles (`role="dialog"`, `aria-modal="true"`), focus trap, and `Esc` to close.
+- `DialogTitle` and `DialogDescription` are wired to `aria-labelledby` and `aria-describedby` automatically. **Always include both**; if visually unnecessary, wrap in `<VisuallyHidden>` from `@base-ui/react`.
+- Initial focus moves to the first focusable element inside `DialogContent`. To override, render a button at the top with `autoFocus`.
+- Returning focus: when the dialog closes, focus restores to the element that opened it (`DialogTrigger` by default, or the element that received the controlled-open click).
+- Backdrop click closes the dialog. To make the dialog mandatory (escape-hatch only via explicit footer action), pass `dismissible={false}` on `Dialog`.
+- For destructive actions, prefer `AlertDialog` — it uses `role="alertdialog"` and stronger semantics for screen readers.
