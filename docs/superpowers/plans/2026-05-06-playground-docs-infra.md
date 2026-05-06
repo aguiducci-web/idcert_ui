@@ -171,13 +171,12 @@ git commit -m "build(playground): add MDX, vitest, and docs generator deps"
 Read `apps/playground/tsconfig.json`. Ensure `compilerOptions.paths` contains:
 
 ```json
-"baseUrl": ".",
 "paths": {
   "@/*": ["./*"]
 }
 ```
 
-If missing, add. Save.
+If missing, add. Save. **Do NOT add `baseUrl`** — it is deprecated in TS 7 and unnecessary since TS 4.1 (paths resolve relative to the tsconfig file).
 
 - [ ] **Step 2: Create vitest.config.ts**
 
