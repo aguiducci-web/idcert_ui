@@ -2214,7 +2214,18 @@ export function CommandMenu() {
 pnpm --filter @idcert/playground test tests/components/CommandMenu.test.tsx
 ```
 
-Expected: PASS.
+Expected: PASS. Note: jsdom does not provide `ResizeObserver`, which cmdk (via Radix Dialog) needs. Add a noop polyfill to `apps/playground/vitest.setup.ts`:
+
+```ts
+class ResizeObserverPolyfill {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+;(globalThis as any).ResizeObserver = (globalThis as any).ResizeObserver ?? ResizeObserverPolyfill
+```
+
+Radix may emit a11y warnings about `DialogTitle`/Description in tests. They don't fail the test; address in a polish pass alongside Plan C search wiring.
 
 - [ ] **Step 5: Commit**
 
