@@ -12,7 +12,7 @@
 
 **Spec reference:** `docs/superpowers/specs/2026-05-06-playground-component-docs-design.md`.
 
-**Out of scope (Plan B/C):** Real component documentation, foundations pages, recipes pages, scaffolding for 36 components, e2e tests, search index wiring, README rewrite. This plan stops at: infra renders a single stub MDX page successfully.
+**Out of scope (Plan B/C):** Real component documentation, foundations pages, recipes pages, scaffolding for 38 components, e2e tests, search index wiring, README rewrite. This plan stops at: infra renders a single stub MDX page successfully.
 
 ---
 
@@ -26,7 +26,7 @@
 | `vitest.setup.ts` | Testing-library matchers |
 | `mdx-components.tsx` | Maps MDX-injected JSX names → React components |
 | `lib/docs.ts` | MDX filesystem helpers: glob, frontmatter, slug normalization |
-| `lib/nav.ts` | Hand-curated sidebar tree (NavSection[] for all 41 components + foundations + recipes) |
+| `lib/nav.ts` | Hand-curated sidebar tree (NavSection[] for all 43 components + foundations + recipes) |
 | `lib/search.ts` | Read `public/search-index.json` (lazy) |
 | `lib/cn.ts` | `clsx` wrapper, copy from `packages/ui/src/lib/cn.ts` |
 | `scripts/generate-props.ts` | `react-docgen-typescript` → `public/props.json` |
@@ -615,7 +615,7 @@ describe('nav structure', () => {
     expect(set.size).toBe(slugs.length)
   })
 
-  it('contains all 41 components by canonical slug', () => {
+  it('contains all 43 components by canonical slug', () => {
     const slugs = allNavSlugs().filter((s) => s.startsWith('components/'))
     expect(slugs).toHaveLength(41)
   })

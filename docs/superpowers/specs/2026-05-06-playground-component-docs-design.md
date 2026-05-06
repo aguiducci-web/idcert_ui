@@ -11,7 +11,7 @@
 
 Build a React Aria–style component documentation site inside `apps/playground`, replacing the current smoke-test pages. The docs cover every `@idcert/ui` component with handwritten prose (anatomy, accessibility, usage guidance) plus auto-generated props tables and reused live examples sourced from the existing `*.stories.tsx` files. Foundations (colors, typography, spacing, radius) and recipes (multi-component patterns migrated from current smoke pages) are first-class sections.
 
-The MVP ships infrastructure plus five fully written pilot components (Button, Input, Dialog, Form, Table); the remaining 36 components are scaffolded with hero example + props table only and prose is written incrementally.
+The MVP ships infrastructure plus five fully written pilot components (Button, Input, Dialog, Form, Table); the remaining 38 components are scaffolded with hero example + props table only and prose is written incrementally.
 
 ---
 
@@ -30,7 +30,7 @@ The MVP ships infrastructure plus five fully written pilot components (Button, I
 - Live code editing (Sandpack/CodeSandbox). Static preview + copyable code only.
 - Versioning docs per release.
 - Auto-changelog rendering, REST API docs.
-- Full prose coverage of all 41 components at launch. Pilot 5 + scaffolding for the rest.
+- Full prose coverage of all 43 components at launch. Pilot 5 + scaffolding for the rest.
 
 ---
 
@@ -638,10 +638,10 @@ Out of scope for MVP. Future option: Chromatic or Percy.
 
 | Phase | Scope | Effort |
 |---|---|---|
-| 1. Infrastructure | Add deps (`@next/mdx`, `cmdk`, `shiki`, `react-docgen-typescript`, `rehype-slug`, `rehype-extract-toc`, `remark-mdx-frontmatter`, `gray-matter`, `glob`); MDX config; `mdx-components.tsx`; `lib/docs.ts`; `app/docs/[...slug]/page.tsx`; `components/docs/*` skeletons (CommandMenu UI shell only — wired in Phase 5); three build scripts wired to `prebuild`; `lib/nav.ts` with all 41 components; move smoke pages to `app/(smoke)/` route group | ~3 days |
+| 1. Infrastructure | Add deps (`@next/mdx`, `cmdk`, `shiki`, `react-docgen-typescript`, `rehype-slug`, `rehype-extract-toc`, `remark-mdx-frontmatter`, `gray-matter`, `glob`); MDX config; `mdx-components.tsx`; `lib/docs.ts`; `app/docs/[...slug]/page.tsx`; `components/docs/*` skeletons (CommandMenu UI shell only — wired in Phase 5); three build scripts wired to `prebuild`; `lib/nav.ts` with all 43 components; move smoke pages to `app/(smoke)/` route group | ~3 days |
 | 2. Pilot 5 components | Button, Input, Dialog, Form, Table: write `<name>.examples.tsx`, refactor `<name>.stories.tsx`, write full MDX with all 7 sections | ~3 days |
 | 3. Foundations + Recipes | 4 foundations pages; 4–5 recipes migrated from existing smoke pages; Installation + Theming pages | ~2 days |
-| 4. Scaffold remaining 36 components | For each non-pilot component: `<name>.examples.tsx` with `Default` export; MDX page with frontmatter (`status: in-progress`) + `<Hero><Default /></Hero>` + `<PropsTable />` only | ~1 day |
+| 4. Scaffold remaining 38 components | For each non-pilot component: `<name>.examples.tsx` with `Default` export; MDX page with frontmatter (`status: in-progress`) + `<Hero><Default /></Hero>` + `<PropsTable />` only | ~1 day |
 | 5. Polish | Search index + cmdk command menu finalization; e2e tests; README update with `pnpm dev` → `http://localhost:3000/docs` | ~1 day |
 
 **Total MVP effort:** ~10 working days.
