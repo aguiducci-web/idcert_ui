@@ -1,0 +1,70 @@
+---
+title: Installation
+description: Install @idcert/ui in a Next.js 14 + Tailwind v4 application.
+category: getting-started
+---
+
+`@idcert/ui` ships as three packages on the internal Verdaccio registry. The `ui` package is the React component library, `tokens` provides CSS variables, and `tailwind-config` is a Tailwind v4 preset that wires the variables to utility classes.
+
+## Prerequisites
+
+- Node ≥ 18
+- React 18+ and Next.js 14+
+- Tailwind CSS v4
+
+## 1. Install packages
+
+<CodeBlock language="bash">{`pnpm add @idcert/ui @idcert/tokens
+pnpm add -D @idcert/tailwind-config tailwindcss postcss autoprefixer`}</CodeBlock>
+
+## 2. Wire Tailwind
+
+For Tailwind v4 (CSS-first preset), import the preset into your global stylesheet. There is no `tailwind.config.js` needed — the preset is the configuration.
+
+`app/globals.css`:
+
+<CodeBlock language="css">{`@import 'tailwindcss';
+@import '@idcert/tokens/styles.css';
+@import '@idcert/tailwind-config/preset.css';
+
+@source '../node_modules/@idcert/ui/dist';`}</CodeBlock>
+
+The `@source` directive tells Tailwind to scan the published `dist` for utility usage. Without it, the JIT compiler will purge classes that components use internally.
+
+## 3. Wrap your root layout
+
+`app/layout.tsx`:
+
+<CodeBlock language="tsx">{`import './globals.css'
+import { ThemeProvider, ToastProvider, Toaster } from '@idcert/ui'
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-background text-foreground antialiased">
+        <ThemeProvider>
+          <ToastProvider>
+            {children}
+            <Toaster position="top-right" />
+          </ToastProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}`}</CodeBlock>
+
+`suppressHydrationWarning` is required because `ThemeProvider` (under the hood: `next-themes`) sets the `class` on `<html>` after hydration.
+
+## 4. First component
+
+<CodeBlock language="tsx">{`import { Button } from '@idcert/ui'
+
+export default function Home() {
+  return <Button>Hello world</Button>
+}`}</CodeBlock>
+
+## What's next
+
+- [Theming](/docs/getting-started/theming) — switch between light/dark and override colors.
+- [Components](/docs/components/button) — start with `Button` and explore the catalog from the sidebar.
+- [Foundations](/docs/foundations/colors) — token model, type scale, spacing, radius.
