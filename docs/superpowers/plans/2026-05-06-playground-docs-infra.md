@@ -857,6 +857,7 @@ const parser = docgen.withCustomConfig(TSCONFIG_PATH, {
   savePropValueAsString: true,
   propFilter: (prop) => !prop.parent?.fileName.includes('node_modules'),
   shouldExtractLiteralValuesFromEnum: true,
+  shouldExtractValuesFromUnion: true,
   shouldRemoveUndefinedFromOptional: true,
 })
 
