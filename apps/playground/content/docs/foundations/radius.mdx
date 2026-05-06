@@ -1,0 +1,31 @@
+---
+title: Radius
+description: Corner radius tokens used by buttons, cards, dialogs, inputs, and other surfaces.
+category: foundations
+---
+
+Four radius tokens cover the common cases: small (chips, badges, code pills), medium (default surfaces — buttons, inputs, cards), large (dialogs, sheets), extra large (page-level hero panels). Setting one variable changes every surface keyed off it.
+
+<TokenGrid scope="radius" />
+
+## Component mapping
+
+| Token | Components |
+|---|---|
+| `--radius-sm` | `Badge`, code chips inside `PropsTable`, `Skeleton` |
+| `--radius-md` | `Button`, `Input`, `Card`, `Alert`, `Avatar`, `Tooltip` |
+| `--radius-lg` | `Dialog`, `AlertDialog`, `Sheet`, `Popover` |
+| `--radius-xl` | Reserved for future hero panels — not currently used |
+
+## Override
+
+To soften or sharpen the entire system, redefine the four variables in your global CSS:
+
+<CodeBlock language="css">{`:root {
+  --radius-sm: 0;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+}`}</CodeBlock>
+
+For a single component override, prefer Tailwind's class API: `<Button className="rounded-full">…</Button>` keeps the change local.

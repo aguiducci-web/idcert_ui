@@ -51,6 +51,24 @@
     ]
   },
   {
+    "slug": "foundations/radius",
+    "title": "Radius",
+    "description": "Corner radius tokens used by buttons, cards, dialogs, inputs, and other surfaces.",
+    "category": "foundations",
+    "headings": [
+      {
+        "id": "component-mapping",
+        "text": "Component mapping",
+        "level": 2
+      },
+      {
+        "id": "override",
+        "text": "Override",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "foundations/spacing",
     "title": "Spacing",
     "description": "The spacing scale derives from Tailwind's 0.25rem step.",
