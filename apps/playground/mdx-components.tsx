@@ -4,6 +4,7 @@ import { Example } from '@/components/docs/Example'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { TokenList } from '@/components/docs/TokenList'
+import { TokenGrid } from '@/components/docs/TokenGrid'
 import { Note } from '@/components/docs/Note'
 import { Warning } from '@/components/docs/Warning'
 
@@ -14,6 +15,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     CodeBlock,
     PropsTable,
     TokenList,
+    TokenGrid,
     Note,
     Warning,
     ...components,
