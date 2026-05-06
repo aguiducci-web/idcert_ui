@@ -144,6 +144,59 @@
     ]
   },
   {
+    "slug": "components/form",
+    "title": "Form",
+    "description": "react-hook-form integration with @idcert/ui inputs and Zod validation.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "anatomy",
+        "text": "Anatomy",
+        "level": 2
+      },
+      {
+        "id": "sub-component-props",
+        "text": "Sub-component props",
+        "level": 3
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "login-form",
+        "text": "Login form",
+        "level": 3
+      },
+      {
+        "id": "showing-field-errors",
+        "text": "Showing field errors",
+        "level": 3
+      },
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "components/input",
     "title": "Input",
     "description": "Single-line text input.",

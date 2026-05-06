@@ -1,0 +1,121 @@
+---
+title: Form
+description: react-hook-form integration with @idcert/ui inputs and Zod validation.
+component: Form
+package: '@idcert/ui'
+category: forms
+status: stable
+whenToUse: |
+  Use Form whenever you have more than two related fields or any non-trivial validation.
+  For a single search input, just render `<Input>` directly. Form provides accessible
+  error wiring and integrates with Zod (or any Resolver supported by react-hook-form).
+---
+
+import {
+  Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage,
+} from '@idcert/ui'
+import { Default, FieldErrorState } from '@idcert/ui/components/form/examples'
+
+<Hero><Default /></Hero>
+
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+} from '@idcert/ui'`}</CodeBlock>
+
+You also need react-hook-form and (typically) Zod:
+
+<CodeBlock language="bash">{`pnpm add react-hook-form zod @hookform/resolvers`}</CodeBlock>
+
+## Anatomy
+
+Form is a deeply compound component. The hierarchy:
+
+```
+<Form {...useForm()}>
+  <form onSubmit={form.handleSubmit(...)}>
+    <FormField control name render={({ field }) => (
+      <FormItem>
+        <FormLabel />
+        <FormControl>{/* your input */}</FormControl>
+        <FormDescription />
+        <FormMessage />
+      </FormItem>
+    )} />
+  </form>
+</Form>
+```
+
+`Form` is `FormProvider` from react-hook-form re-exported. `FormField` wires a `Controller`. `FormItem` provides a stable `id` so `FormLabel`, `FormControl`, `FormDescription`, and `FormMessage` can link via `htmlFor`/`aria-describedby` automatically.
+
+### Sub-component props
+
+#### FormField
+
+<PropsTable component="FormField" />
+
+#### FormItem
+
+<PropsTable component="FormItem" />
+
+#### FormLabel
+
+<PropsTable component="FormLabel" />
+
+#### FormControl
+
+<PropsTable component="FormControl" />
+
+#### FormDescription
+
+<PropsTable component="FormDescription" />
+
+#### FormMessage
+
+<PropsTable component="FormMessage" />
+
+## Examples
+
+### Login form
+
+A complete login flow with email + password + remember-me, validated by Zod, submitted on click.
+
+<Example name="Default" component="Form"><Default /></Example>
+
+### Showing field errors
+
+When validation fails, `FormMessage` renders the error text in `text-destructive`. The input's `aria-invalid` and `aria-describedby` are set automatically.
+
+<Example name="FieldErrorState" component="Form"><FieldErrorState /></Example>
+
+## API Reference
+
+#### Form
+
+<PropsTable component="Form" />
+
+## Tokens
+
+<TokenList component="Form" tokens={[
+  '--foreground',
+  '--muted-foreground',
+  '--destructive',
+  '--ring',
+  '--border',
+]} />
+
+## Accessibility
+
+- Each `FormItem` generates a unique id used for `<FormLabel htmlFor>`, `<FormControl id>`, `<FormDescription id>`, and `<FormMessage id>`. `FormControl` automatically sets `aria-describedby` to include description and message ids.
+- When validation fails, `FormControl` sets `aria-invalid` on the inner element; `FormMessage` renders inside the `aria-describedby` chain.
+- Submit handler typing: `form.handleSubmit(onValid, onInvalid?)`. `onValid` receives the typed values; `onInvalid` receives errors. Always wire `onInvalid` to a focus call (`form.setFocus('field')`) for the first error so screen readers announce it.
+- Native browser validation runs **before** the resolver. Set `noValidate` on the `<form>` element to defer entirely to react-hook-form (recommended when using Zod).
+- For dynamic field arrays, use react-hook-form's `useFieldArray`; it integrates with `FormField` without modification.
+- Submit on Enter: native `<form>` behaviour. To prevent it (e.g., search-as-you-type), set `onSubmit={(e) => e.preventDefault()}` and call `form.handleSubmit` from a `useEffect` keyed on `form.formState.isValid`.
