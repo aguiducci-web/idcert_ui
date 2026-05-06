@@ -28,7 +28,7 @@ function slugify(text: string): string {
 }
 
 export async function buildIndex(baseDir: string): Promise<SearchEntry[]> {
-  const files = await glob('**/*.mdx', { cwd: baseDir, absolute: true })
+  const files = (await glob('**/*.mdx', { cwd: baseDir, absolute: true })).sort()
   const entries: SearchEntry[] = []
   for (const file of files) {
     const raw = await fs.readFile(file, 'utf8')

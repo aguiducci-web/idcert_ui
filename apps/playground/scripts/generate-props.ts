@@ -36,11 +36,14 @@ export async function extractProps(
 }
 
 async function main() {
-  const files = await glob(SOURCE_GLOB)
-  const out = await extractProps(files)
+  const files = (await glob(SOURCE_GLOB)).sort()
+  const docs = await extractProps(files)
+  const sorted = Object.fromEntries(
+    Object.keys(docs).sort().map((key) => [key, docs[key]] as const),
+  )
   await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true })
-  await fs.writeFile(OUTPUT_PATH, JSON.stringify(out, null, 2))
-  console.log(`✓ wrote ${Object.keys(out).length} component entries to ${OUTPUT_PATH}`)
+  await fs.writeFile(OUTPUT_PATH, JSON.stringify(sorted, null, 2))
+  console.log(`✓ wrote ${Object.keys(sorted).length} component entries to ${OUTPUT_PATH}`)
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

@@ -42,16 +42,19 @@ function componentNameFromPath(file: string): string {
 }
 
 async function main() {
-  const files = await glob(SOURCE_GLOB)
+  const files = (await glob(SOURCE_GLOB)).sort()
   const out: Record<string, Record<string, string>> = {}
   for (const file of files) {
     const name = componentNameFromPath(file)
     out[name] = await extractFromFile(file)
   }
+  const sorted = Object.fromEntries(
+    Object.keys(out).sort().map((key) => [key, out[key]] as const),
+  )
   await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true })
-  await fs.writeFile(OUTPUT_PATH, JSON.stringify(out, null, 2))
+  await fs.writeFile(OUTPUT_PATH, JSON.stringify(sorted, null, 2))
   console.log(
-    `✓ wrote ${Object.keys(out).length} component entries to ${OUTPUT_PATH}`,
+    `✓ wrote ${Object.keys(sorted).length} component entries to ${OUTPUT_PATH}`,
   )
 }
 
