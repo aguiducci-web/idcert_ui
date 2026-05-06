@@ -35,8 +35,11 @@ export async function buildIndex(baseDir: string): Promise<SearchEntry[]> {
     const { data, content } = matter(raw)
     const headings: SearchEntry['headings'] = []
     for (const m of content.matchAll(HEADING_REGEX)) {
-      const level = m[1].length === 2 ? 2 : 3
-      const text = m[2].trim()
+      const hashes = m[1]
+      const heading = m[2]
+      if (!hashes || !heading) continue
+      const level = hashes.length === 2 ? 2 : 3
+      const text = heading.trim()
       headings.push({ id: slugify(text), text, level: level as 2 | 3 })
     }
     const rel = path.relative(baseDir, file).replace(/\\/g, '/')

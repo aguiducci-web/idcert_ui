@@ -34,7 +34,7 @@ describe('buildIndex', () => {
   it('produces one entry per MDX with title, description, headings', async () => {
     const entries = await buildIndex(fixtureDir)
     expect(entries).toHaveLength(1)
-    const e = entries[0]
+    const e = entries[0]!
     expect(e.slug).toBe('components/button')
     expect(e.title).toBe('Button')
     expect(e.description).toBe('Trigger primary actions.')

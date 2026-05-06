@@ -1,9 +1,7 @@
 import propsData from '@/public/props.json'
 import { cn } from '@/lib/cn'
 
-type PropType =
-  | { name: 'string' | 'number' | 'boolean' | string }
-  | { name: 'enum'; value: { value: string }[] }
+type PropType = { name: string; value?: { value: string }[] }
 
 type PropDoc = {
   name: string
@@ -65,7 +63,7 @@ export function PropsTable({ component }: { component: string }) {
 }
 
 function TypeCell({ type }: { type: PropType }) {
-  if (type.name === 'enum') {
+  if (type.name === 'enum' && type.value) {
     return (
       <div className="flex flex-wrap gap-1">
         {type.value.map((v) => (

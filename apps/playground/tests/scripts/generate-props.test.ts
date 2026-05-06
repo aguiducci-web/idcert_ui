@@ -8,8 +8,10 @@ describe('extractProps', () => {
     const docs = await extractProps([
       path.resolve(__dirname, '../../../../packages/ui/src/components/button/index.tsx'),
     ])
-    expect(docs.Button).toBeDefined()
-    expect(docs.Button.props.variant).toBeDefined()
-    expect(docs.Button.props.variant.type.name).toBe('enum')
+    const button = docs.Button
+    expect(button).toBeDefined()
+    const variant = button!.props.variant
+    expect(variant).toBeDefined()
+    expect(variant!.type.name).toBe('enum')
   })
 })

@@ -19,12 +19,16 @@ export async function extractFromFile(file: string): Promise<Record<string, stri
   const out: Record<string, string> = {}
   const matches: { name: string; start: number }[] = []
   for (const m of raw.matchAll(EXPORT_REGEX)) {
-    matches.push({ name: m[1], start: m.index! })
+    const name = m[1]
+    if (name === undefined || m.index === undefined) continue
+    matches.push({ name, start: m.index })
   }
   for (let i = 0; i < matches.length; i++) {
-    const start = matches[i].start
-    const end = i + 1 < matches.length ? matches[i + 1].start : raw.length
-    out[matches[i].name] = raw.slice(start, end).trim()
+    const current = matches[i]!
+    const next = matches[i + 1]
+    const start = current.start
+    const end = next ? next.start : raw.length
+    out[current.name] = raw.slice(start, end).trim()
   }
   return out
 }
