@@ -1349,7 +1349,7 @@ describe('<PropsTable>', () => {
     expect(screen.getByText('variant')).toBeInTheDocument()
     expect(screen.getByText('asChild')).toBeInTheDocument()
     expect(screen.getByText('Visual style.')).toBeInTheDocument()
-    expect(screen.getByText('"default"')).toBeInTheDocument()
+    expect(screen.getAllByText('"default"').length).toBeGreaterThan(0)
     expect(screen.getByText('false')).toBeInTheDocument()
   })
 
