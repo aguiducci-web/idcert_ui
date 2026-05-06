@@ -1,19 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from './index.js'
+import * as examples from './input.examples.js'
 
 const meta = {
-  title: 'Primitives/Input',
+  title: 'Forms/Input',
   component: Input,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
-  args: { placeholder: 'Type something...' },
 } satisfies Meta<typeof Input>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
-export const WithValue: Story = { args: { defaultValue: 'Hello' } }
-export const Disabled: Story = { args: { disabled: true } }
-export const Password: Story = { args: { type: 'password', placeholder: 'Password' } }
-export const Email: Story = { args: { type: 'email', placeholder: 'name@example.com' } }
+export const WithLabel: Story = { render: examples.WithLabel }
+export const WithDescription: Story = { render: examples.WithDescription }
+export const ErrorState: Story = { render: examples.ErrorState }
+export const Disabled: Story = { args: { disabled: true, placeholder: 'Disabled' } }
+export const Types: Story = { render: examples.Types }

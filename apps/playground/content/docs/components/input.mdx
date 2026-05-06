@@ -1,0 +1,78 @@
+---
+title: Input
+description: Single-line text input.
+component: Input
+package: '@idcert/ui'
+category: forms
+status: stable
+whenToUse: |
+  Use Input for short single-line text. For multi-line text, use `Textarea`.
+  For options from a fixed set, use `Select` or `Radio`. For freeform text with
+  validation, pair Input with `Form` and a Zod resolver.
+---
+
+import { Input } from '@idcert/ui'
+import {
+  Default, WithLabel, WithDescription, ErrorState, Disabled, Types,
+} from '@idcert/ui/components/input/examples'
+
+<Hero><Default /></Hero>
+
+## Import
+
+<CodeBlock language="tsx">{`import { Input } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With a label
+
+`Input` does not include a label. Pair with the `<Label>` primitive (or with `<FormLabel>` inside a `<Form>`). Always link the label to the input via `htmlFor` / `id`.
+
+<Example name="WithLabel" component="Input"><WithLabel /></Example>
+
+### With a description
+
+Add a sibling `<p>` with `text-xs text-muted-foreground`. Reference it from the input via `aria-describedby` if the description is essential.
+
+<Example name="WithDescription" component="Input"><WithDescription /></Example>
+
+### Error state
+
+Set `aria-invalid` and add `border-destructive` plus a destructive focus ring. The error message gets `text-destructive` and should appear immediately below the input.
+
+<Example name="ErrorState" component="Input"><ErrorState /></Example>
+
+### Disabled
+
+`disabled` removes the field from tab order and lowers opacity to 50%.
+
+<Example name="Disabled" component="Input"><Disabled /></Example>
+
+### Types
+
+`type` is the standard HTML attribute. Useful values: `text` (default), `email`, `password`, `number`, `search`, `tel`, `url`, `file`. Browsers attach format-aware keyboards on mobile.
+
+<Example name="Types" component="Input"><Types /></Example>
+
+## API Reference
+
+<PropsTable component="Input" />
+
+## Tokens
+
+<TokenList component="Input" tokens={[
+  '--background',
+  '--input',
+  '--ring',
+  '--muted-foreground',
+  '--destructive',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Always pair with a `<Label>` (or `<FormLabel>`). Visually hidden labels are acceptable when the field is unambiguous from context (search inputs, toolbar inputs).
+- `aria-invalid` on the input + `role="alert"` on the inline error message exposes the error to screen readers without requiring focus to move.
+- `disabled` should never be the primary signal for "not editable". For a value the user shouldn't change but should see, render plain text instead — `disabled` text is hard to read and skipped by tab.
+- For password fields, prefer `type="password"` with a separate visibility toggle (button + `type` swap on click). Don't replace it with a custom obfuscator that breaks browser password managers.
+- Native HTML constraints (`required`, `pattern`, `minLength`, `maxLength`) are respected. They run before the parent `<Form>` resolver — set `noValidate` on the `<form>` element to defer validation entirely to react-hook-form when using a Zod resolver.

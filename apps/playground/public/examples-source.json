@@ -7,5 +7,13 @@
     "Disabled": "export const Disabled = () => (\n  <div className=\"flex flex-wrap gap-3\">\n    <Button disabled>Disabled</Button>\n    <Button variant=\"destructive\" disabled>Disabled</Button>\n  </div>\n)",
     "Loading": "export const Loading = () => (\n  <Button disabled>\n    <Loader2 className=\"animate-spin\" />\n    Saving…\n  </Button>\n)",
     "AsLink": "export const AsLink = () => (\n  <Button asChild>\n    <a href=\"https://idcert.io\">Open in tab</a>\n  </Button>\n)"
+  },
+  "Input": {
+    "Default": "export const Default = () => <Input placeholder=\"Enter your name\" />",
+    "WithLabel": "export const WithLabel = () => (\n  <div className=\"grid w-72 gap-2\">\n    <Label htmlFor=\"email\">Email</Label>\n    <Input id=\"email\" type=\"email\" placeholder=\"you@example.com\" />\n  </div>\n)",
+    "WithDescription": "export const WithDescription = () => (\n  <div className=\"grid w-72 gap-1.5\">\n    <Label htmlFor=\"password\">Password</Label>\n    <Input id=\"password\" type=\"password\" />\n    <p className=\"text-xs text-muted-foreground\">At least 12 characters.</p>\n  </div>\n)",
+    "ErrorState": "export const ErrorState = () => (\n  <div className=\"grid w-72 gap-1.5\">\n    <Label htmlFor=\"email-bad\">Email</Label>\n    <Input\n      id=\"email-bad\"\n      type=\"email\"\n      defaultValue=\"not-an-email\"\n      aria-invalid\n      className=\"border-destructive focus-visible:ring-destructive\"\n    />\n    <p className=\"text-xs text-destructive\">Enter a valid email address.</p>\n  </div>\n)",
+    "Disabled": "export const Disabled = () => <Input placeholder=\"Disabled\" disabled />",
+    "Types": "export const Types = () => (\n  <div className=\"grid w-72 gap-3\">\n    <Input type=\"text\" placeholder=\"Text\" />\n    <Input type=\"email\" placeholder=\"Email\" />\n    <Input type=\"password\" placeholder=\"Password\" />\n    <Input type=\"number\" placeholder=\"Number\" />\n    <Input type=\"search\" placeholder=\"Search\" />\n    <Input type=\"file\" />\n  </div>\n)"
   }
 }

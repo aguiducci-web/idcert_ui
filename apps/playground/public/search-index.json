@@ -86,6 +86,64 @@
     ]
   },
   {
+    "slug": "components/input",
+    "title": "Input",
+    "description": "Single-line text input.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-a-label",
+        "text": "With a label",
+        "level": 3
+      },
+      {
+        "id": "with-a-description",
+        "text": "With a description",
+        "level": 3
+      },
+      {
+        "id": "error-state",
+        "text": "Error state",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
+        "id": "types",
+        "text": "Types",
+        "level": 3
+      },
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "foundations/colors",
     "title": "Colors",
     "description": "Semantic color tokens with light and dark mode mappings, plus the underlying primitive color ramps.",
