@@ -14,9 +14,37 @@ const SOURCE_GLOB = path.resolve(
 )
 const OUTPUT_PATH = path.resolve(__dirname, '../public/props.json')
 
+// Form/widget HTML attributes worth surfacing in PropsTable when a component
+// type extends React's HTMLAttributes/InputHTMLAttributes via Omit/Pick.
+// Skips noise (className, style, id, aria-*, data-*, key, ref, all event
+// handlers except meaningful ones).
+const REACT_PROPS_ALLOWLIST = new Set([
+  'name', 'value', 'defaultValue', 'checked', 'defaultChecked',
+  'disabled', 'required', 'readOnly', 'placeholder',
+  'min', 'max', 'step', 'minLength', 'maxLength', 'pattern',
+  'autoComplete', 'autoFocus', 'form', 'multiple', 'accept',
+  'rows', 'cols', 'wrap', 'spellCheck',
+  'onChange', 'onBlur', 'onFocus', 'onSubmit', 'onClick', 'onKeyDown',
+  'href', 'target', 'rel', 'type', 'role',
+  'open',
+])
+
 const parser = docgen.withCustomConfig(TSCONFIG_PATH, {
   savePropValueAsString: true,
-  propFilter: (prop) => !prop.parent?.fileName.includes('node_modules'),
+  propFilter: (prop) => {
+    const fileName = prop.parent?.fileName
+    if (!fileName) return true
+    if (!fileName.includes('node_modules')) return true
+    // For props sourced from React types, keep only the curated allowlist.
+    if (fileName.includes('@types/react')) {
+      return REACT_PROPS_ALLOWLIST.has(prop.name)
+    }
+    // Surface props from external UI libraries we wrap (Base UI, next-themes).
+    if (fileName.includes('@base-ui/react') || fileName.includes('next-themes')) {
+      return true
+    }
+    return false
+  },
   shouldExtractLiteralValuesFromEnum: true,
   shouldExtractValuesFromUnion: true,
   shouldRemoveUndefinedFromOptional: true,
