@@ -20,6 +20,7 @@ export const Default = () => (
     <div className="p-4">
       <Trigger />
     </div>
+    <Toaster />
   </ToastProvider>
 )
 

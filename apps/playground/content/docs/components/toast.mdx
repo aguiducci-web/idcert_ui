@@ -57,7 +57,7 @@ own icon and accent color. Pick by intent (what the toast means), not by
 color. Reserve `error` for failures the user should react to and `warning`
 for recoverable issues; everything else is `info` or `success`.
 
-<Example name="Variants" component="ToastProvider"><Variants /></Example>
+<Example name="Variants" component="Toast"><Variants /></Example>
 
 ### With action
 
@@ -66,7 +66,7 @@ recovery — most commonly an "Undo" after a destructive action. Keep the
 label to a single verb and make the handler idempotent; the toast may be
 dismissed before the user clicks.
 
-<Example name="WithAction" component="ToastProvider"><WithAction /></Example>
+<Example name="WithAction" component="Toast"><WithAction /></Example>
 
 ### With description
 
@@ -74,7 +74,7 @@ Use `title` for the headline state and `description` for the supporting
 detail. Keep the title scannable (2-4 words) and the description to a
 single short sentence — a toast is not the place for paragraphs.
 
-<Example name="WithDescription" component="ToastProvider"><WithDescription /></Example>
+<Example name="WithDescription" component="Toast"><WithDescription /></Example>
 
 ### Persistent
 
@@ -84,11 +84,11 @@ changes, payment failed. Always provide a way to dismiss (the close button
 is rendered by default) and never use persistent toasts for routine success
 feedback.
 
-<Example name="Persistent" component="ToastProvider"><Persistent /></Example>
+<Example name="Persistent" component="Toast"><Persistent /></Example>
 
 ## API Reference
 
-<PropsTable component="ToastProvider" />
+<PropsTable component="Toast" />
 
 <PropsTable component="Toaster" />
 
@@ -113,7 +113,7 @@ toast.close(id)`}</CodeBlock>
 
 ## Tokens
 
-<TokenList component="ToastProvider" tokens={[
+<TokenList component="Toast" tokens={[
   '--background',
   '--foreground',
   '--primary',
