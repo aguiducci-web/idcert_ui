@@ -1,0 +1,29 @@
+---
+title: ThemeProvider
+description: Wraps the app with light/dark theme context.
+component: ThemeProvider
+package: '@idcert/ui'
+category: utility
+status: in-progress
+---
+
+`ThemeProvider` exposes the active theme to descendants via React context. Place it
+near the root layout so every component has access to the resolved theme.
+
+<CodeBlock language="tsx">{`import { ThemeProvider } from '@idcert/ui'
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}`}</CodeBlock>
+
+## API Reference
+
+<PropsTable component="ThemeProvider" />
