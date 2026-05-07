@@ -96,40 +96,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -737,40 +703,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -1621,40 +1553,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -2380,40 +2278,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -3114,40 +2978,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -3786,40 +3616,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -4377,40 +4173,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -4935,40 +4697,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -5484,40 +5212,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -6192,40 +5886,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -6962,40 +6622,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -7511,40 +7137,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -8125,40 +7717,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -8745,40 +8303,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -9348,40 +8872,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -9971,40 +9461,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -10563,40 +10019,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -11117,40 +10539,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -11709,40 +11097,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -12370,40 +11724,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -12989,40 +12309,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -13543,40 +12829,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -14135,40 +13387,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -14840,40 +14058,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -15486,40 +14670,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -16040,40 +15190,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -16602,40 +15718,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -17156,40 +16238,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -17718,40 +16766,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -18276,40 +17290,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -18744,31 +17724,6 @@
     "displayName": "Checkbox",
     "methods": [],
     "props": {
-      "accept": {
-        "defaultValue": null,
-        "description": "",
-        "name": "accept",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
       "autoComplete": {
         "defaultValue": null,
         "description": "",
@@ -21476,112 +20431,6 @@
           ]
         }
       },
-      "max": {
-        "defaultValue": null,
-        "description": "",
-        "name": "max",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "maxLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "maxLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "min": {
-        "defaultValue": null,
-        "description": "",
-        "name": "min",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "minLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "minLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "multiple": {
         "defaultValue": null,
         "description": "",
@@ -21614,56 +20463,6 @@
         "defaultValue": null,
         "description": "",
         "name": "name",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "pattern": {
-        "defaultValue": null,
-        "description": "",
-        "name": "pattern",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "placeholder": {
-        "defaultValue": null,
-        "description": "",
-        "name": "placeholder",
         "parent": {
           "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
           "name": "InputHTMLAttributes"
@@ -21737,34 +20536,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "step": {
-        "defaultValue": null,
-        "description": "",
-        "name": "step",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
             }
           ]
         }
@@ -21917,40 +20688,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -22447,40 +21184,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -24033,40 +22736,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -24767,40 +23436,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -25465,40 +24100,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -26056,40 +24657,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -26614,40 +25181,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -27163,40 +25696,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -27871,40 +26370,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -28637,40 +27102,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -29812,40 +28243,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -30539,40 +28936,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -31214,40 +29577,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -31942,40 +30271,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -32589,40 +30884,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -33258,40 +31519,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -34033,40 +32260,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -34675,40 +32868,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -35772,40 +33931,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -36500,40 +34625,6 @@
           "value": [
             {
               "value": "string"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -37347,40 +35438,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -38088,40 +36145,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -38642,40 +36665,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -39204,40 +37193,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -39762,40 +37717,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -40316,40 +38237,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -41243,40 +39130,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -41797,40 +39650,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -42404,40 +40223,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -42958,40 +40743,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -43784,40 +41535,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -44338,40 +42055,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -45074,40 +42757,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -45657,40 +43306,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -46215,40 +43830,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -46769,40 +44350,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -47422,40 +44969,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -48012,31 +45525,6 @@
     "displayName": "Input",
     "methods": [],
     "props": {
-      "accept": {
-        "defaultValue": null,
-        "description": "",
-        "name": "accept",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
       "autoComplete": {
         "defaultValue": null,
         "description": "",
@@ -50744,112 +48232,6 @@
           ]
         }
       },
-      "max": {
-        "defaultValue": null,
-        "description": "",
-        "name": "max",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "maxLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "maxLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "min": {
-        "defaultValue": null,
-        "description": "",
-        "name": "min",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "minLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "minLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "multiple": {
         "defaultValue": null,
         "description": "",
@@ -50882,56 +48264,6 @@
         "defaultValue": null,
         "description": "",
         "name": "name",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "pattern": {
-        "defaultValue": null,
-        "description": "",
-        "name": "pattern",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "placeholder": {
-        "defaultValue": null,
-        "description": "",
-        "name": "placeholder",
         "parent": {
           "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
           "name": "InputHTMLAttributes"
@@ -51005,34 +48337,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "step": {
-        "defaultValue": null,
-        "description": "",
-        "name": "step",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
             }
           ]
         }
@@ -51276,40 +48580,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -51835,40 +49105,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -52389,40 +49625,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -53005,40 +50207,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -53699,40 +50867,6 @@
               "description": "",
               "fullComment": "",
               "tags": {}
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -54398,40 +51532,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "style": {
         "defaultValue": null,
         "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state.",
@@ -54980,40 +52080,6 @@
               "description": "",
               "fullComment": "",
               "tags": {}
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -55719,40 +52785,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -56273,40 +53305,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -56860,40 +53858,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -57418,40 +54382,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -57972,40 +54902,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -58619,40 +55515,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -59368,40 +56230,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -59922,40 +56750,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -60577,40 +57371,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -61287,31 +58047,6 @@
     "displayName": "Radio",
     "methods": [],
     "props": {
-      "accept": {
-        "defaultValue": null,
-        "description": "",
-        "name": "accept",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
       "autoComplete": {
         "defaultValue": null,
         "description": "",
@@ -64019,112 +60754,6 @@
           ]
         }
       },
-      "max": {
-        "defaultValue": null,
-        "description": "",
-        "name": "max",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "maxLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "maxLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "min": {
-        "defaultValue": null,
-        "description": "",
-        "name": "min",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "minLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "minLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "multiple": {
         "defaultValue": null,
         "description": "",
@@ -64157,56 +60786,6 @@
         "defaultValue": null,
         "description": "",
         "name": "name",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "pattern": {
-        "defaultValue": null,
-        "description": "",
-        "name": "pattern",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "placeholder": {
-        "defaultValue": null,
-        "description": "",
-        "name": "placeholder",
         "parent": {
           "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
           "name": "InputHTMLAttributes"
@@ -64280,34 +60859,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "step": {
-        "defaultValue": null,
-        "description": "",
-        "name": "step",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
             }
           ]
         }
@@ -64460,40 +61011,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -64990,40 +61507,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -66207,40 +62690,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -66855,40 +63304,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -67521,40 +63936,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -68137,40 +64518,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -68719,40 +65066,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -69482,40 +65795,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -70094,40 +66373,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -70807,40 +67052,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -71872,40 +68083,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -72484,40 +68661,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -73216,40 +69359,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -73807,40 +69916,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -74365,40 +70440,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -74914,40 +70955,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -75744,40 +71751,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -76392,40 +72365,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -77031,40 +72970,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -77585,40 +73490,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -78147,40 +74018,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -78701,40 +74538,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -79263,40 +75066,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -79821,40 +75590,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -80375,40 +76110,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -81082,40 +76783,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -81745,40 +77412,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -82299,40 +77932,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -82957,40 +78556,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -83664,40 +79229,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -84218,40 +79749,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -84820,40 +80317,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -85845,40 +81308,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "rel": {
         "defaultValue": null,
         "description": "",
@@ -86195,40 +81624,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -86815,31 +82210,6 @@
     "displayName": "Switch",
     "methods": [],
     "props": {
-      "accept": {
-        "defaultValue": null,
-        "description": "",
-        "name": "accept",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
       "autoComplete": {
         "defaultValue": null,
         "description": "",
@@ -89547,112 +84917,6 @@
           ]
         }
       },
-      "max": {
-        "defaultValue": null,
-        "description": "",
-        "name": "max",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "maxLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "maxLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "min": {
-        "defaultValue": null,
-        "description": "",
-        "name": "min",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "minLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "minLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "multiple": {
         "defaultValue": null,
         "description": "",
@@ -89685,56 +84949,6 @@
         "defaultValue": null,
         "description": "",
         "name": "name",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "pattern": {
-        "defaultValue": null,
-        "description": "",
-        "name": "pattern",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "placeholder": {
-        "defaultValue": null,
-        "description": "",
-        "name": "placeholder",
         "parent": {
           "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
           "name": "InputHTMLAttributes"
@@ -89808,34 +85022,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "step": {
-        "defaultValue": null,
-        "description": "",
-        "name": "step",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
             }
           ]
         }
@@ -89988,40 +85174,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -90286,40 +85438,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -90848,40 +85966,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -91402,40 +86486,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -91964,40 +87014,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -92518,40 +87534,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -93080,40 +88062,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -93638,40 +88586,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -94192,40 +89106,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -94766,40 +89646,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -95459,40 +90305,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -96090,40 +90902,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -96761,40 +91539,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -97446,31 +92190,6 @@
           ]
         }
       },
-      "cols": {
-        "defaultValue": null,
-        "description": "",
-        "name": "cols",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "TextareaHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "TextareaHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "disabled": {
         "defaultValue": null,
         "description": "",
@@ -97524,85 +92243,10 @@
           ]
         }
       },
-      "maxLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "maxLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "TextareaHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "TextareaHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "minLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "minLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "TextareaHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "TextareaHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "name": {
         "defaultValue": null,
         "description": "",
         "name": "name",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "TextareaHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "TextareaHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "placeholder": {
-        "defaultValue": null,
-        "description": "",
-        "name": "placeholder",
         "parent": {
           "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
           "name": "TextareaHTMLAttributes"
@@ -97680,31 +92324,6 @@
           ]
         }
       },
-      "rows": {
-        "defaultValue": null,
-        "description": "",
-        "name": "rows",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "TextareaHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "TextareaHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "value": {
         "defaultValue": null,
         "description": "",
@@ -97735,31 +92354,6 @@
               "description": "",
               "fullComment": "",
               "tags": {}
-            }
-          ]
-        }
-      },
-      "wrap": {
-        "defaultValue": null,
-        "description": "",
-        "name": "wrap",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "TextareaHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "TextareaHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
             }
           ]
         }
@@ -97878,40 +92472,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -98657,31 +93217,6 @@
     "displayName": "TimePicker",
     "methods": [],
     "props": {
-      "accept": {
-        "defaultValue": null,
-        "description": "",
-        "name": "accept",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
       "autoComplete": {
         "defaultValue": null,
         "description": "",
@@ -101389,112 +95924,6 @@
           ]
         }
       },
-      "max": {
-        "defaultValue": null,
-        "description": "",
-        "name": "max",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "maxLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "maxLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "min": {
-        "defaultValue": null,
-        "description": "",
-        "name": "min",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
-      "minLength": {
-        "defaultValue": null,
-        "description": "",
-        "name": "minLength",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "number",
-          "value": [
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "multiple": {
         "defaultValue": null,
         "description": "",
@@ -101527,56 +95956,6 @@
         "defaultValue": null,
         "description": "",
         "name": "name",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "pattern": {
-        "defaultValue": null,
-        "description": "",
-        "name": "pattern",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string",
-          "value": [
-            {
-              "value": "string"
-            }
-          ]
-        }
-      },
-      "placeholder": {
-        "defaultValue": null,
-        "description": "",
-        "name": "placeholder",
         "parent": {
           "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
           "name": "InputHTMLAttributes"
@@ -101654,34 +96033,6 @@
           ]
         }
       },
-      "step": {
-        "defaultValue": null,
-        "description": "",
-        "name": "step",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "InputHTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "InputHTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "string | number",
-          "value": [
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            }
-          ]
-        }
-      },
       "defaultChecked": {
         "defaultValue": null,
         "description": "",
@@ -101734,40 +96085,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -102325,40 +96642,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -103025,40 +97308,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -103788,40 +98037,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -104522,40 +98737,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -105163,40 +99344,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -105745,40 +99892,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }
@@ -106767,40 +100880,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -107609,40 +101688,6 @@
           ]
         }
       },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
-            }
-          ]
-        }
-      },
       "role": {
         "defaultValue": null,
         "description": "",
@@ -108327,40 +102372,6 @@
             },
             {
               "value": "true"
-            }
-          ]
-        }
-      },
-      "spellCheck": {
-        "defaultValue": null,
-        "description": "",
-        "name": "spellCheck",
-        "parent": {
-          "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-          "name": "HTMLAttributes"
-        },
-        "declarations": [
-          {
-            "fileName": "idcert-ui/node_modules/.pnpm/@types+react@18.3.28/node_modules/@types/react/index.d.ts",
-            "name": "HTMLAttributes"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "Booleanish",
-          "value": [
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "\"true\""
-            },
-            {
-              "value": "\"false\""
             }
           ]
         }

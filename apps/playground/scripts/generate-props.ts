@@ -16,14 +16,14 @@ const OUTPUT_PATH = path.resolve(__dirname, '../public/props.json')
 
 // Form/widget HTML attributes worth surfacing in PropsTable when a component
 // type extends React's HTMLAttributes/InputHTMLAttributes via Omit/Pick.
-// Skips noise (className, style, id, aria-*, data-*, key, ref, all event
-// handlers except meaningful ones).
+// Skips noise (className, style, id, aria-*, data-*, key, ref) and text/
+// number-input-only attrs (placeholder, min/max, step, pattern, minLength,
+// maxLength, accept, rows, cols, wrap, spellCheck) that would clutter
+// Checkbox/Radio/Switch docs without applying.
 const REACT_PROPS_ALLOWLIST = new Set([
   'name', 'value', 'defaultValue', 'checked', 'defaultChecked',
-  'disabled', 'required', 'readOnly', 'placeholder',
-  'min', 'max', 'step', 'minLength', 'maxLength', 'pattern',
-  'autoComplete', 'autoFocus', 'form', 'multiple', 'accept',
-  'rows', 'cols', 'wrap', 'spellCheck',
+  'disabled', 'required', 'readOnly',
+  'autoComplete', 'autoFocus', 'form', 'multiple',
   'onChange', 'onBlur', 'onFocus', 'onSubmit', 'onClick', 'onKeyDown',
   'href', 'target', 'rel', 'type', 'role',
   'open',
