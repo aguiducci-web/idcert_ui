@@ -4,15 +4,97 @@ description: Compact label for status, counts, and tags.
 component: Badge
 package: '@idcert/ui'
 category: primitives
-status: in-progress
+status: stable
+whenToUse: |
+  Use Badge for short, non-interactive labels: a status pill next to a record,
+  an unread count next to a nav item, a "Beta"/"New" tag on a feature. For
+  interactive chips that the user can click or dismiss, use a `Button` with
+  `variant="outline"` size `sm`. For form selections rendered as removable tags,
+  use `MultiSelect`. Never use Badge as the only signal for status — pair the
+  color with a text label so colorblind users get the same information.
 ---
 
-import { Default } from '@idcert/ui/components/badge/examples'
+import { Badge } from '@idcert/ui'
+import {
+  Default, AllVariants, StatusIndicators, Counts, WithDot,
+} from '@idcert/ui/components/badge/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Badge } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Variants
+
+Six visual styles. `default` is the brand-primary pill for neutral emphasis,
+`secondary` for low-emphasis tags, `destructive` for errors and blocking states,
+`outline` for tags that should not compete with surrounding content, `success`
+for green-state confirmations, and `warning` for amber-state cautions. Pick by
+intent (what the badge means), not by color (what looks good).
+
+<Example name="AllVariants" component="Badge"><AllVariants /></Example>
+
+### Status indicators
+
+Pair Badge variants with explicit text labels to communicate the state of a
+record or service. The variant carries the color signal; the label carries the
+meaning so the badge stays accessible when color is unavailable.
+
+<Example name="StatusIndicators" component="Badge"><StatusIndicators /></Example>
+
+### Counts
+
+Use Badge to show counts next to a label — unread messages, pending tasks,
+notifications. Keep numbers compact (`99+` for overflows) and avoid using
+Badge for values that change every second; for live counters consider a plain
+number with a `Spinner` while it loads.
+
+<Example name="Counts" component="Badge"><Counts /></Example>
+
+### With status dot
+
+Compose a small dot inside an `outline` badge for a low-emphasis status pill
+that still reads well on dense surfaces (tables, sidebars). Mark the dot
+`aria-hidden` so the variant text remains the single accessible label.
+
+<Example name="WithDot" component="Badge"><WithDot /></Example>
+
 ## API Reference
 
 <PropsTable component="Badge" />
+
+## Tokens
+
+<TokenList component="Badge" tokens={[
+  '--primary',
+  '--primary-foreground',
+  '--secondary',
+  '--secondary-foreground',
+  '--destructive',
+  '--destructive-foreground',
+  '--foreground',
+  '--border',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Renders a native `<span>`; Badge is non-interactive by default. Do not attach
+  `onClick` directly — wrap the whole row in a `Button`/`Link` or use a
+  dedicated chip component instead.
+- Color must never be the only signal. Always include a text label inside the
+  badge ("Active", "Offline", "Beta") so screen-reader and colorblind users get
+  the same meaning sighted users do.
+- For status that updates dynamically (e.g., a service going from "Online" to
+  "Degraded"), wrap the badge in an element with `aria-live="polite"` so the
+  change is announced.
+- The `success` and `warning` variants use fixed `green-500`/`yellow-500`
+  values today. If you theme these tokens, update both background and
+  foreground at the same time so contrast stays at AA against the badge text.
+- Keep badge content short — one or two words, or a number. Long text wraps
+  and breaks the pill shape; for longer labels prefer `Alert`.
