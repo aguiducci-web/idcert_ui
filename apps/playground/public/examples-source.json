@@ -1,4 +1,19 @@
 {
+  "Alert": {
+    "Default": "export const Default = () => (\n  <Alert>\n    <AlertTitle>Heads up!</AlertTitle>\n    <AlertDescription>\n      You can add components to your app using the CLI.\n    </AlertDescription>\n  </Alert>\n)"
+  },
+  "AlertDialog": {
+    "Default": "export const Default = () => (\n  <AlertDialog>\n    <AlertDialogTrigger render={<Button variant=\"destructive\">Delete account</Button>} />\n    <AlertDialogContent>\n      <AlertDialogHeader>\n        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\n        <AlertDialogDescription>\n          This action cannot be undone. This will permanently delete your account.\n        </AlertDialogDescription>\n      </AlertDialogHeader>\n      <AlertDialogFooter>\n        <AlertDialogCancel>Cancel</AlertDialogCancel>\n        <AlertDialogAction>Continue</AlertDialogAction>\n      </AlertDialogFooter>\n    </AlertDialogContent>\n  </AlertDialog>\n)"
+  },
+  "Avatar": {
+    "Default": "export const Default = () => (\n  <Avatar>\n    <AvatarImage src=\"https://i.pravatar.cc/100?img=1\" alt=\"User one\" />\n    <AvatarFallback>U1</AvatarFallback>\n  </Avatar>\n)"
+  },
+  "Badge": {
+    "Default": "export const Default = () => (\n  <div className=\"flex flex-wrap gap-2\">\n    <Badge>Default</Badge>\n    <Badge variant=\"secondary\">Beta</Badge>\n    <Badge variant=\"success\">Active</Badge>\n  </div>\n)"
+  },
+  "Breadcrumb": {
+    "Default": "export const Default = () => (\n  <Breadcrumb>\n    <BreadcrumbList>\n      <BreadcrumbItem>\n        <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n      </BreadcrumbItem>\n      <BreadcrumbSeparator />\n      <BreadcrumbItem>\n        <BreadcrumbLink href=\"/docs\">Docs</BreadcrumbLink>\n      </BreadcrumbItem>\n      <BreadcrumbSeparator />\n      <BreadcrumbItem>\n        <BreadcrumbPage>Components</BreadcrumbPage>\n      </BreadcrumbItem>\n    </BreadcrumbList>\n  </Breadcrumb>\n)"
+  },
   "Button": {
     "Default": "export const Default = () => <Button>Click me</Button>",
     "AllVariants": "export const AllVariants = () => (\n  <div className=\"flex flex-wrap gap-3\">\n    <Button variant=\"default\">Default</Button>\n    <Button variant=\"destructive\">Destructive</Button>\n    <Button variant=\"outline\">Outline</Button>\n    <Button variant=\"secondary\">Secondary</Button>\n    <Button variant=\"ghost\">Ghost</Button>\n    <Button variant=\"link\">Link</Button>\n  </div>\n)",
@@ -8,15 +23,45 @@
     "Loading": "export const Loading = () => (\n  <Button disabled>\n    <Loader2 className=\"animate-spin\" />\n    Saving…\n  </Button>\n)",
     "AsLink": "export const AsLink = () => (\n  <Button asChild>\n    <a href=\"https://idcert.io\">Open in tab</a>\n  </Button>\n)"
   },
+  "Card": {
+    "Default": "export const Default = () => (\n  <Card className=\"w-80\">\n    <CardHeader>\n      <CardTitle>Notifications</CardTitle>\n      <CardDescription>You have 3 unread messages.</CardDescription>\n    </CardHeader>\n    <CardContent>\n      <p className=\"text-sm\">Latest: incident report from oncall.</p>\n    </CardContent>\n    <CardFooter>\n      <Button>Mark all read</Button>\n    </CardFooter>\n  </Card>\n)"
+  },
+  "Checkbox": {
+    "Default": "export const Default = () => (\n  <div className=\"flex items-center space-x-2\">\n    <Checkbox id=\"terms\" />\n    <Label htmlFor=\"terms\">Accept terms and conditions</Label>\n  </div>\n)"
+  },
+  "Container": {
+    "Default": "export const Default = () => (\n  <Container>\n    <div className=\"rounded-md bg-muted p-8 text-center text-sm\">\n      Container content\n    </div>\n  </Container>\n)"
+  },
+  "DatePicker": {
+    "Default": "export const Default = () => (\n  <div className=\"w-72\">\n    <DatePicker aria-label=\"Date\" placeholder=\"Pick a date…\" />\n  </div>\n)"
+  },
+  "DateRangePicker": {
+    "Default": "export const Default = () => (\n  <div className=\"w-80\">\n    <DateRangePicker aria-label=\"Range\" placeholder=\"Pick a range…\" />\n  </div>\n)"
+  },
   "Dialog": {
     "Default": "export const Default = () => (\n  <Dialog>\n    <DialogTrigger render={<Button>Open dialog</Button>} />\n    <DialogContent>\n      <DialogHeader>\n        <DialogTitle>Are you sure?</DialogTitle>\n        <DialogDescription>\n          This action cannot be undone. All linked data will be permanently removed.\n        </DialogDescription>\n      </DialogHeader>\n      <DialogFooter>\n        <DialogClose render={<Button variant=\"outline\">Cancel</Button>} />\n        <DialogClose render={<Button variant=\"destructive\">Delete</Button>} />\n      </DialogFooter>\n    </DialogContent>\n  </Dialog>\n)",
     "Controlled": "export const Controlled = () => {\n  const [open, setOpen] = React.useState(false)\n  return (\n    <>\n      <Button onClick={() => setOpen(true)}>Open programmatically</Button>\n      <Dialog open={open} onOpenChange={setOpen}>\n        <DialogContent>\n          <DialogHeader>\n            <DialogTitle>Controlled dialog</DialogTitle>\n            <DialogDescription>\n              Open state lives in your component, not inside the trigger.\n            </DialogDescription>\n          </DialogHeader>\n          <DialogFooter>\n            <Button onClick={() => setOpen(false)}>Close</Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n    </>\n  )\n}",
     "NoCloseButton": "export const NoCloseButton = () => (\n  <Dialog>\n    <DialogTrigger render={<Button>Open</Button>} />\n    <DialogContent showCloseButton={false}>\n      <DialogHeader>\n        <DialogTitle>Confirm migration</DialogTitle>\n        <DialogDescription>\n          You must accept or reject — there is no implicit dismiss.\n        </DialogDescription>\n      </DialogHeader>\n      <DialogFooter>\n        <DialogClose render={<Button variant=\"outline\">Reject</Button>} />\n        <DialogClose render={<Button>Accept</Button>} />\n      </DialogFooter>\n    </DialogContent>\n  </Dialog>\n)",
     "CustomWidth": "export const CustomWidth = () => (\n  <Dialog>\n    <DialogTrigger render={<Button>Open wide dialog</Button>} />\n    <DialogContent className=\"max-w-2xl\">\n      <DialogHeader>\n        <DialogTitle>Detailed report</DialogTitle>\n        <DialogDescription>\n          Override the default `max-w-lg` with any Tailwind width utility.\n        </DialogDescription>\n      </DialogHeader>\n      <p className=\"text-sm\">…content…</p>\n    </DialogContent>\n  </Dialog>\n)"
   },
+  "Divider": {
+    "Default": "export const Default = () => (\n  <div className=\"w-64\">\n    <p className=\"text-sm\">Content above</p>\n    <Divider className=\"my-4\" />\n    <p className=\"text-sm\">Content below</p>\n  </div>\n)"
+  },
+  "DropdownMenu": {
+    "Default": "export const Default = () => (\n  <DropdownMenu>\n    <DropdownMenuTrigger asChild>\n      <Button variant=\"outline\">Open menu</Button>\n    </DropdownMenuTrigger>\n    <DropdownMenuContent>\n      <DropdownMenuLabel>My Account</DropdownMenuLabel>\n      <DropdownMenuItem>Profile</DropdownMenuItem>\n      <DropdownMenuItem>Billing</DropdownMenuItem>\n      <DropdownMenuSeparator />\n      <DropdownMenuItem disabled>Disabled item</DropdownMenuItem>\n    </DropdownMenuContent>\n  </DropdownMenu>\n)"
+  },
+  "EmptyState": {
+    "Default": "export const Default = () => (\n  <EmptyState>\n    <EmptyStateIcon><Inbox /></EmptyStateIcon>\n    <EmptyStateTitle>No messages</EmptyStateTitle>\n    <EmptyStateDescription>\n      Your inbox is empty. Compose to start the conversation.\n    </EmptyStateDescription>\n    <EmptyStateAction>\n      <Button>New message</Button>\n    </EmptyStateAction>\n  </EmptyState>\n)"
+  },
+  "FileUpload": {
+    "Default": "export const Default = () => (\n  <div className=\"mx-auto max-w-md\">\n    <FileUpload multiple>\n      <FileUploadDropzone>\n        <FileUploadPrompt>\n          Drop files or <FileUploadButton>browse</FileUploadButton>\n        </FileUploadPrompt>\n      </FileUploadDropzone>\n      <FileUploadList />\n    </FileUpload>\n  </div>\n)"
+  },
   "Form": {
     "Default": "export const Default = () => {\n  const form = useForm<z.infer<typeof loginSchema>>({\n    resolver: zodResolver(loginSchema),\n    defaultValues: { email: '', password: '', remember: false },\n  })\n  const [submitted, setSubmitted] = React.useState<unknown>(null)\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Form {...form}>\n        <form onSubmit={form.handleSubmit((v) => setSubmitted(v))} className=\"space-y-4\" noValidate>\n          <FormField\n            control={form.control}\n            name=\"email\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Email</FormLabel>\n                <FormControl><Input type=\"email\" {...field} /></FormControl>\n                <FormDescription>Never shared.</FormDescription>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <FormField\n            control={form.control}\n            name=\"password\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Password</FormLabel>\n                <FormControl><Input type=\"password\" {...field} /></FormControl>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <FormField\n            control={form.control}\n            name=\"remember\"\n            render={({ field }) => (\n              <FormItem className=\"flex items-center gap-2 space-y-0\">\n                <FormControl>\n                  <Switch\n                    checked={field.value}\n                    onChange={(e) => field.onChange(e.target.checked)}\n                  />\n                </FormControl>\n                <FormLabel>Remember me</FormLabel>\n              </FormItem>\n            )}\n          />\n          <Button type=\"submit\">Sign in</Button>\n        </form>\n      </Form>\n      {submitted ? (\n        <pre className=\"mt-4 rounded-md bg-muted p-3 text-xs\">{JSON.stringify(submitted, null, 2)}</pre>\n      ) : null}\n    </div>\n  )\n}",
     "FieldErrorState": "export const FieldErrorState = () => {\n  const form = useForm({\n    resolver: zodResolver(loginSchema),\n    defaultValues: { email: 'not-an-email', password: 'short', remember: false },\n    mode: 'onChange',\n  })\n  React.useEffect(() => { form.trigger() }, [form])\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Form {...form}>\n        <form className=\"space-y-4\" noValidate>\n          <FormField\n            control={form.control}\n            name=\"email\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Email</FormLabel>\n                <FormControl><Input type=\"email\" {...field} /></FormControl>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <FormField\n            control={form.control}\n            name=\"password\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Password</FormLabel>\n                <FormControl><Input type=\"password\" {...field} /></FormControl>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n        </form>\n      </Form>\n    </div>\n  )\n}"
+  },
+  "Grid": {
+    "Default": "export const Default = () => (\n  <Grid cols={3} gap={4}>\n    {Array.from({ length: 6 }, (_, i) => <Cell key={i}>{i + 1}</Cell>)}\n  </Grid>\n)"
   },
   "Input": {
     "Default": "export const Default = () => <Input placeholder=\"Enter your name\" />",
@@ -26,9 +71,75 @@
     "Disabled": "export const Disabled = () => <Input placeholder=\"Disabled\" disabled />",
     "Types": "export const Types = () => (\n  <div className=\"grid w-72 gap-3\">\n    <Input type=\"text\" placeholder=\"Text\" />\n    <Input type=\"email\" placeholder=\"Email\" />\n    <Input type=\"password\" placeholder=\"Password\" />\n    <Input type=\"number\" placeholder=\"Number\" />\n    <Input type=\"search\" placeholder=\"Search\" />\n    <Input type=\"file\" />\n  </div>\n)"
   },
+  "Label": {
+    "Default": "export const Default = () => (\n  <div className=\"w-64 space-y-2\">\n    <Label htmlFor=\"email\">Email</Label>\n    <Input id=\"email\" type=\"email\" placeholder=\"name@example.com\" />\n  </div>\n)"
+  },
+  "List": {
+    "Default": "export const Default = () => (\n  <List className=\"w-64\">\n    <ListItem>First item</ListItem>\n    <ListItem>Second item</ListItem>\n    <ListItem>Third item</ListItem>\n  </List>\n)"
+  },
+  "MultiSelect": {
+    "Default": "export const Default = () => (\n  <div className=\"w-80\">\n    <MultiSelect items={countries} placeholder=\"Pick countries…\">\n      <MultiSelectTrigger aria-label=\"Countries\">\n        <MultiSelectChips />\n      </MultiSelectTrigger>\n      <MultiSelectContent>\n        <MultiSelectEmpty>No results</MultiSelectEmpty>\n        <MultiSelectList>\n          {(item) => (\n            <MultiSelectItem key={item.value} value={item.value}>\n              {item.label}\n            </MultiSelectItem>\n          )}\n        </MultiSelectList>\n      </MultiSelectContent>\n    </MultiSelect>\n  </div>\n)"
+  },
+  "Navbar": {
+    "Default": "export const Default = () => (\n  <Navbar>\n    <NavbarBrand>\n      <span className=\"font-semibold\">idcert</span>\n    </NavbarBrand>\n    <NavbarContent>\n      <NavbarItem href=\"/products\" active>Products</NavbarItem>\n      <NavbarItem href=\"/docs\">Docs</NavbarItem>\n      <NavbarItem href=\"/blog\">Blog</NavbarItem>\n    </NavbarContent>\n    <NavbarActions>\n      <Button variant=\"ghost\">Sign in</Button>\n      <Button>Get started</Button>\n    </NavbarActions>\n    <NavbarMobileToggle aria-label=\"Open menu\" />\n  </Navbar>\n)"
+  },
+  "Pagination": {
+    "Default": "export const Default = () => {\n  const [page, setPage] = React.useState(5)\n  return (\n    <div className=\"space-y-2\">\n      <Pagination currentPage={page} totalPages={20} onPageChange={setPage} />\n      <div className=\"text-center text-sm text-muted-foreground\">\n        Page {page} of 20\n      </div>\n    </div>\n  )\n}"
+  },
+  "Portal": {
+    "Default": "export const Default = () => {\n  const [open, setOpen] = React.useState(false)\n  return (\n    <div className=\"space-y-3\">\n      <Button onClick={() => setOpen((v) => !v)}>\n        {open ? 'Close portal' : 'Open portal'}\n      </Button>\n      {open && (\n        <Portal>\n          <div className=\"fixed bottom-4 right-4 z-50 rounded-md border border-border bg-background p-4 shadow-lg\">\n            <p className=\"text-sm\">Floating help (rendered into document.body).</p>\n            <Button\n              variant=\"outline\"\n              size=\"sm\"\n              onClick={() => setOpen(false)}\n              className=\"mt-2\"\n            >\n              Dismiss\n            </Button>\n          </div>\n        </Portal>\n      )}\n    </div>\n  )\n}"
+  },
+  "Progress": {
+    "Default": "export const Default = () => (\n  <div className=\"w-80\">\n    <Progress value={60} />\n  </div>\n)"
+  },
+  "Radio": {
+    "Default": "export const Default = () => (\n  <RadioGroup aria-label=\"Pick one\">\n    <div className=\"flex items-center gap-2\">\n      <Radio id=\"r1\" name=\"grp\" value=\"a\" />\n      <Label htmlFor=\"r1\">Option A</Label>\n    </div>\n    <div className=\"flex items-center gap-2\">\n      <Radio id=\"r2\" name=\"grp\" value=\"b\" />\n      <Label htmlFor=\"r2\">Option B</Label>\n    </div>\n    <div className=\"flex items-center gap-2\">\n      <Radio id=\"r3\" name=\"grp\" value=\"c\" />\n      <Label htmlFor=\"r3\">Option C</Label>\n    </div>\n  </RadioGroup>\n)"
+  },
+  "Select": {
+    "Default": "export const Default = () => (\n  <div className=\"w-64\">\n    <Select>\n      <SelectTrigger aria-label=\"Country\">\n        <SelectValue placeholder=\"Choose a country…\" />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectItem value=\"it\">Italy</SelectItem>\n        <SelectItem value=\"fr\">France</SelectItem>\n        <SelectItem value=\"es\">Spain</SelectItem>\n      </SelectContent>\n    </Select>\n  </div>\n)"
+  },
+  "Separator": {
+    "Default": "export const Default = () => (\n  <div className=\"w-64\">\n    <h4 className=\"text-sm font-semibold\">Section A</h4>\n    <p className=\"text-sm text-muted-foreground\">Content for section A.</p>\n    <Separator className=\"my-4\" />\n    <h4 className=\"text-sm font-semibold\">Section B</h4>\n    <p className=\"text-sm text-muted-foreground\">Content for section B.</p>\n  </div>\n)"
+  },
+  "Sheet": {
+    "Default": "export const Default = () => (\n  <Sheet>\n    <SheetTrigger render={<Button>Open sheet</Button>} />\n    <SheetContent side=\"right\">\n      <SheetHeader>\n        <SheetTitle>Settings</SheetTitle>\n        <SheetDescription>Adjust the active settings here.</SheetDescription>\n      </SheetHeader>\n      <div className=\"grid gap-4 py-4\">\n        <p className=\"text-sm\">Body content goes here.</p>\n      </div>\n      <SheetFooter>\n        <SheetClose render={<Button variant=\"outline\">Cancel</Button>} />\n        <Button>Save</Button>\n      </SheetFooter>\n    </SheetContent>\n  </Sheet>\n)"
+  },
+  "Sidebar": {
+    "Default": "export const Default = () => (\n  <SidebarProvider>\n    <Sidebar collapsible=\"icon\">\n      <SidebarHeader>\n        <SidebarMenuButton size=\"lg\">\n          <Home />\n          <span>idcert</span>\n        </SidebarMenuButton>\n      </SidebarHeader>\n      <SidebarContent>\n        <SidebarGroup>\n          <SidebarGroupLabel>Platform</SidebarGroupLabel>\n          <SidebarMenu>\n            <SidebarMenuItem>\n              <SidebarMenuButton active>\n                <LayoutDashboard />\n                <span>Dashboard</span>\n              </SidebarMenuButton>\n            </SidebarMenuItem>\n            <SidebarMenuItem>\n              <SidebarMenuButton>\n                <Folder />\n                <span>Projects</span>\n              </SidebarMenuButton>\n            </SidebarMenuItem>\n          </SidebarMenu>\n        </SidebarGroup>\n      </SidebarContent>\n      <SidebarFooter>\n        <SidebarMenuButton>\n          <Settings />\n          <span>Settings</span>\n        </SidebarMenuButton>\n      </SidebarFooter>\n    </Sidebar>\n    <SidebarInset>\n      <header className=\"flex h-16 items-center gap-2 border-b px-4\">\n        <SidebarTrigger />\n        <span className=\"text-sm font-medium\">Page header</span>\n      </header>\n      <div className=\"p-6\">\n        <h1 className=\"text-2xl font-semibold\">Hello</h1>\n        <p className=\"text-muted-foreground\">\n          Click the trigger to toggle the sidebar.\n        </p>\n      </div>\n    </SidebarInset>\n  </SidebarProvider>\n)"
+  },
+  "Skeleton": {
+    "Default": "export const Default = () => (\n  <div className=\"flex items-center gap-4\">\n    <Skeleton className=\"h-12 w-12 rounded-full\" />\n    <div className=\"space-y-2\">\n      <Skeleton className=\"h-4 w-48\" />\n      <Skeleton className=\"h-4 w-32\" />\n    </div>\n  </div>\n)"
+  },
+  "Slider": {
+    "Default": "export const Default = () => {\n  const [v, setV] = React.useState([50])\n  return (\n    <div className=\"w-80 space-y-2\">\n      <Slider value={v} onValueChange={setV} aria-label=\"Volume\" />\n      <div className=\"text-sm text-muted-foreground\">Value: {v[0]}</div>\n    </div>\n  )\n}"
+  },
+  "Spinner": {
+    "Default": "export const Default = () => (\n  <div className=\"flex items-center gap-4\">\n    <Spinner aria-label=\"Loading\" />\n    <Spinner size=\"lg\" aria-label=\"Loading\" />\n  </div>\n)"
+  },
+  "Stack": {
+    "Default": "export const Default = () => (\n  <Stack gap={2}>\n    <Box>One</Box>\n    <Box>Two</Box>\n    <Box>Three</Box>\n  </Stack>\n)"
+  },
+  "Switch": {
+    "Default": "export const Default = () => (\n  <div className=\"flex items-center gap-2\">\n    <Switch id=\"airplane\" />\n    <Label htmlFor=\"airplane\">Airplane Mode</Label>\n  </div>\n)"
+  },
   "Table": {
     "Default": "export const Default = () => (\n  <div className=\"w-full max-w-2xl\">\n    <Table>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Invoice</TableHead>\n          <TableHead>Status</TableHead>\n          <TableHead>Method</TableHead>\n          <TableHead className=\"text-right\">Amount</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        {invoices.map((inv) => (\n          <TableRow key={inv.id}>\n            <TableCell className=\"font-mono\">{inv.id}</TableCell>\n            <TableCell>{inv.status}</TableCell>\n            <TableCell>{inv.method}</TableCell>\n            <TableCell className=\"text-right\">{inv.amount}</TableCell>\n          </TableRow>\n        ))}\n      </TableBody>\n    </Table>\n  </div>\n)",
     "WithFooter": "export const WithFooter = () => (\n  <div className=\"w-full max-w-2xl\">\n    <Table>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Invoice</TableHead>\n          <TableHead className=\"text-right\">Amount</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        {invoices.map((inv) => (\n          <TableRow key={inv.id}>\n            <TableCell className=\"font-mono\">{inv.id}</TableCell>\n            <TableCell className=\"text-right\">{inv.amount}</TableCell>\n          </TableRow>\n        ))}\n      </TableBody>\n      <TableFooter>\n        <TableRow>\n          <TableCell>Total</TableCell>\n          <TableCell className=\"text-right\">$1,200.00</TableCell>\n        </TableRow>\n      </TableFooter>\n    </Table>\n  </div>\n)",
     "SelectedRow": "export const SelectedRow = () => (\n  <div className=\"w-full max-w-2xl\">\n    <Table>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Invoice</TableHead>\n          <TableHead>Status</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        {invoices.map((inv, i) => (\n          <TableRow key={inv.id} data-state={i === 1 ? 'selected' : undefined}>\n            <TableCell className=\"font-mono\">{inv.id}</TableCell>\n            <TableCell>{inv.status}</TableCell>\n          </TableRow>\n        ))}\n      </TableBody>\n    </Table>\n  </div>\n)"
+  },
+  "Tabs": {
+    "Default": "export const Default = () => (\n  <Tabs defaultValue=\"account\" className=\"w-[400px]\">\n    <TabsList>\n      <TabsTrigger value=\"account\">Account</TabsTrigger>\n      <TabsTrigger value=\"password\">Password</TabsTrigger>\n      <TabsTrigger value=\"notifications\">Notifications</TabsTrigger>\n    </TabsList>\n    <TabsContent value=\"account\">Manage your account.</TabsContent>\n    <TabsContent value=\"password\">Change your password.</TabsContent>\n    <TabsContent value=\"notifications\">Notification settings.</TabsContent>\n  </Tabs>\n)"
+  },
+  "Textarea": {
+    "Default": "export const Default = () => (\n  <div className=\"w-80\">\n    <Textarea placeholder=\"Type your message…\" />\n  </div>\n)"
+  },
+  "TimePicker": {
+    "Default": "export const Default = () => (\n  <div className=\"w-64\">\n    <TimePicker aria-label=\"Time\" defaultValue=\"09:00\" />\n  </div>\n)"
+  },
+  "Toast": {
+    "Default": "export const Default = () => (\n  <ToastProvider>\n    <div className=\"p-4\">\n      <Trigger />\n    </div>\n  </ToastProvider>\n)"
+  },
+  "Tooltip": {
+    "Default": "export const Default = () => (\n  <TooltipProvider delay={150}>\n    <Tooltip>\n      <TooltipTrigger render={<Button variant=\"outline\">Hover me</Button>} />\n      <TooltipContent>Helpful information</TooltipContent>\n    </Tooltip>\n  </TooltipProvider>\n)"
   }
 }

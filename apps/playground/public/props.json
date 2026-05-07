@@ -7554,62 +7554,7 @@
     "description": "",
     "displayName": "SidebarTrigger",
     "methods": [],
-    "props": {
-      "icon": {
-        "defaultValue": null,
-        "description": "",
-        "name": "icon",
-        "declarations": [
-          {
-            "fileName": "idcert-ui/packages/ui/src/components/sidebar/index.tsx",
-            "name": "TypeLiteral"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "enum",
-          "raw": "ReactNode",
-          "value": [
-            {
-              "value": "null"
-            },
-            {
-              "value": "string"
-            },
-            {
-              "value": "number"
-            },
-            {
-              "value": "false"
-            },
-            {
-              "value": "true"
-            },
-            {
-              "value": "ReactElement<any, string | JSXElementConstructor<any>>",
-              "description": "Represents a JSX element.\n\nWhere {@link ReactNode} represents everything that can be rendered, `ReactElement`\nonly represents JSX.",
-              "fullComment": "Represents a JSX element.\n\nWhere {@link ReactNode} represents everything that can be rendered, `ReactElement`\nonly represents JSX.\n@template P The type of the props object\n@template T The type of the component or tag\n@example ```tsx\nconst element: ReactElement = <div />;\n```",
-              "tags": {
-                "template": "P The type of the props object\nT The type of the component or tag",
-                "example": "```tsx\nconst element: ReactElement = <div />;\n```"
-              }
-            },
-            {
-              "value": "Iterable<ReactNode>",
-              "description": "",
-              "fullComment": "",
-              "tags": {}
-            },
-            {
-              "value": "ReactPortal",
-              "description": "",
-              "fullComment": "",
-              "tags": {}
-            }
-          ]
-        }
-      }
-    }
+    "props": {}
   },
   "Skeleton": {
     "tags": {},

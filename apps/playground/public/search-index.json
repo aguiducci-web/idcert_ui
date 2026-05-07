@@ -1,5 +1,70 @@
 [
   {
+    "slug": "components/alert-dialog",
+    "title": "AlertDialog",
+    "description": "Modal confirmation for destructive or irreversible actions.",
+    "category": "overlays",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/alert",
+    "title": "Alert",
+    "description": "Persistent inline message highlighting status or info.",
+    "category": "feedback",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/avatar",
+    "title": "Avatar",
+    "description": "User profile image with fallback initials.",
+    "category": "primitives",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/badge",
+    "title": "Badge",
+    "description": "Compact label for status, counts, and tags.",
+    "category": "primitives",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/breadcrumb",
+    "title": "Breadcrumb",
+    "description": "Hierarchical trail showing the current page's location.",
+    "category": "navigation",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "components/button",
     "title": "Button",
     "description": "Trigger primary actions, form submissions, and links.",
@@ -63,6 +128,71 @@
     ]
   },
   {
+    "slug": "components/card",
+    "title": "Card",
+    "description": "Container for grouped content with optional header, body, and footer.",
+    "category": "data",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/checkbox",
+    "title": "Checkbox",
+    "description": "Binary toggle for opt-in / opt-out.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/container",
+    "title": "Container",
+    "description": "Fixed-max-width wrapper that centers content.",
+    "category": "layout",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/date-picker",
+    "title": "DatePicker",
+    "description": "Calendar-based single date selector.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/date-range-picker",
+    "title": "DateRangePicker",
+    "description": "Calendar-based date range selector.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "components/dialog",
     "title": "Dialog",
     "description": "A modal that interrupts the page to ask for confirmation or input.",
@@ -121,6 +251,58 @@
     ]
   },
   {
+    "slug": "components/divider",
+    "title": "Divider",
+    "description": "Thin rule that visually separates content.",
+    "category": "primitives",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/dropdown-menu",
+    "title": "DropdownMenu",
+    "description": "Contextual menu of actions or options.",
+    "category": "overlays",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/empty-state",
+    "title": "EmptyState",
+    "description": "Centered illustration, copy, and action for empty data views.",
+    "category": "feedback",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/file-upload",
+    "title": "FileUpload",
+    "description": "Drag-and-drop file picker with progress list.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "components/form",
     "title": "Form",
     "description": "react-hook-form integration with @idcert/ui inputs and Zod validation.",
@@ -169,6 +351,19 @@
       {
         "id": "accessibility",
         "text": "Accessibility",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/grid",
+    "title": "Grid",
+    "description": "Responsive CSS grid wrapper with column and gap props.",
+    "category": "layout",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
         "level": 2
       }
     ]
@@ -232,6 +427,227 @@
     ]
   },
   {
+    "slug": "components/label",
+    "title": "Label",
+    "description": "Accessible label associated with a form control.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/list",
+    "title": "List",
+    "description": "Vertical, semantic list of items.",
+    "category": "data",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/multi-select",
+    "title": "MultiSelect",
+    "description": "Multi-value selector with chips and search.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/navbar",
+    "title": "Navbar",
+    "description": "Top-level horizontal navigation bar.",
+    "category": "navigation",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/pagination",
+    "title": "Pagination",
+    "description": "Navigate large data sets one page at a time.",
+    "category": "navigation",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/portal",
+    "title": "Portal",
+    "description": "Render children into a different DOM subtree.",
+    "category": "overlays",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/progress",
+    "title": "Progress",
+    "description": "Linear bar showing completion of a task.",
+    "category": "feedback",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/radio",
+    "title": "Radio",
+    "description": "Single-choice option within a group.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/select",
+    "title": "Select",
+    "description": "Single-value dropdown selector.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/separator",
+    "title": "Separator",
+    "description": "Horizontal or vertical dividing line.",
+    "category": "layout",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/sheet",
+    "title": "Sheet",
+    "description": "Slide-in panel anchored to a viewport edge.",
+    "category": "overlays",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/sidebar",
+    "title": "Sidebar",
+    "description": "Collapsible vertical navigation panel.",
+    "category": "navigation",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/skeleton",
+    "title": "Skeleton",
+    "description": "Placeholder shimmer for loading content.",
+    "category": "feedback",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/slider",
+    "title": "Slider",
+    "description": "Pick a numeric value (or range) on a continuum.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/spinner",
+    "title": "Spinner",
+    "description": "Indeterminate loading indicator.",
+    "category": "feedback",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/stack",
+    "title": "Stack",
+    "description": "Flexbox helper for vertical or horizontal spacing.",
+    "category": "layout",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/switch",
+    "title": "Switch",
+    "description": "Toggle between two states.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
     "slug": "components/table",
     "title": "Table",
     "description": "A styled HTML table with header, body, footer, and row selection states.",
@@ -280,6 +696,84 @@
       {
         "id": "accessibility",
         "text": "Accessibility",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/tabs",
+    "title": "Tabs",
+    "description": "Switch between related panels of content.",
+    "category": "navigation",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/textarea",
+    "title": "Textarea",
+    "description": "Multi-line text input.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/theme-provider",
+    "title": "ThemeProvider",
+    "description": "Wraps the app with light/dark theme context.",
+    "category": "utility",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/time-picker",
+    "title": "TimePicker",
+    "description": "Hour and minute selector.",
+    "category": "forms",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/toast",
+    "title": "Toast",
+    "description": "Transient, non-blocking notification.",
+    "category": "overlays",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "slug": "components/tooltip",
+    "title": "Tooltip",
+    "description": "Hover- or focus-revealed inline help text.",
+    "category": "overlays",
+    "headings": [
+      {
+        "id": "api-reference",
+        "text": "API Reference",
         "level": 2
       }
     ]

@@ -6,7 +6,7 @@ import { cn } from '@/lib/cn'
 export type TocEntry = {
   value: string
   depth: number
-  attributes?: { id?: string }
+  id?: string
   children?: TocEntry[]
 }
 
@@ -19,11 +19,12 @@ function flatten(toc: TocEntry[], out: TocEntry[] = []): TocEntry[] {
 }
 
 export function TableOfContents({ toc }: { toc: TocEntry[] }) {
+  console.log("🚀 Tripode ~ TableOfContents ~ toc:", toc)
   const flat = React.useMemo(() => flatten(toc), [toc])
   const [active, setActive] = React.useState<string | null>(null)
 
   React.useEffect(() => {
-    const ids = flat.map((e) => e.attributes?.id).filter(Boolean) as string[]
+    const ids = flat.map((e) => e.id).filter(Boolean) as string[]
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -54,7 +55,7 @@ export function TableOfContents({ toc }: { toc: TocEntry[] }) {
       </h3>
       <ul className="space-y-1 text-sm">
         {flat.map((entry) => {
-          const id = entry.attributes?.id ?? ''
+          const id = entry?.id ?? ''
           return (
             <li
               key={id}
