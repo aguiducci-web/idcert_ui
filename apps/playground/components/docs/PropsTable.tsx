@@ -27,7 +27,7 @@ export function PropsTable({ component }: { component: string }) {
   if (!doc) return null
   const entries = Object.values(doc.props)
   return (
-    <div className="overflow-x-auto rounded-md border border-border">
+    <div className="mb-5 overflow-x-auto rounded-md border border-border">
       <table className="w-full text-sm">
         <thead className="bg-muted text-muted-foreground">
           <tr>
