@@ -4,15 +4,114 @@ description: Hover- or focus-revealed inline help text.
 component: Tooltip
 package: '@idcert/ui'
 category: overlays
-status: in-progress
+status: stable
+whenToUse: |
+  Use Tooltip to reveal a short, supplementary label on hover or keyboard focus
+  — most often the name of an icon-only button (`Trash`, `Settings`, `Edit`).
+  Never put primary content in a tooltip: it is unreachable on touch devices
+  and easy to miss with assistive tech. Never use a tooltip as the only way to
+  discover an action — the trigger must still communicate its purpose without
+  the popup. For richer disclosures (forms, links, multi-line copy), use
+  `Popover` instead.
 ---
 
-import { Default } from '@idcert/ui/components/tooltip/examples'
+import {
+  Default, OnIconButton, Sides, WithDelay, Disabled,
+} from '@idcert/ui/components/tooltip/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from '@idcert/ui'`}</CodeBlock>
+
+Wrap your app once with `TooltipProvider` (typically at the root layout) so all
+tooltips share the same delay timing and singleton hover behavior.
+
+## Examples
+
+### On an icon-only button
+
+The most common use case. An icon button without a visible label needs an
+`aria-label` for screen readers; the tooltip adds the same label visually for
+sighted users so both audiences get the action name.
+
+<Example name="OnIconButton" component="Tooltip"><OnIconButton /></Example>
+
+### Sides
+
+The popup positions itself with `side="top" | "right" | "bottom" | "left"` on
+the underlying positioner. Default is `top`. Pick the side that keeps the
+tooltip away from the edge of the trigger's container so it does not get
+clipped on small viewports.
+
+<Example name="Sides" component="Tooltip"><Sides /></Example>
+
+### With delay
+
+`TooltipProvider` accepts a `delay` prop (milliseconds) that controls how long
+the user must hover before the tooltip opens. Use a longer delay (600–800ms)
+on dense surfaces to avoid flicker, and a shorter delay (0–150ms) on toolbars
+where users are scanning many icon buttons in sequence.
+
+<Example name="WithDelay" component="Tooltip"><WithDelay /></Example>
+
+### Disabled triggers
+
+A `disabled` button does not fire pointer events, so the tooltip will never
+open. Wrap the disabled control in a focusable `<span tabIndex={0}>` and pass
+that wrapper as the trigger. Keyboard users can still tab to the wrapper and
+read why the action is unavailable.
+
+<Example name="Disabled" component="Tooltip"><Disabled /></Example>
+
 ## API Reference
 
+<PropsTable component="TooltipProvider" />
+
 <PropsTable component="Tooltip" />
+
+<PropsTable component="TooltipTrigger" />
+
+<PropsTable component="TooltipContent" />
+
+## Tokens
+
+<TokenList component="Tooltip" tokens={[
+  '--background',
+  '--foreground',
+  '--border',
+  '--primary',
+  '--primary-foreground',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Focus must trigger the tooltip the same way hover does. Both pointer hover
+  and keyboard focus open `TooltipContent`; do not block focus events with
+  `onFocus` handlers that prevent default.
+- Pressing `Esc` dismisses the open tooltip without moving focus, so a
+  keyboard user can clear it and continue typing or tabbing.
+- Touch devices have no hover. Never put information in a tooltip that the
+  user must read to complete a task — replicate the label visibly, in a
+  caption, or in a `Popover` triggered by tap.
+- Do not put critical content (errors, instructions, links) in a tooltip.
+  Tooltip content is for short, supplementary labels only — typically one to
+  three words.
+- Keep content short. Long tooltip text causes pointer overshoot — the user
+  moves toward the popup to read it and the tooltip closes. For longer copy,
+  use `Popover`.
+- Wrap your app in `TooltipProvider` exactly once, at the root layout. The
+  provider is a singleton coordinator: nesting providers leads to inconsistent
+  open/close timing across tooltips.
+- Disabled triggers do not receive pointer events. Wrap a disabled `Button`
+  in a focusable `<span tabIndex={0}>` so the tooltip can still open on
+  keyboard focus and explain why the action is unavailable.

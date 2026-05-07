@@ -1,18 +1,101 @@
 ---
 title: Stack
-description: Flexbox helper for vertical or horizontal spacing.
+description: One-dimensional flex layout primitive with gap, alignment, and direction.
 component: Stack
 package: '@idcert/ui'
 category: layout
-status: in-progress
+status: stable
+whenToUse: |
+  Use Stack as the default 1D layout primitive — vertical lists of fields, rows
+  of buttons, toolbars, header bars. Reach for `Grid` when the layout is truly
+  two-dimensional (cards, dashboards, spreadsheet-like surfaces). Drop to raw
+  `flex` utilities only for one-off layouts that will not be reused; the moment
+  you copy the same `flex flex-col gap-4 items-start` triple twice, switch to
+  Stack so spacing and alignment stay consistent across the app.
 ---
 
-import { Default } from '@idcert/ui/components/stack/examples'
+import { Stack } from '@idcert/ui'
+import {
+  Default, Horizontal, Gaps, AlignedRow, Justify,
+} from '@idcert/ui/components/stack/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Stack } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Horizontal
+
+Set `direction="horizontal"` for rows. Use horizontal stacks for button groups,
+toolbars, and any sequence of items that should read left-to-right. For columns
+(the default), omit `direction` or set it explicitly to `"vertical"` for clarity
+in shared layouts.
+
+<Example name="Horizontal" component="Stack"><Horizontal /></Example>
+
+### Gaps
+
+`gap` accepts a fixed scale (`0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `10`, `12`,
+`16`, `20`, `24`) that maps to the spacing tokens. Prefer the smaller values
+(`1`–`4`) for inline groups and `6`–`12` for section-level vertical rhythm.
+Avoid mixing arbitrary CSS gaps with Stack — if you need a value off the scale,
+add it to the spacing tokens first.
+
+<Example name="Gaps" component="Stack"><Gaps /></Example>
+
+### Aligned toolbar
+
+Combine `direction="horizontal"`, `align="center"`, and `justify="between"` for
+the canonical toolbar pattern: a label on the left, a cluster of actions on the
+right, vertically centered. Nest a second horizontal Stack inside to keep the
+trailing actions grouped.
+
+<Example name="AlignedRow" component="Stack"><AlignedRow /></Example>
+
+### Justify
+
+`justify` controls main-axis distribution: `start`, `center`, `end`, `between`,
+`around`. Use `between` for header bars where the leading and trailing groups
+should hug the edges; use `center` for empty-state and confirmation layouts
+where content sits in the middle.
+
+<Example name="Justify" component="Stack"><Justify /></Example>
+
 ## API Reference
 
 <PropsTable component="Stack" />
+
+## Tokens
+
+<TokenList component="Stack" tokens={[
+  '--background',
+  '--border',
+]} />
+
+Stack is layout-only and owns no surface of its own — it inherits the
+`--background` of whatever it is rendered into and only touches `--border` when
+you wrap it with a `className` (toolbar pattern above). All spacing comes from
+the Tailwind `gap-*` scale, which already maps to the spacing tokens.
+
+## Accessibility
+
+- Stack renders a plain `<div>`. When the stack represents a meaningful region
+  (navigation, header, list of articles), wrap it in a semantic landmark
+  (`<nav>`, `<header>`, `<section>`) so assistive tech can skip to it.
+- Do not stack interactive elements (buttons, links) without spacing — use at
+  least `gap={2}` so users with motor impairments do not mis-tap adjacent
+  targets, and so focus rings have room to render without clipping.
+- Row direction respects writing mode: setting `dir="rtl"` on an ancestor flips
+  the visual order of horizontal stacks automatically because the underlying
+  `flex-row` honors logical direction. Do not hard-code `flex-row-reverse` to
+  achieve RTL — that breaks the flip.
+- When a Stack acts as a list (FAQ, navigation items, search results), prefer
+  rendering its children inside `<ul>`/`<li>` instead of generic divs so screen
+  readers announce item count.
+- Avoid using Stack purely as a decorative wrapper around a single child; let
+  the child own its own spacing and skip the extra DOM node.

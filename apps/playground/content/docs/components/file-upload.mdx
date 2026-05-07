@@ -1,18 +1,108 @@
 ---
 title: FileUpload
-description: Drag-and-drop file picker with progress list.
+description: Drag-and-drop file picker with selection list.
 component: FileUpload
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use FileUpload whenever the user must hand a file (or several) to the app —
+  avatars, document attachments, CSV imports, evidence uploads. Pair it with a
+  `Progress` bar while the bytes travel and surface validation feedback (size,
+  type, count) inline below the dropzone. Prefer a plain `<Input type="file" />`
+  when no preview, drag-drop, or list is needed. Client-side `accept`/`maxSize`
+  is UX guard-rail, not a security boundary — the server must always re-validate
+  every file you accept here.
 ---
 
-import { Default } from '@idcert/ui/components/file-upload/examples'
+import {
+  Default, Multiple, Restricted, WithList, Disabled,
+} from '@idcert/ui/components/file-upload/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  FileUpload,
+  FileUploadDropzone,
+  FileUploadPrompt,
+  FileUploadButton,
+  FileUploadList,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Multiple files
+
+Set `multiple` to let the user pick or drop several files at once, and bound
+the total with `maxFiles` so the list never grows past what the form can
+realistically post. The component is controllable via `value`/`onValueChange`
+so you can sync the array to RHF, Zustand, or whatever owns your form state.
+
+<Example name="Multiple" component="FileUpload"><Multiple /></Example>
+
+### Restricted to images
+
+`accept` mirrors the native HTML attribute (MIME types, MIME wildcards like
+`image/*`, or extensions like `.pdf`) and surfaces the same filter inside the
+OS file picker. `maxSize` is in bytes — anything larger fires `onError` with
+`{ type: 'size', file, max }` so you can render a friendly message.
+
+<Example name="Restricted" component="FileUpload"><Restricted /></Example>
+
+### Selection list with remove
+
+`<FileUploadList />` renders one row per accepted file with name, formatted
+size, image preview (when applicable), and a built-in remove button. Each row
+is keyboard-reachable; pressing the remove control updates `value` and revokes
+the preview's object URL automatically.
+
+<Example name="WithList" component="FileUpload"><WithList /></Example>
+
+### Disabled
+
+`disabled` greys the dropzone, blocks drops, disables the browse button, and
+disables every remove control on the list. Use it while a parent form is
+submitting so the user cannot mutate the queue mid-flight.
+
+<Example name="Disabled" component="FileUpload"><Disabled /></Example>
+
 ## API Reference
 
 <PropsTable component="FileUpload" />
+
+## Tokens
+
+<TokenList component="FileUpload" tokens={[
+  '--background',
+  '--foreground',
+  '--primary',
+  '--muted',
+  '--muted-foreground',
+  '--border',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Always pair the dropzone with a visible label and wire it via `htmlFor` to a
+  `FormField` (or your own `<label>`); the dropzone alone is not a labelled
+  control.
+- The `accept` prop is forwarded to the hidden `<input type="file">`, so the
+  same filter surfaces in the native OS picker — keyboard and assistive-tech
+  users get the restriction without relying on the drag-drop affordance.
+- Drag-and-drop must have a keyboard equivalent. `FileUploadButton` opens the
+  native picker on Enter/Space; never ship a dropzone where browsing is the
+  only path to selecting a file.
+- The selection list is a `<ul>` of `<li>`s; each row's remove control is a
+  real `<button>` with `aria-label="Remove {filename}"` and is reachable by
+  Tab. Focus order goes dropzone → browse → list rows.
+- Validation errors (`accept`, `size`, `count`) come back through `onError`.
+  Render them into a region with `aria-live="polite"` so screen readers
+  announce rejections without stealing focus.
+- Treat client-side checks as UX, not security. Re-validate type, size, and
+  count on the server, and never trust the MIME type alone — sniff bytes for
+  anything sensitive.

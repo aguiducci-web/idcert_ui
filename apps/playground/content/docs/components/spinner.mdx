@@ -4,15 +4,95 @@ description: Indeterminate loading indicator.
 component: Spinner
 package: '@idcert/ui'
 category: feedback
-status: in-progress
+status: stable
+whenToUse: |
+  Use Spinner for short indeterminate waits (roughly 0.5–3s) where you cannot
+  report progress — a button submitting, a panel fetching, an inline value
+  resolving. For known totals (uploads, multi-step jobs) use `Progress`. For
+  layout placeholders while content streams in, use `Skeleton`. Never block
+  the entire page with a full-screen spinner — prefer an inline indicator or
+  a scoped overlay on the section that is actually loading.
 ---
 
-import { Default } from '@idcert/ui/components/spinner/examples'
+import { Spinner } from '@idcert/ui'
+import {
+  Default, Sizes, WithLabel, InButton, Inline,
+} from '@idcert/ui/components/spinner/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Spinner } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Sizes
+
+Four sizes map to common slots: `sm` for inline text and button glyphs, `md`
+(default) for cards and form rows, `lg` for section overlays, `xl` for
+empty-state placeholders. Pick by surrounding type size, not by emphasis —
+a bigger spinner does not mean "more loading".
+
+<Example name="Sizes" component="Spinner"><Sizes /></Example>
+
+### With label
+
+Pair the spinner with a short text label whenever the wait exceeds a beat.
+The label tells the user what is happening; the spinner reassures them the
+app has not frozen. Keep the copy specific ("Loading results…", "Saving…")
+rather than the generic "Please wait".
+
+<Example name="WithLabel" component="Spinner"><WithLabel /></Example>
+
+### In a button
+
+Swap the leading icon for a `Spinner` and disable the button while a
+submission is in flight. Keep the label visible so the user still knows
+which action they triggered, and avoid changing the button's width — the
+spinner replaces the icon, not the text.
+
+<Example name="InButton" component="Spinner"><InButton /></Example>
+
+### Inline with text
+
+Drop a `sm` spinner inline with copy when a single value or sentence is
+resolving. The `inline-flex` wrapper keeps it on the text baseline so the
+line height does not shift when the spinner appears or disappears.
+
+<Example name="Inline" component="Spinner"><Inline /></Example>
+
 ## API Reference
 
 <PropsTable component="Spinner" />
+
+## Tokens
+
+<TokenList component="Spinner" tokens={[
+  '--primary',
+  '--muted-foreground',
+  '--foreground',
+  '--background',
+]} />
+
+## Accessibility
+
+- The wrapper renders with `role="status"` and a default `aria-label="Loading"`
+  so assistive tech announces the busy state. Override `aria-label` with a
+  more specific message ("Loading results", "Saving changes") when context
+  warrants it.
+- The spin animation uses Tailwind's `animate-spin`, which respects
+  `prefers-reduced-motion: reduce` — users who disable motion see a static
+  indicator instead of a rotating one. Do not re-introduce the rotation via
+  custom keyframes that ignore the media query.
+- Pair the spinner with visible text whenever the wait is user-facing. A bare
+  spinner with no label is announced only as "Loading" and gives screen-reader
+  users no idea what is loading.
+- Debounce the indicator — do not flash a spinner for sub-200ms operations.
+  A spinner that appears and disappears instantly reads as a glitch and
+  trains users to distrust it.
+- For longer waits (>3s), switch to `Progress` with a determinate value or a
+  `Skeleton` placeholder so the user gets a sense of pace instead of a
+  spinner stuck on screen.

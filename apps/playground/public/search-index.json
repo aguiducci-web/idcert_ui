@@ -6,8 +6,83 @@
     "category": "overlays",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "destructive-confirmation",
+        "text": "Destructive confirmation",
+        "level": 3
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "title-and-multi-paragraph-body",
+        "text": "Title and multi-paragraph body",
+        "level": 3
+      },
+      {
+        "id": "long-content-with-scrolling",
+        "text": "Long content with scrolling",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "alertdialog",
+        "text": "AlertDialog",
+        "level": 3
+      },
+      {
+        "id": "alertdialogtrigger",
+        "text": "AlertDialogTrigger",
+        "level": 3
+      },
+      {
+        "id": "alertdialogcontent",
+        "text": "AlertDialogContent",
+        "level": 3
+      },
+      {
+        "id": "alertdialogtitle",
+        "text": "AlertDialogTitle",
+        "level": 3
+      },
+      {
+        "id": "alertdialogdescription",
+        "text": "AlertDialogDescription",
+        "level": 3
+      },
+      {
+        "id": "alertdialogaction",
+        "text": "AlertDialogAction",
+        "level": 3
+      },
+      {
+        "id": "alertdialogcancel",
+        "text": "AlertDialogCancel",
+        "level": 3
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -19,8 +94,48 @@
     "category": "feedback",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "variants",
+        "text": "Variants",
+        "level": 3
+      },
+      {
+        "id": "title-and-description",
+        "text": "Title and description",
+        "level": 3
+      },
+      {
+        "id": "custom-icon",
+        "text": "Custom icon",
+        "level": 3
+      },
+      {
+        "id": "without-icon",
+        "text": "Without icon",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -32,8 +147,48 @@
     "category": "primitives",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-fallback",
+        "text": "With fallback",
+        "level": 3
+      },
+      {
+        "id": "initials-only",
+        "text": "Initials only",
+        "level": 3
+      },
+      {
+        "id": "sizes",
+        "text": "Sizes",
+        "level": 3
+      },
+      {
+        "id": "group",
+        "text": "Group",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -45,8 +200,48 @@
     "category": "primitives",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "variants",
+        "text": "Variants",
+        "level": 3
+      },
+      {
+        "id": "status-indicators",
+        "text": "Status indicators",
+        "level": 3
+      },
+      {
+        "id": "counts",
+        "text": "Counts",
+        "level": 3
+      },
+      {
+        "id": "with-status-dot",
+        "text": "With status dot",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -58,8 +253,43 @@
     "category": "navigation",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-leading-icon",
+        "text": "With leading icon",
+        "level": 3
+      },
+      {
+        "id": "truncated-trail",
+        "text": "Truncated trail",
+        "level": 3
+      },
+      {
+        "id": "custom-separator",
+        "text": "Custom separator",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -134,8 +364,48 @@
     "category": "data",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-footer-actions",
+        "text": "With footer actions",
+        "level": 3
+      },
+      {
+        "id": "header-with-trailing-action",
+        "text": "Header with trailing action",
+        "level": 3
+      },
+      {
+        "id": "stat-tile",
+        "text": "Stat tile",
+        "level": 3
+      },
+      {
+        "id": "interactive-card",
+        "text": "Interactive card",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -147,8 +417,48 @@
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "default-checked",
+        "text": "Default checked",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
+        "id": "group",
+        "text": "Group",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -160,8 +470,48 @@
     "category": "layout",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "sizes",
+        "text": "Sizes",
+        "level": 3
+      },
+      {
+        "id": "centered-content",
+        "text": "Centered content",
+        "level": 3
+      },
+      {
+        "id": "full-width",
+        "text": "Full width",
+        "level": 3
+      },
+      {
+        "id": "nested-layout",
+        "text": "Nested layout",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -173,8 +523,48 @@
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "min-and-max",
+        "text": "Min and max",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -182,12 +572,52 @@
   {
     "slug": "components/date-range-picker",
     "title": "DateRangePicker",
-    "description": "Calendar-based date range selector.",
+    "description": "Calendar-based selector for a contiguous date range.",
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "presets",
+        "text": "Presets",
+        "level": 3
+      },
+      {
+        "id": "min-max-bounds",
+        "text": "Min / max bounds",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -257,8 +687,38 @@
     "category": "primitives",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "between-sections",
+        "text": "Between sections",
+        "level": 3
+      },
+      {
+        "id": "vertical",
+        "text": "Vertical",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -266,12 +726,57 @@
   {
     "slug": "components/dropdown-menu",
     "title": "DropdownMenu",
-    "description": "Contextual menu of actions or options.",
+    "description": "Contextual menu of actions or options attached to a trigger.",
     "category": "overlays",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-icons-and-shortcuts",
+        "text": "With icons and shortcuts",
+        "level": 3
+      },
+      {
+        "id": "checkbox-items",
+        "text": "Checkbox items",
+        "level": 3
+      },
+      {
+        "id": "radio-group",
+        "text": "Radio group",
+        "level": 3
+      },
+      {
+        "id": "submenu",
+        "text": "Submenu",
+        "level": 3
+      },
+      {
+        "id": "destructive-item",
+        "text": "Destructive item",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -279,12 +784,42 @@
   {
     "slug": "components/empty-state",
     "title": "EmptyState",
-    "description": "Centered illustration, copy, and action for empty data views.",
-    "category": "feedback",
+    "description": "Centered placeholder for blank surfaces, with icon, title, description, and actions.",
+    "category": "primitives",
     "headings": [
+      {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-primary-action",
+        "text": "With primary action",
+        "level": 3
+      },
+      {
+        "id": "no-search-results",
+        "text": "No search results",
+        "level": 3
+      },
       {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -292,12 +827,52 @@
   {
     "slug": "components/file-upload",
     "title": "FileUpload",
-    "description": "Drag-and-drop file picker with progress list.",
+    "description": "Drag-and-drop file picker with selection list.",
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "multiple-files",
+        "text": "Multiple files",
+        "level": 3
+      },
+      {
+        "id": "restricted-to-images",
+        "text": "Restricted to images",
+        "level": 3
+      },
+      {
+        "id": "selection-list-with-remove",
+        "text": "Selection list with remove",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -358,12 +933,47 @@
   {
     "slug": "components/grid",
     "title": "Grid",
-    "description": "Responsive CSS grid wrapper with column and gap props.",
+    "description": "Two-dimensional layout primitive with equal-width columns and consistent gaps.",
     "category": "layout",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "columns",
+        "text": "Columns",
+        "level": 3
+      },
+      {
+        "id": "gaps",
+        "text": "Gaps",
+        "level": 3
+      },
+      {
+        "id": "with-cards",
+        "text": "With cards",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -429,12 +1039,47 @@
   {
     "slug": "components/label",
     "title": "Label",
-    "description": "Accessible label associated with a form control.",
+    "description": "Accessible caption for a form control.",
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-input",
+        "text": "With input",
+        "level": 3
+      },
+      {
+        "id": "required-marker",
+        "text": "Required marker",
+        "level": 3
+      },
+      {
+        "id": "disabled-control",
+        "text": "Disabled control",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -446,8 +1091,58 @@
     "category": "data",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "divided",
+        "text": "Divided",
+        "level": 3
+      },
+      {
+        "id": "with-icons",
+        "text": "With icons",
+        "level": 3
+      },
+      {
+        "id": "nested",
+        "text": "Nested",
+        "level": 3
+      },
+      {
+        "id": "interactive",
+        "text": "Interactive",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "list",
+        "text": "List",
+        "level": 3
+      },
+      {
+        "id": "listitem",
+        "text": "ListItem",
+        "level": 3
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -459,8 +1154,48 @@
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "searchable",
+        "text": "Searchable",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
+        "id": "capped-selection",
+        "text": "Capped selection",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -472,8 +1207,78 @@
     "category": "navigation",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-brand-and-cta",
+        "text": "With brand and CTA",
+        "level": 3
+      },
+      {
+        "id": "with-dropdown-menu",
+        "text": "With dropdown menu",
+        "level": 3
+      },
+      {
+        "id": "sticky",
+        "text": "Sticky",
+        "level": 3
+      },
+      {
+        "id": "mobile",
+        "text": "Mobile",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "navbar",
+        "text": "Navbar",
+        "level": 3
+      },
+      {
+        "id": "navbarbrand",
+        "text": "NavbarBrand",
+        "level": 3
+      },
+      {
+        "id": "navbarcontent",
+        "text": "NavbarContent",
+        "level": 3
+      },
+      {
+        "id": "navbaritem",
+        "text": "NavbarItem",
+        "level": 3
+      },
+      {
+        "id": "navbaractions",
+        "text": "NavbarActions",
+        "level": 3
+      },
+      {
+        "id": "navbarmobiletoggle",
+        "text": "NavbarMobileToggle",
+        "level": 3
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -485,8 +1290,48 @@
     "category": "navigation",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "truncated-with-ellipsis",
+        "text": "Truncated with ellipsis",
+        "level": 3
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "compact-no-siblings",
+        "text": "Compact (no siblings)",
+        "level": 3
+      },
+      {
+        "id": "disabled-at-bounds",
+        "text": "Disabled at bounds",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -498,8 +1343,38 @@
     "category": "overlays",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "into-document-body",
+        "text": "Into document.body",
+        "level": 3
+      },
+      {
+        "id": "custom-container",
+        "text": "Custom container",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -511,8 +1386,48 @@
     "category": "feedback",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "determinate",
+        "text": "Determinate",
+        "level": 3
+      },
+      {
+        "id": "indeterminate",
+        "text": "Indeterminate",
+        "level": 3
+      },
+      {
+        "id": "animated",
+        "text": "Animated",
+        "level": 3
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -524,8 +1439,43 @@
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "group",
+        "text": "Group",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -537,8 +1487,73 @@
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "grouped-options",
+        "text": "Grouped options",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
+        "id": "with-icon",
+        "text": "With icon",
+        "level": 3
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "select",
+        "text": "Select",
+        "level": 3
+      },
+      {
+        "id": "selecttrigger",
+        "text": "SelectTrigger",
+        "level": 3
+      },
+      {
+        "id": "selectcontent",
+        "text": "SelectContent",
+        "level": 3
+      },
+      {
+        "id": "selectitem",
+        "text": "SelectItem",
+        "level": 3
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -546,12 +1561,47 @@
   {
     "slug": "components/separator",
     "title": "Separator",
-    "description": "Horizontal or vertical dividing line.",
+    "description": "Horizontal dividing line between groups of content.",
     "category": "layout",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "between-sections",
+        "text": "Between sections",
+        "level": 3
+      },
+      {
+        "id": "inside-a-card",
+        "text": "Inside a card",
+        "level": 3
+      },
+      {
+        "id": "between-menu-groups",
+        "text": "Between menu groups",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -559,12 +1609,92 @@
   {
     "slug": "components/sheet",
     "title": "Sheet",
-    "description": "Slide-in panel anchored to a viewport edge.",
-    "category": "overlays",
+    "description": "Side-anchored panel for secondary content, forms, and drawers.",
+    "category": "primitives",
     "headings": [
+      {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "sides",
+        "text": "Sides",
+        "level": 3
+      },
+      {
+        "id": "with-a-form",
+        "text": "With a form",
+        "level": 3
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "scrollable-body",
+        "text": "Scrollable body",
+        "level": 3
+      },
       {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "sheet",
+        "text": "Sheet",
+        "level": 3
+      },
+      {
+        "id": "sheettrigger",
+        "text": "SheetTrigger",
+        "level": 3
+      },
+      {
+        "id": "sheetcontent",
+        "text": "SheetContent",
+        "level": 3
+      },
+      {
+        "id": "sheetheader",
+        "text": "SheetHeader",
+        "level": 3
+      },
+      {
+        "id": "sheettitle",
+        "text": "SheetTitle",
+        "level": 3
+      },
+      {
+        "id": "sheetdescription",
+        "text": "SheetDescription",
+        "level": 3
+      },
+      {
+        "id": "sheetfooter",
+        "text": "SheetFooter",
+        "level": 3
+      },
+      {
+        "id": "sheetclose",
+        "text": "SheetClose",
+        "level": 3
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -576,8 +1706,48 @@
     "category": "navigation",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-groups",
+        "text": "With groups",
+        "level": 3
+      },
+      {
+        "id": "collapsed-icon-only",
+        "text": "Collapsed (icon-only)",
+        "level": 3
+      },
+      {
+        "id": "with-footer",
+        "text": "With footer",
+        "level": 3
+      },
+      {
+        "id": "with-search",
+        "text": "With search",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -589,8 +1759,48 @@
     "category": "feedback",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "card",
+        "text": "Card",
+        "level": 3
+      },
+      {
+        "id": "list",
+        "text": "List",
+        "level": 3
+      },
+      {
+        "id": "avatar",
+        "text": "Avatar",
+        "level": 3
+      },
+      {
+        "id": "paragraph",
+        "text": "Paragraph",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -602,8 +1812,48 @@
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "range",
+        "text": "Range",
+        "level": 3
+      },
+      {
+        "id": "steps",
+        "text": "Steps",
+        "level": 3
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -615,8 +1865,48 @@
     "category": "feedback",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "sizes",
+        "text": "Sizes",
+        "level": 3
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "in-a-button",
+        "text": "In a button",
+        "level": 3
+      },
+      {
+        "id": "inline-with-text",
+        "text": "Inline with text",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -624,12 +1914,52 @@
   {
     "slug": "components/stack",
     "title": "Stack",
-    "description": "Flexbox helper for vertical or horizontal spacing.",
+    "description": "One-dimensional flex layout primitive with gap, alignment, and direction.",
     "category": "layout",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "horizontal",
+        "text": "Horizontal",
+        "level": 3
+      },
+      {
+        "id": "gaps",
+        "text": "Gaps",
+        "level": 3
+      },
+      {
+        "id": "aligned-toolbar",
+        "text": "Aligned toolbar",
+        "level": 3
+      },
+      {
+        "id": "justify",
+        "text": "Justify",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -637,12 +1967,52 @@
   {
     "slug": "components/switch",
     "title": "Switch",
-    "description": "Toggle between two states.",
-    "category": "forms",
+    "description": "Two-state toggle for instant-apply boolean settings.",
+    "category": "primitives",
     "headings": [
+      {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "in-settings-rows",
+        "text": "In settings rows",
+        "level": 3
+      },
       {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -707,8 +2077,53 @@
     "category": "navigation",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "with-icons",
+        "text": "With icons",
+        "level": 3
+      },
+      {
+        "id": "disabled-trigger",
+        "text": "Disabled trigger",
+        "level": 3
+      },
+      {
+        "id": "vertical",
+        "text": "Vertical",
+        "level": 3
+      },
+      {
+        "id": "many-tabs",
+        "text": "Many tabs",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -720,8 +2135,48 @@
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "with-a-label",
+        "text": "With a label",
+        "level": 3
+      },
+      {
+        "id": "with-a-description",
+        "text": "With a description",
+        "level": 3
+      },
+      {
+        "id": "error-state",
+        "text": "Error state",
+        "level": 3
+      },
+      {
+        "id": "disabled",
+        "text": "Disabled",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -733,8 +2188,23 @@
     "category": "utility",
     "headings": [
       {
+        "id": "setup",
+        "text": "Setup",
+        "level": 2
+      },
+      {
+        "id": "toggle-theme",
+        "text": "Toggle Theme",
+        "level": 2
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -746,8 +2216,48 @@
     "category": "forms",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "controlled",
+        "text": "Controlled",
+        "level": 3
+      },
+      {
+        "id": "with-label",
+        "text": "With label",
+        "level": 3
+      },
+      {
+        "id": "with-seconds",
+        "text": "With seconds",
+        "level": 3
+      },
+      {
+        "id": "step",
+        "text": "Step",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -759,8 +2269,53 @@
     "category": "overlays",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "variants",
+        "text": "Variants",
+        "level": 3
+      },
+      {
+        "id": "with-action",
+        "text": "With action",
+        "level": 3
+      },
+      {
+        "id": "with-description",
+        "text": "With description",
+        "level": 3
+      },
+      {
+        "id": "persistent",
+        "text": "Persistent",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "usetoast",
+        "text": "`useToast()`",
+        "level": 3
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]
@@ -772,8 +2327,48 @@
     "category": "overlays",
     "headings": [
       {
+        "id": "import",
+        "text": "Import",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "Examples",
+        "level": 2
+      },
+      {
+        "id": "on-an-icon-only-button",
+        "text": "On an icon-only button",
+        "level": 3
+      },
+      {
+        "id": "sides",
+        "text": "Sides",
+        "level": 3
+      },
+      {
+        "id": "with-delay",
+        "text": "With delay",
+        "level": 3
+      },
+      {
+        "id": "disabled-triggers",
+        "text": "Disabled triggers",
+        "level": 3
+      },
+      {
         "id": "api-reference",
         "text": "API Reference",
+        "level": 2
+      },
+      {
+        "id": "tokens",
+        "text": "Tokens",
+        "level": 2
+      },
+      {
+        "id": "accessibility",
+        "text": "Accessibility",
         "level": 2
       }
     ]

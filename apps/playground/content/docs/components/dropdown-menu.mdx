@@ -1,18 +1,150 @@
 ---
 title: DropdownMenu
-description: Contextual menu of actions or options.
+description: Contextual menu of actions or options attached to a trigger.
 component: DropdownMenu
 package: '@idcert/ui'
 category: overlays
-status: in-progress
+status: stable
+whenToUse: |
+  Use DropdownMenu for an action menu attached to a trigger button: an overflow
+  ("…") on a table row, a user/account menu in the header, a "More actions"
+  affordance on a card. Reach for `Select` instead when the goal is picking a
+  value to submit in a form. Use `Popover` when the floating surface holds
+  arbitrary content (forms, rich previews) rather than a list of commands. Use
+  `ContextMenu` when the menu should open on right-click against a region.
 ---
 
-import { Default } from '@idcert/ui/components/dropdown-menu/examples'
+import { DropdownMenu } from '@idcert/ui'
+import {
+  Default, WithIcons, Checkboxes, RadioGroup, Submenu, Destructive,
+} from '@idcert/ui/components/dropdown-menu/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With icons and shortcuts
+
+Lead each item with a small `lucide-react` icon (`User`, `Settings`, `LogOut`)
+to scan faster, and trail keyboard shortcuts in muted text aligned to the right.
+Mark the icon `aria-hidden` so the item label remains the single accessible
+name; use a real `<kbd>` or muted `<span>` for the shortcut hint.
+
+<Example name="WithIcons" component="DropdownMenu"><WithIcons /></Example>
+
+### Checkbox items
+
+Use `DropdownMenuCheckboxItem` for togglable settings that stay open across
+selections — visibility flags, feature toggles, table column pickers. The
+component reserves indicator space on the left and binds `checked` /
+`onCheckedChange` like a regular controlled checkbox.
+
+<Example name="Checkboxes" component="DropdownMenu"><Checkboxes /></Example>
+
+### Radio group
+
+Wrap mutually-exclusive choices in `DropdownMenuRadioGroup` with a controlled
+`value` / `onValueChange`. Each `DropdownMenuRadioItem` declares its `value` and
+the group enforces single-pick semantics with the correct ARIA role mapping.
+
+<Example name="RadioGroup" component="DropdownMenu"><RadioGroup /></Example>
+
+### Submenu
+
+Nest secondary actions inside `DropdownMenuSub` + `DropdownMenuSubTrigger` +
+`DropdownMenuSubContent`. The trigger renders a chevron automatically and opens
+on hover or arrow-right. Keep submenus shallow — one level deep is the limit
+for keyboard and pointer ergonomics.
+
+<Example name="Submenu" component="DropdownMenu"><Submenu /></Example>
+
+### Destructive item
+
+Tint a destroying action with the `destructive` token pair so the consequence
+is visible at a glance. Pair with a confirmation step (`AlertDialog`) for any
+action that loses data — the menu item should open the confirm, not delete on
+click.
+
+<Example name="Destructive" component="DropdownMenu"><Destructive /></Example>
+
 ## API Reference
 
 <PropsTable component="DropdownMenu" />
+
+<PropsTable component="DropdownMenuTrigger" />
+
+<PropsTable component="DropdownMenuContent" />
+
+<PropsTable component="DropdownMenuItem" />
+
+<PropsTable component="DropdownMenuCheckboxItem" />
+
+<PropsTable component="DropdownMenuRadioItem" />
+
+<PropsTable component="DropdownMenuLabel" />
+
+<PropsTable component="DropdownMenuSeparator" />
+
+<PropsTable component="DropdownMenuSub" />
+
+<PropsTable component="DropdownMenuSubTrigger" />
+
+<PropsTable component="DropdownMenuSubContent" />
+
+## Tokens
+
+<TokenList component="DropdownMenu" tokens={[
+  '--background',
+  '--foreground',
+  '--accent',
+  '--accent-foreground',
+  '--muted-foreground',
+  '--destructive',
+  '--destructive-foreground',
+  '--border',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- The menu surface and items wire `role="menu"` and `role="menuitem"`
+  automatically via Base UI; do not override these. Checkbox items expose
+  `aria-checked` and radio items expose `aria-checked` with single-select
+  semantics so AT users hear state changes correctly.
+- Arrow Up/Down move focus within the open menu, Arrow Right opens a submenu
+  (or moves to the next item if none), Arrow Left closes the current submenu,
+  Home/End jump to the first/last item, and printable characters perform
+  type-ahead to jump to the matching item.
+- Esc closes the menu and returns focus to the trigger. Tab also closes and
+  moves focus to the next focusable element in the document — never trap focus
+  inside the menu.
+- Separators render `role="separator"` and are effectively `aria-hidden` to AT
+  navigation, so use them freely for visual grouping without polluting the
+  reading order. Group related items with `DropdownMenuLabel` for a visible,
+  non-focusable heading.
+- Any item whose `onClick` destroys data must use the `destructive` style **and**
+  open a confirmation step (e.g., `AlertDialog`). Do not perform the destructive
+  action on the click of the menu item itself.
+- Keep the menu shallow: avoid more than two submenu levels deep. Deep nesting
+  is hostile to keyboard users and unreadable on touch — flatten with section
+  labels or split into multiple triggers instead.

@@ -4,15 +4,100 @@ description: Persistent inline message highlighting status or info.
 component: Alert
 package: '@idcert/ui'
 category: feedback
-status: in-progress
+status: stable
+whenToUse: |
+  Use Alert for persistent, in-flow messages that explain the state of a page,
+  form, or record — empty-state hints, validation summaries, system notices.
+  For transient feedback after an action ("Saved", "Copied"), use `Toast`. For
+  compact status pills next to a label, use `Badge`. For confirmations that
+  block the flow until the user responds, use `Dialog`. Color alone never
+  carries meaning here: every variant pairs an icon with a text title so the
+  alert stays accessible to colorblind and screen-reader users.
 ---
 
-import { Default } from '@idcert/ui/components/alert/examples'
+import { Alert, AlertTitle, AlertDescription } from '@idcert/ui'
+import {
+  Default, AllVariants, TitleAndDescription, WithCustomIcon, WithoutIcon,
+} from '@idcert/ui/components/alert/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Alert, AlertTitle, AlertDescription } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Variants
+
+Five visual styles. `default` is the neutral notice with no leading icon,
+`info` for contextual hints tied to the brand primary, `success` for green
+confirmations, `warning` for amber cautions that need attention but do not
+block, and `destructive` for errors and failed operations. Pick by intent
+(what the alert means), not by color (what looks good).
+
+<Example name="AllVariants" component="Alert"><AllVariants /></Example>
+
+### Title and description
+
+Compose `AlertTitle` and `AlertDescription` to give the message a clear
+heading and a longer explanation. The title renders as an `h5`; keep it short
+and action-oriented so screen-reader users hear the gist first.
+
+<Example name="TitleAndDescription" component="Alert"><TitleAndDescription /></Example>
+
+### Custom icon
+
+Every variant except `default` renders a built-in icon
+(`Info`, `CheckCircle2`, `AlertTriangle`, `XCircle`). Override it by passing a
+node to the `icon` prop — useful for product-specific glyphs while keeping the
+variant color and layout.
+
+<Example name="WithCustomIcon" component="Alert"><WithCustomIcon /></Example>
+
+### Without icon
+
+Pass `icon={false}` to suppress the variant default icon when the surrounding
+layout already communicates state — for example, when the alert sits inside a
+section that already has its own status header.
+
+<Example name="WithoutIcon" component="Alert"><WithoutIcon /></Example>
+
 ## API Reference
 
 <PropsTable component="Alert" />
+
+## Tokens
+
+<TokenList component="Alert" tokens={[
+  '--background',
+  '--foreground',
+  '--muted-foreground',
+  '--destructive',
+  '--destructive-foreground',
+  '--border',
+  '--radius-lg',
+]} />
+
+## Accessibility
+
+- Renders with `role="alert"`, so assistive technologies announce the message
+  as soon as it enters the DOM. Mount the alert only when the condition it
+  describes becomes true; do not render an empty alert and fill it later.
+- Color is never the only signal. The `info`, `success`, `warning`, and
+  `destructive` variants ship with a leading icon, and `AlertTitle` carries
+  the textual meaning so colorblind users get the same information.
+- Default icons are marked `aria-hidden="true"`; the title and description
+  remain the accessible name and description. When passing a custom `icon`,
+  hide it from assistive tech the same way unless it adds new information.
+- Keep `AlertTitle` short (one line) and put longer explanations in
+  `AlertDescription`. Screen readers announce the entire alert at once, so
+  front-load the action or outcome.
+- Alert is non-interactive by default. For dismissible or actionable banners,
+  compose with `Button` inside the alert body and wire your own state — do not
+  attach `onClick` to the alert container.
+- Do not stack many alerts on the same view. If you need to show a list of
+  validation errors, render one alert with a bulleted description rather than
+  five sibling alerts.

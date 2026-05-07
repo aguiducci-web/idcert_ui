@@ -1,18 +1,86 @@
 ---
 title: Label
-description: Accessible label associated with a form control.
+description: Accessible caption for a form control.
 component: Label
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use Label to caption every form control — `Input`, `Textarea`, `Select`,
+  `Checkbox`, `RadioGroup`, `Switch`. Always wire `htmlFor` to the control's
+  `id` so the label clicks focus the field and screen readers announce the
+  caption when the control is reached. Prefer `Label` over a bare `<label>`
+  tag inside forms so styling, disabled state, and spacing stay consistent.
+  For prose captions that are not tied to a control, use a plain heading or
+  paragraph instead.
 ---
 
-import { Default } from '@idcert/ui/components/label/examples'
+import { Label } from '@idcert/ui'
+import {
+  Default, WithInput, Required, Disabled,
+} from '@idcert/ui/components/label/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Label } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With input
+
+The canonical pairing: a `Label` above an `Input`, joined by `htmlFor` and
+`id`. Clicking the label text focuses the field, and assistive technology
+announces "Username, edit text" instead of just "edit text".
+
+<Example name="WithInput" component="Label"><WithInput /></Example>
+
+### Required marker
+
+There is no `required` prop on Label — render the marker as content. Pair a
+visual asterisk (`aria-hidden`) with a screen-reader-only "(required)" string
+so sighted users see the cue and assistive tech announces the obligation.
+Mirror the state on the control with the native `required` attribute.
+
+<Example name="Required" component="Label"><Required /></Example>
+
+### Disabled control
+
+Label exposes a `peer-disabled:opacity-70` style that fades the caption when
+a sibling control marked `peer` is disabled. Add `className="peer"` to the
+input and the label dims automatically — no extra state plumbing.
+
+<Example name="Disabled" component="Label"><Disabled /></Example>
+
 ## API Reference
 
 <PropsTable component="Label" />
+
+## Tokens
+
+<TokenList component="Label" tokens={[
+  '--foreground',
+  '--muted-foreground',
+  '--destructive',
+]} />
+
+## Accessibility
+
+- `htmlFor` and the control's `id` are required and must match. Without the
+  pair, clicking the label does not focus the control and screen readers do
+  not announce the caption when the user tabs into the field.
+- The label's click target extends to the control: tapping the text is the
+  same as tapping the input. Keep label text concise so the hit area stays
+  predictable on touch devices.
+- Required state must be announced, not just shown. Combine an `aria-hidden`
+  asterisk with `sr-only` "(required)" text, or set `aria-required="true"`
+  on the control itself.
+- Do not nest interactive elements (links, buttons) inside a Label. The
+  whole label is already a click target for the associated control, and
+  nested interactives create ambiguous focus and click behaviour.
+- For groups of controls (radio buttons, checkbox sets) that share one
+  caption, wrap the group in a `<fieldset>` with a `<legend>` instead of a
+  single Label — Label captions exactly one control.

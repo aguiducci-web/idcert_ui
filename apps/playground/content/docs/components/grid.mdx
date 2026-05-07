@@ -1,18 +1,84 @@
 ---
 title: Grid
-description: Responsive CSS grid wrapper with column and gap props.
+description: Two-dimensional layout primitive with equal-width columns and consistent gaps.
 component: Grid
 package: '@idcert/ui'
 category: layout
-status: in-progress
+status: stable
+whenToUse: |
+  Use Grid for 2D layouts where children share equal-width column tracks — card
+  galleries, stat dashboards, feature rows. For 1D stacks (form fields, vertical
+  lists, toolbars), use `Stack`. For one-off layouts that need named areas,
+  asymmetric tracks, or row spans, drop down to raw CSS `grid` on a `div` —
+  Grid trades flexibility for consistency.
 ---
 
-import { Default } from '@idcert/ui/components/grid/examples'
+import { Grid } from '@idcert/ui'
+import {
+  Default, Columns, Gaps, WithCards,
+} from '@idcert/ui/components/grid/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Grid } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Columns
+
+`cols` accepts `1 | 2 | 3 | 4 | 5 | 6 | 12`. Children stretch to fill each
+column track equally — the grid does not auto-fit, so passing more children
+than columns wraps onto new rows. Pick column count by content density: 2 for
+side-by-side comparisons, 3-4 for card galleries, 12 for fine-grained dashboards.
+
+<Example name="Columns" component="Grid"><Columns /></Example>
+
+### Gaps
+
+`gap` controls spacing between rows and columns simultaneously — there is no
+separate `rowGap`/`columnGap`. Values map to the spacing scale (`0`, `1`, `2`,
+`3`, `4`, `5`, `6`, `8`, `10`, `12`). Use smaller gaps (`2`-`3`) for dense data,
+medium gaps (`4`-`6`) for cards, larger gaps (`8`+) for marketing sections.
+
+<Example name="Gaps" component="Grid"><Gaps /></Example>
+
+### With cards
+
+Compose `Card` children inside Grid for the most common real-world use: a
+gallery of equal-height tiles. Grid handles the track sizing; Card handles the
+internal padding and surface. Pair with `Stack` inside each card if the card
+itself needs vertical rhythm.
+
+<Example name="WithCards" component="Grid"><WithCards /></Example>
+
 ## API Reference
 
 <PropsTable component="Grid" />
+
+## Tokens
+
+<TokenList component="Grid" tokens={[
+  '--background',
+  '--border',
+]} />
+
+## Accessibility
+
+- Grid renders a plain `<div>` with `display: grid`. It carries no semantics
+  on its own — wrap it in a landmark (`<section>`, `<main>`, `<nav>`) or a
+  heading region so assistive tech understands the group.
+- DOM order must match reading order. Do not rely on visual column placement
+  alone; screen readers and keyboard users traverse children in source order,
+  so put the most important child first in markup regardless of where it lands
+  visually.
+- `gap` is a visual concern only — it does not introduce a separator role.
+  If items in the grid represent a list (e.g., a card gallery), wrap them in
+  a `<ul>`/`<li>` structure inside the grid (or pass `role="list"` on the grid
+  and `role="listitem"` on children) so the count is announced.
+- Equal-width tracks can break long words on narrow viewports. Either reduce
+  `cols` at small breakpoints with a parent media query, or set
+  `overflow-wrap: anywhere` on text-heavy children to avoid horizontal scroll.

@@ -4,15 +4,109 @@ description: Hierarchical trail showing the current page's location.
 component: Breadcrumb
 package: '@idcert/ui'
 category: navigation
-status: in-progress
+status: stable
+whenToUse: |
+  Use Breadcrumb as secondary navigation to show the user's position in a
+  hierarchy and to give a quick way back up the tree (Settings → Billing →
+  Invoices). It is not a replacement for top-level navigation — use `Navbar`
+  or a sidebar for primary destinations. On narrow viewports, collapse the
+  middle of the trail with `BreadcrumbEllipsis` so the first crumb and the
+  current page stay visible.
 ---
 
-import { Default } from '@idcert/ui/components/breadcrumb/examples'
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+} from '@idcert/ui'
+import {
+  Default, WithIcon, Truncated, CustomSeparator,
+} from '@idcert/ui/components/breadcrumb/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With leading icon
+
+Replace the first crumb's text with a `Home` glyph to save horizontal space on
+deep trails. Keep an `sr-only` label on the link so screen-reader users still
+hear "Home" — the icon alone is not an accessible name.
+
+<Example name="WithIcon" component="Breadcrumb"><WithIcon /></Example>
+
+### Truncated trail
+
+Long hierarchies wrap and push the current page off-screen on small viewports.
+Drop a `BreadcrumbEllipsis` in place of the middle crumbs so the first link
+and the current page stay anchored at the ends. The ellipsis is decorative
+(`aria-hidden`); pair it with a dropdown if you need the hidden crumbs to
+remain reachable.
+
+<Example name="Truncated" component="Breadcrumb"><Truncated /></Example>
+
+### Custom separator
+
+`BreadcrumbSeparator` defaults to a `ChevronRight` glyph. Pass any node as
+children to override — `Slash` for filesystem-style trails, `ChevronRight` for
+explicit forward motion. Mix and match per crumb if it helps the hierarchy
+read.
+
+<Example name="CustomSeparator" component="Breadcrumb"><CustomSeparator /></Example>
+
 ## API Reference
 
 <PropsTable component="Breadcrumb" />
+
+<PropsTable component="BreadcrumbLink" />
+
+<PropsTable component="BreadcrumbPage" />
+
+<PropsTable component="BreadcrumbSeparator" />
+
+<PropsTable component="BreadcrumbEllipsis" />
+
+## Tokens
+
+<TokenList component="Breadcrumb" tokens={[
+  '--foreground',
+  '--muted-foreground',
+  '--primary',
+  '--border',
+]} />
+
+## Accessibility
+
+- The root renders a `<nav>` with `aria-label="breadcrumb"` so assistive tech
+  announces the landmark distinctly from primary navigation. Do not nest a
+  second breadcrumb inside the same page.
+- Use `BreadcrumbPage` for the current page — it renders a `<span>` with
+  `aria-current="page"` and `aria-disabled="true"`, signalling "you are here"
+  without offering a non-functional link.
+- `BreadcrumbSeparator` is `aria-hidden` and `role="presentation"`; the trail
+  reads as a clean list of links to screen readers, with no extra noise
+  between crumbs.
+- `BreadcrumbEllipsis` carries an `sr-only` "More" label and is otherwise
+  hidden from AT. If the hidden crumbs must stay reachable, wrap the ellipsis
+  in a `DropdownMenu` trigger so keyboard users can expand them.
+- Tab order flows naturally through each `BreadcrumbLink`; the current page is
+  intentionally not focusable. Keep crumb labels short so they fit on one line
+  and do not wrap mid-link.

@@ -4,15 +4,129 @@ description: Top-level horizontal navigation bar.
 component: Navbar
 package: '@idcert/ui'
 category: navigation
-status: in-progress
+status: stable
+whenToUse: |
+  Use Navbar for the top-level horizontal navigation of an app shell, marketing
+  site, or landing page — brand on the left, a handful of primary destinations
+  in the middle, account/CTA actions on the right. For dense product UIs with
+  many sections and nested groups, prefer `Sidebar`. For showing the user's
+  position inside a hierarchy (e.g. Settings › Billing › Invoices), use
+  `Breadcrumb` instead — Navbar is for siblings, not ancestors.
 ---
 
-import { Default } from '@idcert/ui/components/navbar/examples'
+import {
+  Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarActions, NavbarMobileToggle,
+} from '@idcert/ui'
+import {
+  Default, WithBrand, WithDropdown, Sticky, Mobile,
+} from '@idcert/ui/components/navbar/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarActions,
+  NavbarMobileToggle,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With brand and CTA
+
+The canonical layout: `NavbarBrand` on the left for the logo and product name,
+`NavbarContent` in the middle for primary destinations, `NavbarActions` on the
+right for sign-in and a high-emphasis call-to-action. Mark the current page
+with `active` so it gets the foreground color and `aria-current="page"`.
+
+<Example name="WithBrand" component="Navbar"><WithBrand /></Example>
+
+### With dropdown menu
+
+Group secondary destinations behind a `DropdownMenu` trigger styled as a nav
+item — useful for "Resources", "Solutions", or any cluster that does not earn
+top-level real estate. Keep dropdowns shallow (one level) to stay scannable on
+hover and accessible by keyboard.
+
+<Example name="WithDropdown" component="Navbar"><WithDropdown /></Example>
+
+### Sticky
+
+Set `position="sticky"` to pin the navbar to the top of the scroll container
+(`top-0 z-40`). Use this for long marketing pages and docs where the user
+needs persistent access to navigation. Make sure the background stays opaque
+so content scrolling underneath does not bleed through and break contrast.
+
+<Example name="Sticky" component="Navbar"><Sticky /></Example>
+
+### Mobile
+
+Below the `md` breakpoint `NavbarContent` hides itself and `NavbarMobileToggle`
+appears. Wire the toggle to a `Sheet` or disclosure panel and reflect open
+state with `aria-expanded` plus `aria-controls` pointing at the panel id.
+
+<Example name="Mobile" component="Navbar"><Mobile /></Example>
+
 ## API Reference
 
+### Navbar
+
 <PropsTable component="Navbar" />
+
+### NavbarBrand
+
+<PropsTable component="NavbarBrand" />
+
+### NavbarContent
+
+<PropsTable component="NavbarContent" />
+
+### NavbarItem
+
+<PropsTable component="NavbarItem" />
+
+### NavbarActions
+
+<PropsTable component="NavbarActions" />
+
+### NavbarMobileToggle
+
+<PropsTable component="NavbarMobileToggle" />
+
+## Tokens
+
+<TokenList component="Navbar" tokens={[
+  '--background',
+  '--foreground',
+  '--border',
+  '--muted-foreground',
+  '--primary',
+  '--primary-foreground',
+  '--ring',
+]} />
+
+## Accessibility
+
+- Renders a native `<nav>` landmark. Pass `aria-label="Main"` (or similar) so
+  screen readers can distinguish it from other `<nav>` regions on the page
+  (footer, in-page TOC, breadcrumb).
+- The current page must be marked with `active` on its `NavbarItem`, which
+  emits `aria-current="page"`. Color alone is not enough — `aria-current` is
+  what assistive tech announces.
+- `NavbarMobileToggle` is a `<button>`. When it controls a disclosure panel,
+  set `aria-expanded` to reflect open state and `aria-controls` to the panel's
+  id so screen readers can jump to the revealed menu.
+- Provide a "Skip to content" link as the first focusable element on the page
+  so keyboard and screen-reader users can bypass the nav on every route.
+- For `position="sticky"` and `position="fixed"`, keep the background fully
+  opaque (`bg-background`) so text contrast against scrolling content stays at
+  AA — translucent navbars often fail WCAG on busy pages.
+- Items rendered with `asChild` must forward the anchor semantics: pass an
+  `<a>` (or framework `<Link>`) so keyboard focus, right-click, and
+  middle-click open-in-new-tab all keep working.

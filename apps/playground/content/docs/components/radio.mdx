@@ -4,15 +4,91 @@ description: Single-choice option within a group.
 component: Radio
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use Radio when the user must pick exactly one value from 2-7 mutually
+  exclusive options that benefit from being visible at a glance (plan tiers,
+  shipping speed, payment method). For 8 or more options, or when vertical
+  space is tight, prefer `Select`. For multi-select where users can pick zero
+  or more values, use `Checkbox`. Never render a single radio on its own —
+  a radio always belongs to a named group of two or more.
 ---
 
-import { Default } from '@idcert/ui/components/radio/examples'
+import { Radio, RadioGroup } from '@idcert/ui'
+import {
+  Default, WithLabel, Group, Disabled,
+} from '@idcert/ui/components/radio/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Radio, RadioGroup } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With label
+
+Pair every Radio with a `Label` via `htmlFor`/`id`. The label expands the
+clickable target to the text and is what screen readers announce — a bare
+radio with adjacent text is not accessible.
+
+<Example name="WithLabel" component="Radio"><WithLabel /></Example>
+
+### Group
+
+Wrap related radios in `RadioGroup` and give every input the same `name` so
+the browser enforces single-select. Use `value` to identify which option is
+chosen on submit. Do not pre-check an arbitrary option — let the user make
+the choice unless one value is genuinely the safe default.
+
+<Example name="Group" component="Radio"><Group /></Example>
+
+### Disabled
+
+Use `disabled` for options that are temporarily unavailable (out of stock,
+not allowed by current plan). Disabled options stay visible so the user
+understands the full set of choices; if an option should never appear,
+remove it from the list instead.
+
+<Example name="Disabled" component="Radio"><Disabled /></Example>
+
 ## API Reference
 
 <PropsTable component="Radio" />
+
+<PropsTable component="RadioGroup" />
+
+## Tokens
+
+<TokenList component="Radio" tokens={[
+  '--primary',
+  '--background',
+  '--border',
+  '--input',
+  '--ring',
+]} />
+
+## Accessibility
+
+- Group related radios with `RadioGroup` (renders `role="radiogroup"`) or a
+  native `<fieldset>` + `<legend>` so assistive tech announces the group
+  label before each option. A bare list of radios with no group label fails
+  WCAG 1.3.1.
+- Every Radio needs an associated `Label` with matching `htmlFor`/`id`.
+  Without it, the input has no accessible name and the click target is the
+  16x16 dot only.
+- Arrow keys move focus *within* the group and change selection; only the
+  currently checked radio is in the tab order. This is native browser
+  behavior — do not override `tabIndex` or intercept arrow keys.
+- All radios in one group must share the same `name` attribute. Mismatched
+  names break single-select and let users check multiple options.
+- Avoid pre-selecting an arbitrary default with `defaultChecked`. Forcing a
+  selection makes "no answer" indistinguishable from a real choice. Only
+  pre-select when one value is the genuine safe default (e.g., the user's
+  saved preference).
+- For two mutually exclusive states where one must be true (on/off, yes/no
+  with no neutral), prefer `Switch` or a single `Checkbox` over a 2-option
+  radio group.

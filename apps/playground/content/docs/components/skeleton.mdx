@@ -4,15 +4,88 @@ description: Placeholder shimmer for loading content.
 component: Skeleton
 package: '@idcert/ui'
 category: feedback
-status: in-progress
+status: stable
+whenToUse: |
+  Use Skeleton as a placeholder shape during the initial data fetch of a view,
+  when the final layout is known and you can mirror it (avatar circle, text
+  lines, card frame). Skip Skeleton for sub-second waits — a `Spinner` is less
+  jarring than a flash of shimmer. Do not skeleton existing content during a
+  refresh; keep the previous data visible and signal the refresh elsewhere.
 ---
 
-import { Default } from '@idcert/ui/components/skeleton/examples'
+import { Skeleton } from '@idcert/ui'
+import {
+  Default, Card, List, Avatar, Paragraph,
+} from '@idcert/ui/components/skeleton/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Skeleton } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Card
+
+Mirror the final card layout — avatar circle plus two text lines — so the
+transition from skeleton to real content does not shift the page. The skeleton
+should occupy the same box dimensions as the loaded card.
+
+<Example name="Card" component="Skeleton"><Card /></Example>
+
+### List
+
+Stack skeleton rows for list and table views. Render the same number of rows
+you expect from the first page of results so scroll position stays stable when
+data arrives.
+
+<Example name="List" component="Skeleton"><List /></Example>
+
+### Avatar
+
+Compose a circular skeleton with `rounded-full` for user avatars and profile
+pictures. Match the avatar size you render once the image loads to avoid a
+layout jump.
+
+<Example name="Avatar" component="Skeleton"><Avatar /></Example>
+
+### Paragraph
+
+Stack text-line skeletons of varying widths to suggest a paragraph of prose.
+The last line is typically shorter than the rest so the placeholder reads as
+text rather than a block.
+
+<Example name="Paragraph" component="Skeleton"><Paragraph /></Example>
+
 ## API Reference
 
 <PropsTable component="Skeleton" />
+
+## Tokens
+
+<TokenList component="Skeleton" tokens={[
+  '--muted',
+  '--muted-foreground',
+  '--background',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Skeleton renders a `<div>` with `aria-hidden="true"` so the shimmer itself
+  is never announced. Mark the wrapping region `aria-busy="true"` and
+  `aria-live="polite"` so assistive tech announces the final content when it
+  replaces the placeholder.
+- Alternatively, hide the entire skeleton subtree from the a11y tree and rely
+  on a single live region to announce when the real content has loaded — pick
+  one strategy per view and stay consistent.
+- Do not over-animate. The default `animate-pulse` is a slow opacity loop;
+  avoid stacking additional motion on top, and respect
+  `prefers-reduced-motion` if you customize the animation.
+- Ensure the skeleton dimensions match the final content (same height, same
+  width, same border radius) so the swap does not cause cumulative layout
+  shift. If the real content has variable size, reserve a min-height on the
+  parent instead of guessing inside the skeleton.

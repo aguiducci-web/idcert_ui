@@ -1,18 +1,141 @@
 ---
 title: Sheet
-description: Slide-in panel anchored to a viewport edge.
+description: Side-anchored panel for secondary content, forms, and drawers.
 component: Sheet
 package: '@idcert/ui'
-category: overlays
-status: in-progress
+category: primitives
+status: stable
+whenToUse: |
+  Use Sheet for a side panel that holds secondary content without leaving the
+  page: settings, an edit drawer over a list row, or a mobile navigation menu.
+  Reach for `Dialog` when the content should be centered and modal over the
+  whole page (confirmations, blocking flows). Reach for `Popover` when the
+  content is small and anchored to the trigger (menus, hints). Reach for
+  `Sidebar` when the panel is persistent navigation, not a transient overlay.
 ---
 
-import { Default } from '@idcert/ui/components/sheet/examples'
+import { Sheet } from '@idcert/ui'
+import {
+  Default, Sides, WithForm, Controlled, WideContent,
+} from '@idcert/ui/components/sheet/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetFooter,
+  SheetClose,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Sides
+
+`SheetContent` accepts `side` of `top`, `right`, `bottom`, or `left`. Right is
+the default and the right call for most edit drawers and settings panels. Use
+`bottom` on mobile patterns where the sheet behaves like an action sheet, and
+`left` when the sheet is acting as a navigation drawer.
+
+<Example name="Sides" component="Sheet"><Sides /></Example>
+
+### With a form
+
+Sheet bodies are the canonical home for medium-length forms — long enough that
+a Popover would feel cramped, short enough that a full page would be overkill.
+Wire the submit button in `SheetFooter` to the form via the `form` attribute so
+the layout can keep the form scrollable and the footer pinned.
+
+<Example name="WithForm" component="Sheet"><WithForm /></Example>
+
+### Controlled
+
+Pass `open` and `onOpenChange` to control visibility from a parent. Use this
+when the open state is derived from URL, a row selection, or another component
+— for purely local triggers, leave Sheet uncontrolled and let `SheetTrigger`
+handle it.
+
+<Example name="Controlled" component="Sheet"><Controlled /></Example>
+
+### Scrollable body
+
+For long content (changelogs, audit logs, comment threads), keep
+`SheetHeader`/`SheetFooter` outside the scroll region and give the body
+`overflow-y-auto`. The sheet stays a fixed height; only the body scrolls so
+the title and primary actions never leave the viewport.
+
+<Example name="WideContent" component="Sheet"><WideContent /></Example>
+
 ## API Reference
 
+### Sheet
+
 <PropsTable component="Sheet" />
+
+### SheetTrigger
+
+<PropsTable component="SheetTrigger" />
+
+### SheetContent
+
+<PropsTable component="SheetContent" />
+
+### SheetHeader
+
+<PropsTable component="SheetHeader" />
+
+### SheetTitle
+
+<PropsTable component="SheetTitle" />
+
+### SheetDescription
+
+<PropsTable component="SheetDescription" />
+
+### SheetFooter
+
+<PropsTable component="SheetFooter" />
+
+### SheetClose
+
+<PropsTable component="SheetClose" />
+
+## Tokens
+
+<TokenList component="Sheet" tokens={[
+  '--background',
+  '--foreground',
+  '--card',
+  '--border',
+  '--muted-foreground',
+  '--primary',
+  '--ring',
+  '--radius-lg',
+]} />
+
+## Accessibility
+
+- Sheet renders as a modal dialog: focus is trapped inside `SheetContent` while
+  open, `Esc` closes it, and focus returns to the trigger on close. Do not
+  reimplement these — let the primitive own them.
+- `aria-modal="true"` and `role="dialog"` are applied automatically on the
+  popup. Do not add them yourself.
+- A `SheetTitle` is required for an accessible name. If your design hides the
+  visible title, keep `SheetTitle` in the tree and apply `sr-only` instead of
+  removing it.
+- Pair `SheetTitle` with a `SheetDescription` when the panel needs more context
+  than the title gives — it is wired to `aria-describedby` automatically.
+- Clicking the backdrop dismisses the sheet by default. For destructive forms
+  with unsaved input, intercept `onOpenChange` and confirm before closing
+  rather than disabling outside-click globally.
+- The built-in close button has `aria-label="Close"`. Hide it with
+  `showCloseButton={false}` only when you provide your own labelled close
+  control inside the sheet.

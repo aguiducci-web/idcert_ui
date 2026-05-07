@@ -4,15 +4,100 @@ description: Calendar-based single date selector.
 component: DatePicker
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use DatePicker when the user must pick a single calendar date and the input
+  benefits from a real calendar grid — birthdays, due dates, scheduled events.
+  For a start/end pair use `DateRangePicker`. For time-of-day without a date
+  use `TimePicker`. If zero polish is acceptable and the form is internal-only,
+  a native `<Input type="date">` is fine; reach for DatePicker when locale,
+  min/max bounds, or visual consistency with the rest of the form matter.
 ---
 
-import { Default } from '@idcert/ui/components/date-picker/examples'
+import { DatePicker } from '@idcert/ui'
+import {
+  Default, Controlled, WithLabel, MinMax, Disabled,
+} from '@idcert/ui/components/date-picker/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { DatePicker } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Controlled
+
+Drive the selected date from your own state with `value` and `onValueChange`.
+The callback receives `Date | undefined` — `undefined` when the user clears the
+selection. Use this when the date participates in form validation, derives
+other fields, or needs to be reset programmatically.
+
+<Example name="Controlled" component="DatePicker"><Controlled /></Example>
+
+### With label
+
+DatePicker exposes an `id` prop so a sibling `Label` can associate via
+`htmlFor`. Always pair the picker with a visible label — the trigger button
+alone reads as "Pick a date" to assistive tech, which loses the field's
+meaning ("Birth date", "Due date", "Start date").
+
+<Example name="WithLabel" component="DatePicker"><WithLabel /></Example>
+
+### Min and max
+
+Use `fromDate` and `toDate` to constrain the selectable range. Days outside
+the bounds are disabled in the grid and the month navigation is clamped, so
+the user cannot page into months that contain no valid days. Prefer this over
+post-submit validation — invalid dates should never be selectable in the
+first place.
+
+<Example name="MinMax" component="DatePicker"><MinMax /></Example>
+
+### Disabled
+
+Set `disabled` to lock the trigger when the field is not currently editable
+(awaiting another field, read-only record, pending server response). The
+popover cannot be opened and the trigger is removed from the tab order.
+
+<Example name="Disabled" component="DatePicker"><Disabled /></Example>
+
 ## API Reference
 
 <PropsTable component="DatePicker" />
+
+## Tokens
+
+<TokenList component="DatePicker" tokens={[
+  '--background',
+  '--foreground',
+  '--primary',
+  '--primary-foreground',
+  '--muted-foreground',
+  '--border',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Always associate a visible `Label` with the picker via `htmlFor` pointing at
+  the picker's `id`. The trigger button on its own announces only the
+  formatted date or placeholder, which is not enough context.
+- The calendar grid uses `role="grid"` with `gridcell` children, matching the
+  WAI-ARIA date picker pattern. Screen readers announce the selected day with
+  the full month name (e.g. "Tuesday, May 7, 2026"), not the numeric form.
+- Keyboard: arrow keys move day-by-day inside the grid, `Page Up`/`Page Down`
+  jump one month, `Shift+Page Up`/`Shift+Page Down` jump one year, `Enter` or
+  `Space` selects the focused day, and `Esc` closes the popover and returns
+  focus to the trigger.
+- The first day of the week and month/weekday names follow the `locale` prop
+  (date-fns `Locale`), so a `de` locale starts the week on Monday and labels
+  days in German without any extra wiring.
+- `fromDate`/`toDate` mark out-of-range days as `aria-disabled` so they are
+  skipped by arrow-key navigation rather than silently ignored.
+- Focus is trapped inside the popover while open and restored to the trigger
+  on close, so keyboard users never lose their place in the form.

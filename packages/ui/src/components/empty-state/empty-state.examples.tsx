@@ -1,4 +1,4 @@
-import { Inbox } from 'lucide-react'
+import { Inbox, FilePlus, Search } from 'lucide-react'
 import {
   EmptyState,
   EmptyStateIcon,
@@ -17,6 +17,35 @@ export const Default = () => (
     </EmptyStateDescription>
     <EmptyStateAction>
       <Button>New message</Button>
+    </EmptyStateAction>
+  </EmptyState>
+)
+
+export const WithAction = () => (
+  <EmptyState>
+    <EmptyStateIcon aria-hidden><FilePlus /></EmptyStateIcon>
+    <EmptyStateTitle>No projects yet</EmptyStateTitle>
+    <EmptyStateDescription>
+      Create your first project to start collecting documents and inviting
+      collaborators.
+    </EmptyStateDescription>
+    <EmptyStateAction>
+      <Button>Create project</Button>
+      <Button variant="outline">Import</Button>
+    </EmptyStateAction>
+  </EmptyState>
+)
+
+export const NoResults = () => (
+  <EmptyState>
+    <EmptyStateIcon aria-hidden><Search /></EmptyStateIcon>
+    <EmptyStateTitle>No results found</EmptyStateTitle>
+    <EmptyStateDescription>
+      We couldn't find anything matching your search. Try different keywords or
+      clear your filters.
+    </EmptyStateDescription>
+    <EmptyStateAction>
+      <Button variant="outline">Clear filters</Button>
     </EmptyStateAction>
   </EmptyState>
 )

@@ -4,15 +4,104 @@ description: Binary toggle for opt-in / opt-out.
 component: Checkbox
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use Checkbox for multi-select lists, boolean form fields, and explicit
+  agreements ("I accept the terms"). Checkbox values commit on form submit —
+  the user can change their mind before saving. For settings that apply
+  immediately (notifications on/off, dark mode), use `Switch` instead. For
+  picking exactly one option from a set, use `RadioGroup`. Always pair a
+  Checkbox with a `Label` so the hit target covers the full row and screen
+  readers announce the field name.
 ---
 
-import { Default } from '@idcert/ui/components/checkbox/examples'
+import { Checkbox } from '@idcert/ui'
+import {
+  Default, WithLabel, DefaultChecked, Disabled, Group,
+} from '@idcert/ui/components/checkbox/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Checkbox } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With label
+
+A Checkbox on its own has no accessible name. Pair it with a `Label` whose
+`htmlFor` matches the checkbox `id` so clicking the label toggles the box and
+screen readers announce the field. This is the canonical pattern — use it
+everywhere unless you have a very specific layout reason not to.
+
+<Example name="WithLabel" component="Checkbox"><WithLabel /></Example>
+
+### Default checked
+
+Pre-fill a checkbox with `defaultChecked` for uncontrolled forms — the user
+still owns the value, and the form picks up changes on submit. Reach for
+`checked` + `onChange` only when you need to react to toggles in real time
+(e.g., enabling a dependent field).
+
+<Example name="DefaultChecked" component="Checkbox"><DefaultChecked /></Example>
+
+### Disabled
+
+Use `disabled` for options that are not currently available — a permission the
+user has not been granted, a setting locked by an admin policy. Disabled
+checkboxes still render their checked state so the user can read the current
+value; they just cannot change it. Pair with helper text nearby explaining why
+the option is locked.
+
+<Example name="Disabled" component="Checkbox"><Disabled /></Example>
+
+### Group
+
+Wrap related checkboxes in a `<fieldset>` with a `<legend>` to give the group
+a single accessible name ("Permissions"). Each checkbox shares the same
+`name` attribute so the form submits an array of selected `value`s. Prefer
+this over a custom multi-select for short, stable lists where seeing every
+option at once helps the user decide.
+
+<Example name="Group" component="Checkbox"><Group /></Example>
+
 ## API Reference
 
 <PropsTable component="Checkbox" />
+
+## Tokens
+
+<TokenList component="Checkbox" tokens={[
+  '--primary',
+  '--primary-foreground',
+  '--background',
+  '--border',
+  '--ring',
+  '--radius-sm',
+]} />
+
+## Accessibility
+
+- Always pair a Checkbox with a `Label` (`htmlFor` matching the checkbox
+  `id`). Without a label the input has no accessible name and screen readers
+  will announce only "checkbox, checked".
+- Renders a native `<input type="checkbox">`, so keyboard support is built in:
+  Tab moves focus, Space toggles, and the value participates in standard
+  form submission and reset.
+- The focus ring (`focus-visible:ring-2 ring-ring`) must remain visible. Do
+  not override `focus-visible` styles or remove the outline — keyboard users
+  rely on it to track position.
+- `disabled` checkboxes are still announced by screen readers with their
+  checked state, but skipped from the tab order. Provide nearby helper text
+  explaining why the control is locked.
+- For an indeterminate ("mixed") state — typically a parent checkbox
+  reflecting partially-selected children — set the DOM property
+  `input.indeterminate = true` via a ref and mirror it with
+  `aria-checked="mixed"`. The visual indeterminate styling is purely
+  presentational; the ARIA state is what assistive tech reads.
+- Group related checkboxes inside a `<fieldset>` with a `<legend>` so the
+  group has a single accessible name. Share a `name` attribute across the
+  group so the form posts an array of selected values.

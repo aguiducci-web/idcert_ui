@@ -4,15 +4,100 @@ description: Vertical, semantic list of items.
 component: List
 package: '@idcert/ui'
 category: data
-status: in-progress
+status: stable
+whenToUse: |
+  Use List for sequences of related items where order or grouping matters
+  semantically — feature bullets, settings menus, FAQ entries, sub-resources of
+  a record. For tabular data with multiple columns per row use `Table`. For
+  pure visual stacking of unrelated UI blocks (cards, sections) use a flex
+  `Stack` instead — List adds `<ul>`/`<li>` semantics that screen readers will
+  announce as "list of N items".
 ---
 
-import { Default } from '@idcert/ui/components/list/examples'
+import { List, ListItem } from '@idcert/ui'
+import {
+  Default, Divided, WithIcons, Nested, Interactive,
+} from '@idcert/ui/components/list/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { List, ListItem } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Divided
+
+Set `divider` to separate items with a hairline border instead of vertical
+gap. Use this for settings groups, navigation sections, or any list where
+each row is its own discrete affordance and the boundary between rows
+matters more than the rhythm between them.
+
+<Example name="Divided" component="List"><Divided /></Example>
+
+### With icons
+
+Compose a leading lucide icon inside each `ListItem` for feature checklists
+and pricing comparisons. Mark the icon `aria-hidden` so the visible text
+remains the single accessible label, and lean on `text-muted-foreground`
+plus an `X` glyph for items that are intentionally excluded.
+
+<Example name="WithIcons" component="List"><WithIcons /></Example>
+
+### Nested
+
+Place a child `List` inside a `ListItem` to express hierarchy — categories
+with sub-items, parent records with children. Keep nesting to two levels;
+deeper trees should use a dedicated `Tree` or a navigable disclosure pattern
+so users do not lose their place.
+
+<Example name="Nested" component="List"><Nested /></Example>
+
+### Interactive
+
+Wrap each item's content in a `Button` or anchor to make rows actionable.
+Keep the interactive element as the direct child of `ListItem` (not the
+`<li>` itself) so keyboard focus, hover, and `focus-visible` styles land on
+the real control and screen readers announce the role correctly.
+
+<Example name="Interactive" component="List"><Interactive /></Example>
+
 ## API Reference
 
+### List
+
 <PropsTable component="List" />
+
+### ListItem
+
+<PropsTable component="ListItem" />
+
+## Tokens
+
+<TokenList component="List" tokens={[
+  '--foreground',
+  '--muted-foreground',
+  '--border',
+  '--primary',
+]} />
+
+## Accessibility
+
+- Renders a native `<ul>` of `<li>` elements. Screen readers announce the
+  list role and the item count ("list, 4 items"), so prefer List over a
+  generic `<div>` stack whenever the items belong together semantically.
+- Do not strip the list semantics with `list-style: none` alone in custom
+  styling without also re-applying `role="list"` on the `<ul>` — Safari
+  removes the implicit list role when bullets are hidden via CSS.
+- For ordered, sequence-sensitive content (steps, rankings) the current API
+  only renders `<ul>`; if order is meaningful, render an `<ol>` directly or
+  add visible numbers inside each `ListItem` until an ordered variant ships.
+- Nested lists must be `<ul>` placed inside an `<li>`, never as a sibling of
+  the parent `<li>`. The `Nested` example follows this rule.
+- When a `ListItem` wraps an interactive element, put the `Button`/anchor
+  inside the `<li>` rather than attaching `onClick` to the row — that keeps
+  the row keyboard-reachable and preserves the correct role for assistive
+  tech.

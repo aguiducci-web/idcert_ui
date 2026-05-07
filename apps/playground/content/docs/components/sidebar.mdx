@@ -4,15 +4,121 @@ description: Collapsible vertical navigation panel.
 component: Sidebar
 package: '@idcert/ui'
 category: navigation
-status: in-progress
+status: stable
+whenToUse: |
+  Use Sidebar for persistent app navigation in dashboards and admin tools where
+  users move between many top-level destinations. For top-of-page horizontal
+  navigation on marketing sites or shallow apps, use `Navbar` instead. For a
+  dismissible drawer that opens on demand (filters, settings, mobile-only
+  navigation), use `Sheet`. Always pair Sidebar with `SidebarProvider` at the
+  app root so state, mobile drawer behavior, and the keyboard shortcut all work.
 ---
 
-import { Default } from '@idcert/ui/components/sidebar/examples'
+import {
+  Default, WithGroups, Collapsed, WithFooter, WithSearch,
+} from '@idcert/ui/components/sidebar/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Sidebar,
+  SidebarProvider,
+  SidebarHeader,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarTrigger,
+  SidebarInset,
+  SidebarRail,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With groups
+
+Split the menu into labelled `SidebarGroup` sections when you have more than
+five or six destinations or when items belong to clearly different scopes
+(e.g. "Platform" vs "Workspace"). Group labels are hidden automatically when
+the sidebar collapses to icon-only mode, so they cost nothing visually in
+narrow states.
+
+<Example name="WithGroups" component="Sidebar"><WithGroups /></Example>
+
+### Collapsed (icon-only)
+
+Set `collapsible="icon"` on `Sidebar` to keep the rail visible when collapsed
+— icons stay reachable while text labels fold away. Use this for dense
+dashboards where users want more horizontal space without losing navigation
+entirely. Pair with `defaultOpen={false}` on `SidebarProvider` to start
+collapsed.
+
+<Example name="Collapsed" component="Sidebar"><Collapsed /></Example>
+
+### With footer
+
+Anchor the user/account row at the bottom in `SidebarFooter`. This is the
+shadcn/Linear pattern: primary destinations in `SidebarContent`, identity and
+account actions pinned to the footer so they never scroll out of view.
+
+<Example name="WithFooter" component="Sidebar"><WithFooter /></Example>
+
+### With search
+
+Drop a search input into `SidebarHeader` for apps with many nav items or
+searchable resources (projects, channels, docs). Wire it to your own filter
+or command-menu logic; the Sidebar primitive does not filter items for you.
+
+<Example name="WithSearch" component="Sidebar"><WithSearch /></Example>
+
 ## API Reference
 
 <PropsTable component="Sidebar" />
+
+<PropsTable component="SidebarProvider" />
+
+<PropsTable component="SidebarMenuButton" />
+
+<PropsTable component="SidebarTrigger" />
+
+## Tokens
+
+<TokenList component="Sidebar" tokens={[
+  '--background',
+  '--foreground',
+  '--muted',
+  '--muted-foreground',
+  '--accent',
+  '--accent-foreground',
+  '--primary',
+  '--border',
+  '--ring',
+]} />
+
+## Accessibility
+
+- The outer `Sidebar` renders an `<aside>` element. Wrap your menu in a
+  `<nav aria-label="Sidebar">` (or set `role="navigation"` on a parent) so
+  screen readers announce the landmark distinctly from other navigation
+  regions on the page.
+- Mark the active destination with `aria-current="page"` on the
+  `SidebarMenuButton` (or its child link via `asChild`). The `active` prop
+  controls visual state only — it does not set ARIA on its own.
+- All items must remain reachable by keyboard tab order. `SidebarTrigger`
+  toggles the panel and is bound to `Cmd/Ctrl+B` by default; pass
+  `enableKeyboardShortcut={false}` on `SidebarProvider` if it conflicts with
+  your app shortcuts.
+- In `collapsible="icon"` mode the text label is visually hidden when
+  collapsed. Add an explicit `aria-label` to each `SidebarMenuButton` so
+  icon-only items still have an accessible name.
+- On mobile, `Sidebar` renders inside a `Sheet` drawer. Focus is trapped while
+  the drawer is open and Escape closes it — the same behavior as `Sheet`.
+  Make sure `SidebarTrigger` is visible in your top bar so users on touch
+  devices can open it.

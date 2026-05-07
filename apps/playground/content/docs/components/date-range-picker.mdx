@@ -1,18 +1,104 @@
 ---
 title: DateRangePicker
-description: Calendar-based date range selector.
+description: Calendar-based selector for a contiguous date range.
 component: DateRangePicker
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Pick a contiguous date range — reporting periods, booking stays, log
+  filters, analytics windows. Pair with preset shortcuts ("Last 7 days",
+  "This month") so the common ranges are one click away. If `from` and
+  `to` are independent fields (e.g. a project with a kickoff date and an
+  unrelated deadline), prefer two separate `DatePicker` inputs instead.
 ---
 
-import { Default } from '@idcert/ui/components/date-range-picker/examples'
+import { DateRangePicker } from '@idcert/ui'
+import {
+  Default, Controlled, WithLabel, Presets, MinMax,
+} from '@idcert/ui/components/date-range-picker/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { DateRangePicker } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Controlled
+
+Drive the value from `useState<DateRange | undefined>` when the parent
+needs to read or persist the selected range — saving filters to a URL,
+syncing across two pickers, or validating min duration. The
+`onValueChange` callback fires on every interaction, including the
+intermediate state where only `from` is set.
+
+<Example name="Controlled" component="DateRangePicker"><Controlled /></Example>
+
+### With label
+
+Associate a visible `Label` via `htmlFor` and the picker's `id` so
+clicking the label moves focus to the trigger and screen readers
+announce the field name alongside the current range.
+
+<Example name="WithLabel" component="DateRangePicker"><WithLabel /></Example>
+
+### Presets
+
+Compose preset buttons next to the picker for the ranges users select
+most often. The buttons set the controlled value directly, so the
+calendar opens with the correct range already highlighted if the user
+wants to refine it.
+
+<Example name="Presets" component="DateRangePicker"><Presets /></Example>
+
+### Min / max bounds
+
+Constrain selectable days with `fromDate` and `toDate`. The calendar
+disables out-of-range days and prevents month navigation past the
+bounds — useful for quarter-only reports, future-only bookings, or
+historical-only audit windows.
+
+<Example name="MinMax" component="DateRangePicker"><MinMax /></Example>
+
 ## API Reference
 
 <PropsTable component="DateRangePicker" />
+
+## Tokens
+
+<TokenList component="DateRangePicker" tokens={[
+  '--background',
+  '--foreground',
+  '--primary',
+  '--primary-foreground',
+  '--muted-foreground',
+  '--accent',
+  '--border',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Associate a visible label via `<Label htmlFor>` matching the picker's
+  `id`, or pass `aria-label` when the field is icon-only. The label
+  should describe the range purpose ("Reporting period"), not the
+  widget ("Date range picker").
+- Selection is two-step: the first click sets `from` and leaves `to`
+  empty; the second click sets `to` and closes the popover. Announce
+  the intermediate state ("Start date selected, pick an end date") via
+  a polite live region if the surrounding form depends on it.
+- The visualised range uses `aria-pressed` / `aria-current` on the day
+  cells so assistive tech can convey which days are inside the
+  selection, which is the start, and which is the end.
+- Keyboard navigation matches `DatePicker`: arrow keys move by day,
+  Page Up/Down by month, Home/End by week, Enter selects, Escape
+  closes the popover and returns focus to the trigger.
+- Preset shortcuts are rendered as native `<button type="button">`
+  elements so they are reachable by Tab in source order, activatable
+  with Enter or Space, and visible to screen readers without extra
+  ARIA.

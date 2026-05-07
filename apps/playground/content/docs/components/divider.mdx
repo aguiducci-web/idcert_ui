@@ -4,15 +4,80 @@ description: Thin rule that visually separates content.
 component: Divider
 package: '@idcert/ui'
 category: primitives
-status: in-progress
+status: stable
+whenToUse: |
+  Use Divider to draw a thin rule between blocks of content — between large
+  layout sections (settings groups, card regions), or as a vertical hairline
+  between inline items in a toolbar or breadcrumb. Divider supports both
+  `horizontal` and `vertical` orientations and renders a `<div
+  role="separator">` so assistive tech announces the break. For a plain
+  horizontal page break inside flowing prose, prefer `Separator` — it renders
+  a native `<hr>` and is horizontal-only. Do not stack multiple Dividers to
+  create vertical rhythm; use spacing utilities instead.
 ---
 
-import { Default } from '@idcert/ui/components/divider/examples'
+import { Divider } from '@idcert/ui'
+import {
+  Default, Vertical, BetweenSections,
+} from '@idcert/ui/components/divider/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Divider } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Between sections
+
+Drop a horizontal Divider between sibling blocks to mark a clear boundary —
+settings groups, card regions, list segments. Pair the rule with vertical
+spacing (`my-4`, `my-6`) so the break reads as "new section" rather than
+"new line".
+
+<Example name="BetweenSections" component="Divider"><BetweenSections /></Example>
+
+### Vertical
+
+Set `orientation="vertical"` to render a hairline between inline items. The
+parent must establish a height (here via `flex` + `h-8`) because the divider
+itself is `h-full w-px`; a vertical Divider in a zero-height container will
+not paint.
+
+<Example name="Vertical" component="Divider"><Vertical /></Example>
+
 ## API Reference
 
 <PropsTable component="Divider" />
+
+## Tokens
+
+<TokenList component="Divider" tokens={[
+  '--border',
+  '--background',
+  '--muted',
+  '--muted-foreground',
+]} />
+
+## Accessibility
+
+- Renders `<div role="separator">` with `aria-orientation` reflecting the
+  `orientation` prop, so assistive tech announces the break in both
+  horizontal and vertical layouts.
+- Divider is decorative-by-default — it carries no label. If you need a
+  labelled break ("OR" between auth methods, "and" between filters), compose
+  the label yourself and mark the surrounding rules `aria-hidden`, or use a
+  semantic heading instead of a divider.
+- A vertical Divider inside a flex row needs an explicit height on the
+  parent (`h-8`, `items-stretch`). Without it the `h-full` rule collapses to
+  zero and the separator is invisible.
+- Do not stack multiple Dividers to fake padding or emphasis. Repeated rules
+  read as noise to screen readers and add nothing visually that a margin
+  utility cannot. Use spacing tokens for rhythm, Divider only for true
+  section boundaries.
+- For a plain horizontal page break inside flowing prose, prefer `Separator`
+  — it renders a native `<hr>` which is the right semantic for a thematic
+  break in a document.

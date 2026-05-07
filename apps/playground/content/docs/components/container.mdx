@@ -4,15 +4,88 @@ description: Fixed-max-width wrapper that centers content.
 component: Container
 package: '@idcert/ui'
 category: layout
-status: in-progress
+status: stable
+whenToUse: |
+  Use Container to constrain page content to a comfortable max-width on wide
+  viewports while keeping it edge-padded on narrow ones. Reach for it instead
+  of a raw `<div className="mx-auto max-w-…">` so the responsive padding scale
+  (`px-4 sm:px-6 lg:px-8`) and size tokens stay consistent across pages. Pair
+  Container with `Stack` or `Grid` for the inner layout — Container only
+  handles the outer width, never the vertical rhythm or column structure.
 ---
 
-import { Default } from '@idcert/ui/components/container/examples'
+import { Container } from '@idcert/ui'
+import {
+  Default, Sizes, Centered, FullWidth, Nested,
+} from '@idcert/ui/components/container/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Container } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Sizes
+
+Six max-width steps map to Tailwind's `screen-*` scale: `sm`, `md`, `lg`, `xl`
+(default), `2xl`, and `full`. Pick by content type — `md` for long-form prose,
+`lg`/`xl` for app shells with sidebars, `2xl` for wide dashboards, `full` when
+you only need the centered padding without a width cap.
+
+<Example name="Sizes" component="Container"><Sizes /></Example>
+
+### Centered content
+
+Container is centered horizontally via `mx-auto` and applies responsive
+horizontal padding so content never touches the viewport edge. The default
+size is `xl`; use a smaller size to keep reading line-length comfortable.
+
+<Example name="Centered" component="Container"><Centered /></Example>
+
+### Full width
+
+`size="full"` removes the max-width cap but keeps the responsive horizontal
+padding. Use it for hero bands, full-bleed tables, or any region that should
+breathe to the viewport edges while still respecting the gutter scale.
+
+<Example name="FullWidth" component="Container"><FullWidth /></Example>
+
+### Nested layout
+
+Compose Container with semantic markup inside — a `<header>`, a body region,
+or a `Stack` — to lay out a full page section. Keep one Container per logical
+region; nesting Containers compounds the padding and is almost always a bug.
+
+<Example name="Nested" component="Container"><Nested /></Example>
+
 ## API Reference
 
 <PropsTable component="Container" />
+
+## Tokens
+
+<TokenList component="Container" tokens={[
+  '--background',
+  '--foreground',
+  '--muted',
+]} />
+
+## Accessibility
+
+- Container renders a plain `<div>` and does not expose an `as` prop today.
+  When the region needs a landmark role, wrap Container in the appropriate
+  semantic element (`<main>`, `<section>`, `<article>`, `<aside>`) rather than
+  forcing the role onto Container itself.
+- Never rely on Container as the only landmark on a page. Every page should
+  have exactly one `<main>` element, and Container belongs inside that main —
+  not in place of it.
+- The responsive padding scale (`px-4` → `sm:px-6` → `lg:px-8`) shrinks
+  gracefully on narrow viewports so content stays readable on phones without
+  any per-breakpoint overrides from the consumer.
+- Container does not set a background or text color. Inherit from the page or
+  apply `bg-background`/`text-foreground` on a child so theme tokens drive the
+  surface in light and dark modes.

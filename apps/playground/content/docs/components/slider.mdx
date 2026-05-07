@@ -4,15 +4,97 @@ description: Pick a numeric value (or range) on a continuum.
 component: Slider
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use Slider for continuous numeric input within a known range — volume,
+  brightness, price filters, opacity. For precise numeric entry where users
+  type the value, prefer `Input` with `type="number"`. Don't use Slider to
+  pick from a small set of discrete options (3–5 choices) — `Select` or
+  `RadioGroup` make the options visible and scannable.
 ---
 
-import { Default } from '@idcert/ui/components/slider/examples'
+import { Slider } from '@idcert/ui'
+import {
+  Default, Range, Steps, WithLabel, Disabled,
+} from '@idcert/ui/components/slider/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Slider } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Range
+
+Pass two values in the `defaultValue`/`value` array to render a two-thumb
+range selector — useful for price filters, date windows, or any
+"between X and Y" query. Each thumb is independently focusable and
+keyboard-driven; the indicator fills the segment between them.
+
+<Example name="Range" component="Slider"><Range /></Example>
+
+### Steps
+
+Use `step` to constrain the slider to discrete increments. Combined with
+`min` and `max`, this is the right shape for quantised values (volume in
+tens, percentage in fives) where every keystroke should land on a clean
+number rather than a fractional one.
+
+<Example name="Steps" component="Slider"><Steps /></Example>
+
+### With label
+
+Pair the slider with a visible label and a live value readout so users
+see what they're adjusting and what the current value is. Use `htmlFor`
+on the label pointing at the slider's `id` so clicking the label focuses
+the thumb.
+
+<Example name="WithLabel" component="Slider"><WithLabel /></Example>
+
+### Disabled
+
+The `disabled` prop dims the track and thumb and removes pointer/keyboard
+interaction. Reach for it when the slider depends on another field that
+hasn't been filled in yet — pair it with helper text explaining why.
+
+<Example name="Disabled" component="Slider"><Disabled /></Example>
+
 ## API Reference
 
 <PropsTable component="Slider" />
+
+## Tokens
+
+<TokenList component="Slider" tokens={[
+  '--primary',
+  '--primary-foreground',
+  '--secondary',
+  '--background',
+  '--border',
+  '--ring',
+]} />
+
+## Accessibility
+
+- Each thumb renders with `role="slider"` and exposes `aria-valuenow`,
+  `aria-valuemin`, and `aria-valuemax` so assistive tech can announce the
+  current position and bounds. Provide `aria-valuetext` when the numeric
+  value alone isn't meaningful (e.g., "Medium" instead of "50").
+- Label every slider. Either set `aria-label` directly on the component
+  or wrap it in a `<label htmlFor="...">` that points at the slider's
+  `id` — clicking the label then focuses the thumb.
+- Keyboard: `ArrowLeft`/`ArrowDown` decrement by `step` (default 1),
+  `ArrowRight`/`ArrowUp` increment by `step`. `Home` jumps to `min`,
+  `End` jumps to `max`. `PageUp`/`PageDown` move by a larger increment
+  (typically 10× step) when supported by the underlying primitive.
+- The thumb shows a visible focus ring via `--ring`; do not remove it
+  with `outline-none` overrides. Focus must be visible at AA contrast
+  against both the track and the page background.
+- For two-thumb ranges, each thumb is its own focus stop. Label them
+  distinctly when announced (e.g., "Minimum price", "Maximum price")
+  using `aria-label` on each thumb if the underlying primitive exposes
+  per-thumb labelling.

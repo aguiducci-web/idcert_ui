@@ -4,15 +4,108 @@ description: Switch between related panels of content.
 component: Tabs
 package: '@idcert/ui'
 category: navigation
-status: in-progress
+status: stable
+whenToUse: |
+  Use Tabs to switch between related views of the same context — an account
+  page split into Profile / Security / Notifications, a record split into
+  Overview / Activity / Reports. Only one panel is visible at a time and the
+  user is not navigating away. For separate destinations with their own URL,
+  use a navbar/sidebar route instead. For one-of-many choices that submit with
+  a form, use `RadioGroup` or `Select`.
 ---
 
-import { Default } from '@idcert/ui/components/tabs/examples'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@idcert/ui'
+import {
+  Default, Controlled, WithIcons, Disabled, Vertical, ManyTabs,
+} from '@idcert/ui/components/tabs/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Tabs, TabsList, TabsTrigger, TabsContent } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Controlled
+
+Lift the active tab into state with `value` and `onValueChange` when another
+part of the UI needs to read or set it (deep links, wizard flows, syncing
+with a query param). Leave `defaultValue` alone for self-contained tabs.
+
+<Example name="Controlled" component="Tabs"><Controlled /></Example>
+
+### With icons
+
+Pair a `lucide-react` icon with the trigger label to anchor the tab visually.
+Mark the icon `aria-hidden` so the label remains the single accessible name —
+icons are decoration, not the label.
+
+<Example name="WithIcons" component="Tabs"><WithIcons /></Example>
+
+### Disabled trigger
+
+Disable a trigger when the underlying view is unavailable for this user or
+record. Disabled triggers are skipped by arrow-key navigation and dimmed via
+`disabled:opacity-50`. Prefer hiding the tab entirely if the user will never
+have access — disabled states should be temporary.
+
+<Example name="Disabled" component="Tabs"><Disabled /></Example>
+
+### Vertical
+
+Set `orientation="vertical"` for sidebar-style tabs in dense settings pages.
+Arrow-key navigation switches to up/down, and `aria-orientation="vertical"`
+is applied to the tablist. Compose with flex utilities to lay the list beside
+the panel.
+
+<Example name="Vertical" component="Tabs"><Vertical /></Example>
+
+### Many tabs
+
+When the trigger count outgrows the available width, wrap `TabsList` in an
+`overflow-x-auto` container so the row scrolls horizontally instead of
+wrapping or truncating. For more than ~7 tabs, consider a sidebar instead —
+tabs work best when the full set is scannable at a glance.
+
+<Example name="ManyTabs" component="Tabs"><ManyTabs /></Example>
+
 ## API Reference
 
 <PropsTable component="Tabs" />
+
+<PropsTable component="TabsList" />
+
+<PropsTable component="TabsTrigger" />
+
+<PropsTable component="TabsContent" />
+
+## Tokens
+
+<TokenList component="Tabs" tokens={[
+  '--background',
+  '--foreground',
+  '--muted-foreground',
+  '--primary',
+  '--border',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Arrow keys move focus between triggers (left/right for horizontal,
+  up/down for vertical). `Home`/`End` jump to the first/last trigger. `Tab`
+  moves focus out of the tablist and into the active panel.
+- Roles are wired automatically: the list gets `role="tablist"`, each trigger
+  `role="tab"`, each panel `role="tabpanel"`. `aria-selected` and
+  `aria-controls` reflect the active state — do not set these by hand.
+- Keep trigger labels short (one or two words). Long labels wrap and break
+  the row; for descriptive text put the detail in the panel, not the
+  trigger.
+- Disabled triggers are skipped by keyboard navigation. If a tab is
+  permanently unavailable for the user, omit it instead of disabling.
+- Pair icons with text. Icon-only triggers must have an `aria-label` so
+  screen-reader users get the same name sighted users do.

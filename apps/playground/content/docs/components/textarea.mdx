@@ -4,15 +4,72 @@ description: Multi-line text input.
 component: Textarea
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use Textarea for multi-line free text — comments, descriptions, mailing
+  addresses, change-log notes. For short single-line values (name, email,
+  search) use `Input` instead. Set `rows` to hint the expected length: 3 for
+  short notes, 5–6 for descriptions, 8+ for long-form bodies. For rich text
+  with formatting, reach for a dedicated editor instead of stretching Textarea.
 ---
 
-import { Default } from '@idcert/ui/components/textarea/examples'
+import { Textarea } from '@idcert/ui'
+import {
+  Default, WithLabel, WithDescription, ErrorState, Disabled,
+} from '@idcert/ui/components/textarea/examples'
 
-<Hero>
-  <Default />
-</Hero>
+<Hero><Default /></Hero>
+
+## Import
+
+<CodeBlock language="tsx">{`import { Textarea } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With a label
+
+`Textarea` does not include a label. Pair with the `<Label>` primitive (or with `<FormLabel>` inside a `<Form>`). Always link the label to the textarea via `htmlFor` / `id`.
+
+<Example name="WithLabel" component="Textarea"><WithLabel /></Example>
+
+### With a description
+
+Add a sibling `<p>` with `text-xs text-muted-foreground` and reference it from the textarea via `aria-describedby`. Use `rows` to size the field for the expected answer.
+
+<Example name="WithDescription" component="Textarea"><WithDescription /></Example>
+
+### Error state
+
+Set `aria-invalid` and add `border-destructive` plus a destructive focus ring. Point `aria-describedby` at the error message and give the message `role="alert"` so screen readers announce it without moving focus.
+
+<Example name="ErrorState" component="Textarea"><ErrorState /></Example>
+
+### Disabled
+
+`disabled` removes the field from tab order and lowers opacity to 50%.
+
+<Example name="Disabled" component="Textarea"><Disabled /></Example>
 
 ## API Reference
 
 <PropsTable component="Textarea" />
+
+## Tokens
+
+<TokenList component="Textarea" tokens={[
+  '--background',
+  '--input',
+  '--ring',
+  '--muted-foreground',
+  '--destructive',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Always pair with a `<Label>` linked via `htmlFor` / `id`. Visually hidden labels are acceptable only when the field is unambiguous from context.
+- Reference helper text and error messages from the textarea via `aria-describedby` so screen readers read them after the label.
+- On error, set `aria-invalid` on the textarea and `role="alert"` on the inline error so the message is announced without requiring focus to move.
+- Do not auto-focus a Textarea on page load — it traps screen-reader users inside the field and skips the page heading. Focus only after an explicit user action (e.g., clicking "Reply").
+- For character counters, render a sibling element with `aria-live="polite"` so updates are announced periodically rather than on every keystroke. Reference the counter from `aria-describedby` alongside any helper text.
+- `disabled` should never be the primary signal for "not editable". For a value the user shouldn't change but should see, render plain text instead — `disabled` text is hard to read and skipped by tab.

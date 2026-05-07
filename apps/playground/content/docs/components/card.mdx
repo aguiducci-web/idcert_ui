@@ -4,15 +4,121 @@ description: Container for grouped content with optional header, body, and foote
 component: Card
 package: '@idcert/ui'
 category: data
-status: in-progress
+status: stable
+whenToUse: |
+  Use Card to group related content into a single, scannable surface — a
+  notification panel, a settings section, a stat tile in a dashboard grid, a
+  preview of a remote resource. Reach for a plain `<div>` when you only need
+  spacing or a divider; Card carries border, radius, background, and shadow,
+  so it should signal "this is a discrete unit" not "I need padding". For
+  transient content layered above the page (confirmations, edit forms) use
+  `Dialog`; for side-anchored panels use `Sheet`. Avoid nesting Cards inside
+  Cards — flatten to one container and use spacing or `Separator` instead.
 ---
 
-import { Default } from '@idcert/ui/components/card/examples'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@idcert/ui'
+import {
+  Default, WithFooter, WithHeaderAction, Stat, Interactive,
+} from '@idcert/ui/components/card/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With footer actions
+
+Place primary and secondary actions in `CardFooter`. Align them to the end of
+the row for the standard "cancel / confirm" pairing, and keep the destructive
+action on the right so it sits where users expect a confirm button — paired
+with the `destructive` Button variant for the color signal.
+
+<Example name="WithFooter" component="Card"><WithFooter /></Example>
+
+### Header with trailing action
+
+A compact icon button in the header is the conventional spot for a "more"
+menu, settings, or dismiss control. Lay the header out as a row with the
+title block on the left and the action on the right; always give the icon
+button an `aria-label` so it is reachable to screen readers.
+
+<Example name="WithHeaderAction" component="Card"><WithHeaderAction /></Example>
+
+### Stat tile
+
+Flip the visual hierarchy for metric cards: the label (`CardDescription`)
+goes first as small muted text, the value (`CardTitle`) is the large number
+below it, and a delta or comparison sits in the body. Keep one metric per
+card so the value is always the loudest element on the surface.
+
+<Example name="Stat" component="Card"><Stat /></Example>
+
+### Interactive card
+
+Wrap the entire card in an anchor or button when the whole surface should
+navigate or trigger an action. The wrapper owns the focus ring and the
+`href`; the Card itself stays a passive `<div>`. Do not nest other
+interactive elements (links, buttons) inside a clickable card root — only
+the outer wrapper should be tabbable.
+
+<Example name="Interactive" component="Card"><Interactive /></Example>
+
 ## API Reference
 
 <PropsTable component="Card" />
+
+<PropsTable component="CardHeader" />
+
+<PropsTable component="CardTitle" />
+
+<PropsTable component="CardDescription" />
+
+<PropsTable component="CardContent" />
+
+<PropsTable component="CardFooter" />
+
+## Tokens
+
+<TokenList component="Card" tokens={[
+  '--card',
+  '--card-foreground',
+  '--border',
+  '--muted-foreground',
+  '--radius-lg',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- `CardTitle` renders a fixed `<h3>`. Make sure the surrounding page heading
+  outline still reads top-down: if the card sits under an `<h1>` page title,
+  `<h3>` is fine; if it sits inside an `<h2>` section, an `<h3>` is also
+  correct. If the level is wrong for the context, render your own heading
+  inside the header and skip `CardTitle`.
+- An interactive card must have a single primary target. Wrap the whole card
+  in one anchor or button so there is exactly one tab stop and one
+  announceable name; do not place additional links or buttons inside.
+- Give the wrapper a visible focus ring (`focus-visible:ring-2`) and a
+  matching hover affordance (border or shadow change) so keyboard and mouse
+  users get the same "this is clickable" cue.
+- `CardDescription` uses `--muted-foreground` on `--card`. Verify any custom
+  theming keeps that pair at AA contrast; muted text on a tinted card
+  background is the most common contrast regression.
+- Do not nest interactive elements inside a clickable card root. If you need
+  a row-level action and a card-level action, drop the card-level link and
+  move navigation into a dedicated "Open" button in the footer instead.
+- Keep the content order semantic: header (title + description) before body
+  before footer. Screen readers read DOM order, so visual reordering with
+  flex/grid utilities should not change the source order.

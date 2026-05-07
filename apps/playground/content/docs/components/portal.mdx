@@ -4,15 +4,78 @@ description: Render children into a different DOM subtree.
 component: Portal
 package: '@idcert/ui'
 category: overlays
-status: in-progress
+status: stable
+whenToUse: |
+  Low-level utility for rendering children outside the parent DOM tree —
+  useful for overlays, tooltips, dropdowns, and toasts that must escape
+  `overflow: hidden` or stacking-context traps. Most product code should
+  reach for `Dialog`, `Sheet`, `Popover`, or `DropdownMenu` instead — those
+  already portal internally and bring focus management, dismissal, and
+  ARIA wiring with them. Use `Portal` directly only when building a new
+  overlay primitive that the design system does not yet ship.
 ---
 
-import { Default } from '@idcert/ui/components/portal/examples'
+import { Portal } from '@idcert/ui'
+import {
+  Default, IntoBody, CustomContainer,
+} from '@idcert/ui/components/portal/examples'
 
 <Hero>
-  <Default />
+  <div className="flex min-h-32 items-center justify-center">
+    <Default />
+  </div>
 </Hero>
+
+## Import
+
+<CodeBlock language="tsx">{`import { Portal } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Into document.body
+
+Pass `container={document.body}` explicitly when you want to be unambiguous
+about the mount target. Resolve `document.body` inside `useEffect` so the
+component stays SSR-safe — `Portal` itself only commits the portal after the
+first client render.
+
+<Example name="IntoBody" component="Portal"><IntoBody /></Example>
+
+### Custom container
+
+Pass any `Element` as `container` to teleport children into a specific node —
+a ref to a slot in your layout, a `getElementById` lookup for a host page
+mount point, or an iframe's document body. Wait until the ref is attached
+(post-mount) before passing it to `Portal`, otherwise the first render has
+nothing to portal into and bails out.
+
+<Example name="CustomContainer" component="Portal"><CustomContainer /></Example>
 
 ## API Reference
 
 <PropsTable component="Portal" />
+
+## Tokens
+
+Portal carries no styles — it only changes where children mount in the DOM.
+Tokens belong to the content you render inside it.
+
+## Accessibility
+
+- Focus management is the consumer's responsibility. Portal moves DOM, not
+  focus. When opening a modal-style overlay, move focus into it on mount and
+  return focus to the trigger on unmount; for non-modal popovers, leave focus
+  on the trigger and let arrow keys drive selection.
+- Set `role="dialog"` and `aria-modal="true"` on overlay containers that trap
+  focus, and `aria-labelledby`/`aria-describedby` pointing at the heading and
+  body so assistive tech announces the overlay's purpose.
+- Screen readers traverse the DOM in source order, so portaled content reads
+  at the end of `<body>` rather than next to its trigger. Use `aria-controls`
+  or `aria-owns` on the trigger to wire the relationship, and prefer the
+  higher-level `Dialog`/`Popover` primitives which handle this for you.
+- SSR-safe: `Portal` mounts inside `useEffect`, so the first server render
+  emits nothing and hydration matches. Do not rely on portaled content for
+  above-the-fold critical UI — render it in place and portal only after
+  interaction.
+- Dismissal (Escape key, outside click, route change) is not provided. Wire
+  it explicitly, or use `Dialog`/`DropdownMenu` which already handle it.

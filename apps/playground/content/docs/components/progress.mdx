@@ -4,15 +4,92 @@ description: Linear bar showing completion of a task.
 component: Progress
 package: '@idcert/ui'
 category: feedback
-status: in-progress
+status: stable
+whenToUse: |
+  Use Progress for determinate work where completion is measurable on a 0-100
+  scale (file uploads, multi-step imports, batch jobs). Use the indeterminate
+  variant (`value={null}`) when the total is unknown but the task is still
+  running. For tiny inline waits under a second — a button submitting, a row
+  refreshing — prefer `Spinner`. For content placeholders while a layout loads,
+  use `Skeleton` instead so the page reserves the right shape.
 ---
 
-import { Default } from '@idcert/ui/components/progress/examples'
+import { Progress } from '@idcert/ui'
+import {
+  Default, Indeterminate, Animated, WithLabel,
+} from '@idcert/ui/components/progress/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Progress } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Determinate
+
+Pass a numeric `value` between `0` and `max` (default `100`) to show known
+progress. The indicator translates proportionally and the track exposes
+`aria-valuenow` so assistive tech can announce the current state.
+
+<Example name="Default" component="Progress"><Default /></Example>
+
+### Indeterminate
+
+When the total is unknown — a stream that has not reported size, a job whose
+duration cannot be predicted — pass `value={null}`. The bar drops
+`aria-valuenow` so screen readers announce a busy state without a misleading
+number.
+
+<Example name="Indeterminate" component="Progress"><Indeterminate /></Example>
+
+### Animated
+
+Drive `value` from state for live updates. Throttle updates to the rate the
+user can perceive (every 250-500ms is enough); updating every frame wastes
+renders and produces a jittery indicator.
+
+<Example name="Animated" component="Progress"><Animated /></Example>
+
+### With label
+
+Pair the bar with a textual percentage so sighted users see the exact value
+and screen-reader users get an `aria-label`. Mark the visible percentage
+`aria-hidden` to avoid double-announcement.
+
+<Example name="WithLabel" component="Progress"><WithLabel /></Example>
+
 ## API Reference
 
 <PropsTable component="Progress" />
+
+## Tokens
+
+<TokenList component="Progress" tokens={[
+  '--primary',
+  '--secondary',
+  '--muted',
+  '--background',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Renders with `role="progressbar"` and the appropriate `aria-valuemin`,
+  `aria-valuemax`, and `aria-valuenow` attributes derived from `value` and
+  `max`. Override `max` if your scale is not 0-100.
+- For the indeterminate state (`value={null}`) `aria-valuenow` is intentionally
+  omitted so assistive tech announces a busy state instead of a misleading
+  number.
+- Always pair the bar with a text label — either visually adjacent text or an
+  `aria-label`/`aria-labelledby` reference — so screen readers announce what
+  the progress is for, not just the percentage.
+- Avoid flicker. If a task may finish in under 500ms, do not show Progress at
+  all — the bar will appear and disappear before the user can register it.
+  Gate rendering behind a 500ms threshold for tasks of unknown duration.
+- For long-running work, update `value` at human-perceivable intervals
+  (250-500ms). Updating on every event produces a jittery indicator and
+  noisy screen-reader announcements.

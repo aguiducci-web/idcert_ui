@@ -1,18 +1,101 @@
 ---
 title: EmptyState
-description: Centered illustration, copy, and action for empty data views.
+description: Centered placeholder for blank surfaces, with icon, title, description, and actions.
 component: EmptyState
 package: '@idcert/ui'
-category: feedback
-status: in-progress
+category: primitives
+status: stable
+whenToUse: |
+  Use EmptyState when a list, grid, or table has no items to show — because the
+  data set is empty, a search or filter returned nothing, or the user has not
+  created their first record yet. Pair the first-run case with a primary CTA
+  that creates the missing item; pair the no-results case with a secondary
+  action that resets the query. Do not use EmptyState during loading — show a
+  `Skeleton` first, then swap to EmptyState only after the request resolves
+  with zero rows. For inline error feedback that doesn't replace the whole
+  surface, prefer `Alert`.
 ---
 
-import { Default } from '@idcert/ui/components/empty-state/examples'
+import { EmptyState } from '@idcert/ui'
+import {
+  Default, WithAction, NoResults,
+} from '@idcert/ui/components/empty-state/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateTitle,
+  EmptyStateDescription,
+  EmptyStateAction,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With primary action
+
+Use the first-run pattern when the user has never created the underlying
+record. Lead with a clear primary CTA that performs the create action, and
+offer a secondary path (import, learn more) only when it is genuinely useful —
+two equally weighted buttons make the choice harder, not easier.
+
+<Example name="WithAction" component="EmptyState"><WithAction /></Example>
+
+### No search results
+
+When a query or filter returns zero rows, keep the surface in place but swap
+the rows for an EmptyState. The copy should hint at recovery ("try different
+keywords", "clear your filters") and the action should let the user undo the
+constraint that produced the empty set, not start a new task.
+
+<Example name="NoResults" component="EmptyState"><NoResults /></Example>
+
 ## API Reference
 
+EmptyState is a set of unstyled-by-default building blocks. Compose them in
+order — icon, title, description, action — to keep the visual rhythm
+consistent across the product.
+
 <PropsTable component="EmptyState" />
+<PropsTable component="EmptyStateIcon" />
+<PropsTable component="EmptyStateTitle" />
+<PropsTable component="EmptyStateDescription" />
+<PropsTable component="EmptyStateAction" />
+
+## Tokens
+
+<TokenList component="EmptyState" tokens={[
+  '--foreground',
+  '--muted-foreground',
+  '--muted',
+  '--primary',
+  '--primary-foreground',
+  '--border',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- `EmptyStateTitle` renders a native `<h3>`. Make sure the surrounding page
+  still has a single `<h1>` and that the heading order around the empty state
+  stays sequential — don't drop from `<h1>` straight to the empty state's
+  `<h3>` without an intermediate section heading.
+- The action button must be reachable by keyboard. Because EmptyState replaces
+  the row of items the user expected to tab through, the CTA should be the
+  next logical Tab stop after the surrounding controls (search, filter bar).
+- Treat the title and description as a single announcement. Screen-reader
+  users should hear the "what" (title) and the "why / what to do next"
+  (description) together — keep the description short enough that it doesn't
+  bury the action.
+- The icon is decorative. Mark the `EmptyStateIcon` (or its inner SVG) with
+  `aria-hidden` so assistive tech does not announce a meaningless "image" or
+  icon name before the title.
+- Do not show EmptyState during loading. A spinner-then-empty flicker reads as
+  a flash of "nothing here" before the data arrives — render a `Skeleton`
+  while the request is in flight and only swap to EmptyState after the
+  response confirms zero results.

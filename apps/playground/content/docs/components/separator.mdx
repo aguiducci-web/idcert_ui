@@ -1,18 +1,89 @@
 ---
 title: Separator
-description: Horizontal or vertical dividing line.
+description: Horizontal dividing line between groups of content.
 component: Separator
 package: '@idcert/ui'
 category: layout
-status: in-progress
+status: stable
+whenToUse: |
+  Use Separator to mark a semantic break between groups of content — sections
+  inside a card, item groups inside a menu, blocks inside a settings page. It
+  renders a real `<hr>` so assistive tech announces the boundary. Reach for
+  `Divider` when you need a vertical rule (e.g., between inline labels in a
+  toolbar) or a configurable orientation; Separator in this library is
+  horizontal-only by design. Never use Separator as a decorative spacer between
+  unrelated UI — use margin/padding instead so screen readers don't announce a
+  break that isn't there.
 ---
 
-import { Default } from '@idcert/ui/components/separator/examples'
+import { Separator } from '@idcert/ui'
+import {
+  Default, BetweenSections, InCard, InMenu,
+} from '@idcert/ui/components/separator/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Separator } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Between sections
+
+The most common use: a thin rule between sibling content blocks that share a
+parent but stand on their own. Let stack spacing carry the rhythm and let the
+Separator carry the semantic break — don't double up with extra margin classes
+on the rule unless the surrounding stack lacks gap.
+
+<Example name="BetweenSections" component="Separator"><BetweenSections /></Example>
+
+### Inside a card
+
+Use Separator inside a card to split a header (title plus description) from
+the body (actions, lists, fields). Keep one rule per card section — multiple
+separators inside a small card start to feel like a table and lose meaning.
+
+<Example name="InCard" component="Separator"><InCard /></Example>
+
+### Between menu groups
+
+Drop a Separator between item groups in a vertical menu or popover (e.g.,
+"Account" items vs "Workspace" items vs the destructive "Sign out"). The rule
+makes the grouping visible and gives screen-reader users a navigational
+landmark between sets of choices.
+
+<Example name="InMenu" component="Separator"><InMenu /></Example>
+
 ## API Reference
 
 <PropsTable component="Separator" />
+
+## Tokens
+
+<TokenList component="Separator" tokens={[
+  '--border',
+  '--muted',
+]} />
+
+## Accessibility
+
+- Renders a native `<hr>`, so assistive tech announces a thematic break
+  between groups of content without any extra ARIA. Prefer Separator over a
+  styled `<div>` when the rule actually means "new section."
+- Use Separator only between *related* groups under a common parent. If the
+  rule is purely visual (e.g., framing an unrelated card), use margin or a
+  border on the container instead so screen readers don't announce a break.
+- Separator is horizontal-only in this library. For a vertical rule between
+  inline items in a flex row (toolbar, breadcrumb), use `Divider` with
+  `orientation="vertical"` — it carries `role="separator"` and
+  `aria-orientation` for the same semantics.
+- Don't wrap Separator in interactive elements or attach handlers; it's a
+  passive landmark, not a control. If a section needs a clickable boundary,
+  use a `Button` or `Link` next to the rule, not on it.
+- Keep contrast in mind: the default `--border` token is intentionally subtle.
+  On dense surfaces (tables, dark cards) verify the rule is still visible at
+  AA against its background; bump opacity via `className` if needed rather
+  than swapping the token globally.

@@ -4,15 +4,102 @@ description: User profile image with fallback initials.
 component: Avatar
 package: '@idcert/ui'
 category: primitives
-status: in-progress
+status: stable
+whenToUse: |
+  Use Avatar to identify a specific user or account in lists, comments, headers,
+  and member rosters. Always provide a fallback with initials so the slot still
+  reads when the image is missing, slow, or blocked. Do not use Avatar for
+  generic icons, brand logos, or decorative illustrations — reach for an `Icon`
+  or plain `<img>` instead. Pair the avatar with the user's name nearby; the
+  image alone is not a reliable identifier.
 ---
 
-import { Default } from '@idcert/ui/components/avatar/examples'
+import { Avatar, AvatarImage, AvatarFallback } from '@idcert/ui'
+import {
+  Default, WithFallback, InitialsOnly, Sizes, Group,
+} from '@idcert/ui/components/avatar/examples'
 
 <Hero>
-  <Default />
+  <Default className='not-prose'/>
 </Hero>
+
+## Import
+
+<CodeBlock language="tsx">{`import { Avatar, AvatarImage, AvatarFallback } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With fallback
+
+`AvatarFallback` renders automatically when `AvatarImage` fails to load or has
+not finished loading. Keep the fallback short — two letters of the user's
+initials is the convention. The fallback inherits the avatar's size and uses
+the muted token pair so it stays legible on light and dark surfaces.
+
+<Example name="WithFallback" component="Avatar"><WithFallback /></Example>
+
+### Initials only
+
+For users without a profile picture, render `AvatarFallback` alone and skip
+`AvatarImage` entirely. This is the cheapest path (no network request, no
+flicker) and is the right default for freshly created accounts.
+
+<Example name="InitialsOnly" component="Avatar"><InitialsOnly /></Example>
+
+### Sizes
+
+Four sizes via the `size` prop: `sm` (24px) for dense tables and inline
+mentions, `md` (40px, default) for lists and comments, `lg` (48px) for cards,
+`xl` (64px) for profile headers. Match the size to the surrounding line-height
+so the avatar does not push rows taller than they need to be.
+
+<Example name="Sizes" component="Avatar"><Sizes /></Example>
+
+### Group
+
+Use `AvatarGroup` to stack overlapping avatars for shared resources — project
+members, channel participants, document collaborators. Pass `max` to cap the
+visible count; the rest collapse into a `+N` fallback. The group adds a
+background-colored ring on each avatar so the overlap reads cleanly on any
+surface.
+
+<Example name="Group" component="Avatar"><Group /></Example>
 
 ## API Reference
 
 <PropsTable component="Avatar" />
+
+<PropsTable component="AvatarImage" />
+
+<PropsTable component="AvatarFallback" />
+
+## Tokens
+
+<TokenList component="Avatar" tokens={[
+  '--muted',
+  '--muted-foreground',
+  '--background',
+  '--border',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Always set a meaningful `alt` on `AvatarImage` — typically the user's full
+  name. Screen readers announce this as the user's identity; an empty `alt`
+  hides the avatar entirely.
+- `AvatarFallback` text is the accessible name when the image fails. Use
+  initials that match the user's name so assistive tech does not report a
+  different identity than sighted users see.
+- For decorative groups (e.g. a marketing strip of "happy users"), wrap the
+  group in an element with `aria-label` describing the collection and set the
+  individual images' `alt=""` so each face is not announced separately.
+- Do not rely on the avatar image alone to identify a user in critical flows
+  (approvals, permissions, payments). Pair the avatar with the user's name in
+  text so the identity is unambiguous when the image is missing or spoofed.
+- When the avatar is wrapped in a link or button, the interactive parent owns
+  focus and keyboard handling — keep the avatar itself non-interactive and
+  ensure the wrapper has a visible focus ring (the `--ring` token).
+- `AvatarGroup` rings use the `--background` token to mask the overlap. If you
+  place a group on a non-default surface (a card, a colored banner), override
+  `ring-background` so the ring matches the surface behind it.

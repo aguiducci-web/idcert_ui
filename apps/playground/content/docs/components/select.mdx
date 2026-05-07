@@ -4,15 +4,139 @@ description: Single-value dropdown selector.
 component: Select
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use Select for a single choice from seven or more mutually exclusive options
+  where horizontal real estate matters. For three to six mutually exclusive
+  options, prefer `RadioGroup` so all choices stay visible. For multi-value
+  selection, use `MultiSelect`. For long, searchable lists or async option
+  loading, use `Combobox` instead — Select assumes the option set is short
+  enough to scan visually.
 ---
 
-import { Default } from '@idcert/ui/components/select/examples'
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@idcert/ui'
+import {
+  Default, WithLabel, Grouped, Disabled, WithIcon, Controlled,
+} from '@idcert/ui/components/select/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+  SelectGroup,
+  SelectLabel,
+  SelectSeparator,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With label
+
+Pair every Select with a visible `Label` and connect them with `htmlFor` /
+`id`. The label is the accessible name for the trigger and is read first by
+assistive tech; without it the user only hears the placeholder, which is
+ambiguous once a value is chosen.
+
+<Example name="WithLabel" component="Select"><WithLabel /></Example>
+
+### Grouped options
+
+Use `SelectGroup` with `SelectLabel` to split a long option list into
+meaningful sections, and `SelectSeparator` to keep groups visually distinct.
+Group labels are decorative headings — they do not become selectable items,
+so users can still arrow through every option in a single pass.
+
+<Example name="Grouped" component="Select"><Grouped /></Example>
+
+### Disabled
+
+Disable the trigger when the field is not currently editable (read-only
+record, missing prerequisite). Prefer hiding the field entirely if it will
+never be enabled in this flow; a permanently disabled control adds noise
+without giving the user a path forward.
+
+<Example name="Disabled" component="Select"><Disabled /></Example>
+
+### With icon
+
+Compose a leading `lucide-react` icon inside `SelectItem` to reinforce option
+meaning (channels, regions, file types). Mark the icon `aria-hidden` so the
+accessible name remains the option text — the icon is decorative, not the
+label.
+
+<Example name="WithIcon" component="Select"><WithIcon /></Example>
+
+### Controlled
+
+Pass `value` and `onValueChange` to control the selection from parent state.
+Use this when the value drives other UI (dependent fields, summaries) or is
+persisted to a form library; otherwise let Select manage its own state with
+`defaultValue`.
+
+<Example name="Controlled" component="Select"><Controlled /></Example>
+
 ## API Reference
 
+### Select
+
 <PropsTable component="Select" />
+
+### SelectTrigger
+
+<PropsTable component="SelectTrigger" />
+
+### SelectContent
+
+<PropsTable component="SelectContent" />
+
+### SelectItem
+
+<PropsTable component="SelectItem" />
+
+## Tokens
+
+<TokenList component="Select" tokens={[
+  '--background',
+  '--foreground',
+  '--muted-foreground',
+  '--border',
+  '--input',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- The trigger renders as a button and exposes the listbox via Base UI; the
+  popup uses `listbox` and `option` roles so screen readers announce the
+  control type and the number of options.
+- Always associate a visible `Label` with the trigger using `htmlFor` /
+  `id`. The label is the accessible name; the placeholder alone is not a
+  substitute and disappears once a value is selected.
+- Keyboard: `ArrowDown` / `ArrowUp` move highlight, `Home` / `End` jump to
+  first / last, `Enter` or `Space` selects the highlighted option, `Esc`
+  closes the popup, and type-ahead jumps to the first option matching the
+  typed characters.
+- Focus returns to the trigger when the popup closes (after selection or
+  `Esc`), so tab order stays predictable and users do not lose their place
+  in the form.
+- Do not put interactive controls inside `SelectItem`. Items must be plain
+  options — nesting buttons or links breaks the listbox role and confuses
+  arrow-key navigation.
+- For long option lists prefer `Combobox` (with type-to-filter) over Select.
+  Type-ahead in Select only matches from the start of each option label and
+  does not scale past a few dozen entries.

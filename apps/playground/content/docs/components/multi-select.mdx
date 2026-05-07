@@ -4,15 +4,113 @@ description: Multi-value selector with chips and search.
 component: MultiSelect
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use MultiSelect when the user must pick multiple values from a longer list —
+  tags, categories, filters, country lists. For 2–6 fixed options where every
+  choice should be visible at once, prefer a checkbox group: it surfaces all
+  options without an extra click. For single-choice pickers, use `Select`. If
+  the field accepts free-text values that aren't in the list, reach for a
+  combobox/`TagInput` instead.
 ---
 
-import { Default } from '@idcert/ui/components/multi-select/examples'
+import {
+  MultiSelect,
+  MultiSelectTrigger,
+  MultiSelectChips,
+  MultiSelectContent,
+  MultiSelectList,
+  MultiSelectItem,
+  MultiSelectEmpty,
+} from '@idcert/ui'
+import {
+  Default, WithLabel, Searchable, Disabled, WithMaxSelection,
+} from '@idcert/ui/components/multi-select/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  MultiSelect,
+  MultiSelectTrigger,
+  MultiSelectChips,
+  MultiSelectContent,
+  MultiSelectList,
+  MultiSelectItem,
+  MultiSelectEmpty,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With label
+
+Pair MultiSelect with a `Label` and connect them via `htmlFor`/`id` on the
+trigger so screen readers announce the field name when focus enters the input.
+The label is the field's accessible name; do not rely on placeholder text alone.
+
+<Example name="WithLabel" component="MultiSelect"><WithLabel /></Example>
+
+### Searchable
+
+The trigger renders a real `<input>`, so typing filters the list out of the box —
+no extra prop needed. Use a `placeholder` that hints at the action ("Type to
+filter…") so users understand they can search rather than only click.
+
+<Example name="Searchable" component="MultiSelect"><Searchable /></Example>
+
+### Disabled
+
+Pass `disabled` to lock the whole field — input, chips, and remove buttons all
+become non-interactive. Keep the current `value` visible so users still see
+what was selected before the field was locked.
+
+<Example name="Disabled" component="MultiSelect"><Disabled /></Example>
+
+### Capped selection
+
+There is no `max` prop; cap selections by intercepting `onValueChange` and
+ignoring updates that would exceed the limit. Show the remaining count next to
+the field so users understand why new selections stop being added.
+
+<Example name="WithMaxSelection" component="MultiSelect"><WithMaxSelection /></Example>
+
 ## API Reference
 
 <PropsTable component="MultiSelect" />
+
+## Tokens
+
+<TokenList component="MultiSelect" tokens={[
+  '--background',
+  '--foreground',
+  '--secondary',
+  '--secondary-foreground',
+  '--muted-foreground',
+  '--border',
+  '--input',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Built on Base UI Combobox: the trigger exposes `role="combobox"` and the
+  popup exposes `role="listbox"`, so assistive tech announces the field as a
+  multi-select picker.
+- Arrow keys move the highlight within the open list; `Space` and `Enter`
+  toggle the highlighted option without closing the popup, matching the WAI-ARIA
+  multi-select combobox pattern.
+- Selected values render as chips inside the trigger. Each chip's remove button
+  is reachable by `Tab` and exposes an `aria-label` of `Remove {label}` so it
+  announces correctly in isolation. `Backspace` on an empty input removes the
+  last chip as a shortcut.
+- Always associate a visible `Label` via `htmlFor`/`id` (or pass `aria-label`
+  on the trigger). Without one, screen readers read only the placeholder, which
+  disappears as soon as a chip is added.
+- Selection changes update the chip list inside the trigger, which is part of
+  the focused field — screen readers announce the new state when focus returns
+  to the input. For remote-loaded options, render `MultiSelectEmpty` so the
+  "no results" state is announced instead of an empty popup.

@@ -4,15 +4,95 @@ description: Hour and minute selector.
 component: TimePicker
 package: '@idcert/ui'
 category: forms
-status: in-progress
+status: stable
+whenToUse: |
+  Use TimePicker when the user must pick a clock time independent of a date —
+  meeting slots, opening hours, reminders. Pair it with `DatePicker` when you
+  need a full datetime; do not stuff both into one field. Prefer a plain
+  `Input` with `type="time"` only for casual, low-stakes capture where you do
+  not need consistent styling. Respect locale: the underlying control renders
+  12h (AM/PM) or 24h based on the user's OS/browser locale, so do not hardcode
+  a format in the label.
 ---
 
-import { Default } from '@idcert/ui/components/time-picker/examples'
+import { TimePicker } from '@idcert/ui'
+import {
+  Default, Controlled, WithLabel, WithSeconds, Step,
+} from '@idcert/ui/components/time-picker/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { TimePicker } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Controlled
+
+Drive the value from React state with `value` + `onValueChange`. The value is
+always a `HH:mm` string (or `HH:mm:ss` when seconds are enabled), making it
+trivial to serialise to a form payload or compare against business hours.
+
+<Example name="Controlled" component="TimePicker"><Controlled /></Example>
+
+### With label
+
+Always associate a visible `Label` via `htmlFor`/`id`. A bare TimePicker has no
+visual affordance for what time it represents, and screen readers will fall
+back to the field's placeholder — which the native control does not render
+consistently across browsers.
+
+<Example name="WithLabel" component="TimePicker"><WithLabel /></Example>
+
+### With seconds
+
+Pass `step={1}` to enable a seconds segment. Use this only when seconds matter
+(timestamps, audio cues, lab procedures); for human-scheduling flows the extra
+segment adds friction without value.
+
+<Example name="WithSeconds" component="TimePicker"><WithSeconds /></Example>
+
+### Step
+
+Set `step` (in seconds) to constrain selection to a granularity — `900` for
+15-minute slots, `1800` for half-hour, `300` for 5-minute. The browser snaps
+arrow-key increments to the step, so users cannot land between slots.
+
+<Example name="Step" component="TimePicker"><Step /></Example>
+
 ## API Reference
 
 <PropsTable component="TimePicker" />
+
+## Tokens
+
+<TokenList component="TimePicker" tokens={[
+  '--background',
+  '--foreground',
+  '--muted-foreground',
+  '--border',
+  '--input',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Always pair with a `Label` connected via `htmlFor`/`id`. The native time
+  input has no implicit labelling, and a placeholder is not a label.
+- The control exposes separate hour, minute, and (when `step={1}`) seconds
+  fields. Browsers give each segment its own `aria-label` derived from the
+  field's accessible name; provide one via `<Label>` or `aria-label` on the
+  TimePicker so all segments inherit context.
+- Arrow keys increment/decrement the focused segment; `Tab` moves between
+  segments. Respect this and do not intercept arrow keys with custom handlers.
+- A bare "12:00" is ambiguous between noon and midnight. The native control
+  renders an AM/PM toggle in 12h locales — keep the user's locale rather than
+  forcing 24h, and surface the resolved value in confirmations ("Meeting at
+  12:00 PM") so screen-reader users hear the unambiguous form.
+- Announce selection in full when echoing the value back to the user
+  (`aria-live="polite"` on a sibling node, or in the submit confirmation),
+  using the locale's spoken form rather than the raw `HH:mm` string.

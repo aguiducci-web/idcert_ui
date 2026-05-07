@@ -4,15 +4,95 @@ description: Navigate large data sets one page at a time.
 component: Pagination
 package: '@idcert/ui'
 category: navigation
-status: in-progress
+status: stable
+whenToUse: |
+  Use Pagination for paged data sets where users need to jump to a specific
+  page or know the total — admin tables, search results, transaction logs,
+  audit history. Prefer infinite scroll for casual browsing feeds where
+  position does not matter. Pair Pagination with a page-size selector when
+  rows-per-page is meaningful (e.g., 10/25/50). For very small lists
+  (under ~30 items) skip pagination entirely and render the full list.
 ---
 
-import { Default } from '@idcert/ui/components/pagination/examples'
+import {
+  Default, Truncated, Controlled, Compact, Disabled,
+} from '@idcert/ui/components/pagination/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Pagination } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Truncated with ellipsis
+
+When the total page count exceeds what fits on one row, Pagination collapses
+the middle into ellipses and keeps the first page, last page, and a window of
+siblings around the current page visible. Tune the window with `siblingCount`.
+
+<Example name="Truncated" component="Pagination"><Truncated /></Example>
+
+### Controlled
+
+Pagination is fully controlled: you own `currentPage` and respond to
+`onPageChange`. Wire it to your data fetcher (URL search params, server query,
+client filter) and announce changes through an `aria-live` region above the
+table so screen-reader users hear the new page.
+
+<Example name="Controlled" component="Pagination"><Controlled /></Example>
+
+### Compact (no siblings)
+
+Set `siblingCount={0}` for a compact bar that only shows the first, last, and
+current page numbers. Useful in tight toolbars or sidebars where horizontal
+space is limited but users still need direct page jumps.
+
+<Example name="Compact" component="Pagination"><Compact /></Example>
+
+### Disabled at bounds
+
+Previous and Next disable automatically at page 1 and the last page so users
+cannot step out of range. The buttons stay in the DOM (not removed) so layout
+does not shift as the user paginates.
+
+<Example name="Disabled" component="Pagination"><Disabled /></Example>
+
 ## API Reference
 
 <PropsTable component="Pagination" />
+
+## Tokens
+
+<TokenList component="Pagination" tokens={[
+  '--background',
+  '--foreground',
+  '--primary',
+  '--primary-foreground',
+  '--muted-foreground',
+  '--border',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Renders a `<nav>` landmark with `aria-label="Pagination"` (override via the
+  `aria-label` prop) so assistive tech can list it alongside other navigation.
+- The active page button carries `aria-current="page"` so screen readers
+  announce the current position; non-active page buttons are plain buttons.
+- Previous and Next buttons disable at the first and last page via the native
+  `disabled` attribute, which removes them from the tab order and announces
+  "dimmed" — users cannot navigate out of range.
+- Ellipses are rendered as `<li role="presentation">` with the icon marked
+  `aria-hidden="true"` and an `sr-only` "More pages" label, so they do not
+  pollute the focus ring or the accessible name list.
+- Tab moves focus through Previous, each visible page number, then Next.
+  Activate with Enter or Space — buttons are native, no custom key handling
+  required.
+- When the list/table that Pagination drives is updated, place an
+  `aria-live="polite"` region near the data (e.g., "Showing page 3 of 20") so
+  screen-reader users hear the change without losing focus.

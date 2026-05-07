@@ -4,15 +4,141 @@ description: Modal confirmation for destructive or irreversible actions.
 component: AlertDialog
 package: '@idcert/ui'
 category: overlays
-status: in-progress
+status: stable
+whenToUse: |
+  Use AlertDialog to confirm a destructive or irreversible action — delete,
+  sign out everywhere, revoke, discard unsaved work. Use `Dialog` for
+  arbitrary modal content (forms, detail views) where the action is not
+  inherently dangerous. Use `Toast` for non-blocking feedback after an
+  action completes. Never wrap routine, safe, or easily reversible actions
+  in an AlertDialog — the interruption trains users to dismiss it reflexively.
 ---
 
-import { Default } from '@idcert/ui/components/alert-dialog/examples'
+import {
+  AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader,
+  AlertDialogTitle, AlertDialogDescription, AlertDialogFooter,
+  AlertDialogAction, AlertDialogCancel,
+} from '@idcert/ui'
+import {
+  Default, Destructive, Controlled, WithDescription, LongContent,
+} from '@idcert/ui/components/alert-dialog/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### Destructive confirmation
+
+The canonical pattern: a destructive trigger button opens a modal whose
+`AlertDialogAction` carries the same destructive styling. The action label
+restates the verb ("Delete project") so the button is unambiguous in
+isolation — never label it just "Yes" or "Confirm".
+
+<Example name="Destructive" component="AlertDialog"><Destructive /></Example>
+
+### Controlled
+
+Pass `open` and `onOpenChange` to drive the dialog from your component.
+Useful when the confirmation is triggered programmatically — for example,
+after an unsaved-changes guard fires on navigation.
+
+<Example name="Controlled" component="AlertDialog"><Controlled /></Example>
+
+### Title and multi-paragraph body
+
+`AlertDialogDescription` is the accessible body and should stay short.
+For additional context — caveats, side effects — render extra paragraphs as
+plain `<p>` elements between the description and the footer. Only the
+description is wired to `aria-describedby`.
+
+<Example name="WithDescription" component="AlertDialog"><WithDescription /></Example>
+
+### Long content with scrolling
+
+When the body cannot be condensed (terms, exports, license confirmations),
+constrain `AlertDialogContent` height with `max-h-[80vh]` and let it scroll.
+Keep the footer outside the scroll region — `flex` layout already pins it
+visually, but verify the action buttons remain reachable on small viewports.
+
+<Example name="LongContent" component="AlertDialog"><LongContent /></Example>
+
 ## API Reference
 
+### AlertDialog
+
 <PropsTable component="AlertDialog" />
+
+### AlertDialogTrigger
+
+<PropsTable component="AlertDialogTrigger" />
+
+### AlertDialogContent
+
+<PropsTable component="AlertDialogContent" />
+
+### AlertDialogTitle
+
+<PropsTable component="AlertDialogTitle" />
+
+### AlertDialogDescription
+
+<PropsTable component="AlertDialogDescription" />
+
+### AlertDialogAction
+
+<PropsTable component="AlertDialogAction" />
+
+### AlertDialogCancel
+
+<PropsTable component="AlertDialogCancel" />
+
+## Tokens
+
+<TokenList component="AlertDialog" tokens={[
+  '--background',
+  '--foreground',
+  '--border',
+  '--muted-foreground',
+  '--destructive',
+  '--destructive-foreground',
+  '--ring',
+  '--radius-lg',
+]} />
+
+## Accessibility
+
+- Built on Base UI's `AlertDialog` primitive. Renders with
+  `role="alertdialog"` so assistive tech announces the modal as an alert
+  rather than a generic dialog.
+- Focus is trapped inside `AlertDialogContent` while open. By default, focus
+  lands on `AlertDialogCancel` — the safer choice for destructive flows so
+  an accidental Enter does not commit the action.
+- `Esc` closes the dialog and returns focus to the element that opened it
+  (`AlertDialogTrigger` by default, or the controlled trigger element).
+- `AlertDialogTitle` is the accessible name (wired to `aria-labelledby`)
+  and `AlertDialogDescription` is the accessible body (wired to
+  `aria-describedby`). Always include both — Base UI warns at runtime if
+  either is missing.
+- Action buttons must be self-describing. Label them with the verb
+  ("Delete project", "Revoke certificate", "Sign out everywhere") — never
+  "Yes" / "No" / "OK" / "Confirm" alone, which lose meaning when read out
+  of context by a screen reader.
+- Unlike `Dialog`, AlertDialog is not dismissible by backdrop click — the
+  user must explicitly choose Cancel or Action. This is intentional: it
+  prevents misclicks on irreversible operations.

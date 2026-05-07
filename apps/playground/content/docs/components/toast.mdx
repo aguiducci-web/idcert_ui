@@ -4,15 +4,143 @@ description: Transient, non-blocking notification.
 component: ToastProvider
 package: '@idcert/ui'
 category: overlays
-status: in-progress
+status: stable
+whenToUse: |
+  Use Toast for transient feedback right after a user action — "Saved",
+  "Deleted", "Failed to upload". For persistent inline messages tied to a
+  region of the page, use `Alert` instead. For blocking confirmations the
+  user must acknowledge, use `Dialog`. Never make a Toast the only signal
+  for critical errors — back it with an inline state on the affected control
+  so the user can recover it after the toast disappears.
 ---
 
-import { Default } from '@idcert/ui/components/toast/examples'
+import { ToastProvider, Toaster, useToast } from '@idcert/ui'
+import {
+  Default, Variants, WithAction, WithDescription, Persistent,
+} from '@idcert/ui/components/toast/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { ToastProvider, Toaster, useToast } from '@idcert/ui'`}</CodeBlock>
+
+Mount `ToastProvider` near the root of your app (above any tree that calls
+`useToast`) and render `<Toaster />` once inside it — typically at the bottom
+of the root layout. The provider owns the queue; `Toaster` owns the viewport
+that renders queued toasts into a portal.
+
+<CodeBlock language="tsx">{`// app/layout.tsx
+import { ToastProvider, Toaster } from '@idcert/ui'
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <body>
+        <ToastProvider>
+          {children}
+          <Toaster />
+        </ToastProvider>
+      </body>
+    </html>
+  )
+}`}</CodeBlock>
+
+## Examples
+
+### Variants
+
+Four semantic types — `info`, `success`, `warning`, `error` — each with its
+own icon and accent color. Pick by intent (what the toast means), not by
+color. Reserve `error` for failures the user should react to and `warning`
+for recoverable issues; everything else is `info` or `success`.
+
+<Example name="Variants" component="ToastProvider"><Variants /></Example>
+
+### With action
+
+Pass an `action` with a `label` and `onClick` to give the user one-tap
+recovery — most commonly an "Undo" after a destructive action. Keep the
+label to a single verb and make the handler idempotent; the toast may be
+dismissed before the user clicks.
+
+<Example name="WithAction" component="ToastProvider"><WithAction /></Example>
+
+### With description
+
+Use `title` for the headline state and `description` for the supporting
+detail. Keep the title scannable (2-4 words) and the description to a
+single short sentence — a toast is not the place for paragraphs.
+
+<Example name="WithDescription" component="ToastProvider"><WithDescription /></Example>
+
+### Persistent
+
+Pass `timeout: 0` to disable auto-dismiss. Reserve this for critical errors
+or states the user must explicitly acknowledge — connection lost, unsaved
+changes, payment failed. Always provide a way to dismiss (the close button
+is rendered by default) and never use persistent toasts for routine success
+feedback.
+
+<Example name="Persistent" component="ToastProvider"><Persistent /></Example>
+
 ## API Reference
 
 <PropsTable component="ToastProvider" />
+
+<PropsTable component="Toaster" />
+
+### `useToast()`
+
+Hook that returns the queue controller. Must be called inside `ToastProvider`.
+
+<CodeBlock language="tsx">{`const toast = useToast()
+
+// add a toast — returns the id
+const id = toast.add({
+  type: 'success',         // 'info' | 'success' | 'warning' | 'error'
+  title: 'Saved',
+  description: 'Your changes are stored.',
+  timeout: 5000,           // ms; 0 disables auto-dismiss
+  action: { label: 'Undo', onClick: () => restore() },
+})
+
+// update or close it later
+toast.update(id, { description: 'Still saving…' })
+toast.close(id)`}</CodeBlock>
+
+## Tokens
+
+<TokenList component="ToastProvider" tokens={[
+  '--background',
+  '--foreground',
+  '--primary',
+  '--primary-foreground',
+  '--destructive',
+  '--destructive-foreground',
+  '--border',
+  '--muted-foreground',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Non-error toasts (`info`, `success`, `warning`) render in a region with
+  `role="status"` and `aria-live="polite"` so screen readers announce them
+  without interrupting the current task.
+- `error` toasts render as `role="alert"` with `aria-live="assertive"` so
+  failures are announced immediately. Reserve assertive announcements for
+  genuine errors — overusing them desensitizes users.
+- Every toast is dismissible: pressing `Esc` while the viewport is focused
+  closes the active toast, and the close button (rendered by default) is
+  reachable via Tab.
+- Do not auto-dismiss critical information. Pass `timeout: 0` for errors and
+  states the user must acknowledge so the message stays until they act.
+- Pick a single position (`bottom-right` or `top-right` are conventional)
+  and use it consistently across the app — moving the viewport between
+  routes disorients users who rely on its location.
+- When toasts swap quickly, screen readers re-announce on each change. Keep
+  titles short and avoid firing more than one toast per user action; use
+  `update` to mutate an existing toast rather than queuing a new one.

@@ -1,18 +1,98 @@
 ---
 title: Switch
-description: Toggle between two states.
+description: Two-state toggle for instant-apply boolean settings.
 component: Switch
 package: '@idcert/ui'
-category: forms
-status: in-progress
+category: primitives
+status: stable
+whenToUse: |
+  Use Switch for boolean settings that take effect immediately — Wi-Fi on/off,
+  notifications enabled, dark mode. For boolean inputs that only commit on form
+  submit (terms accepted, "remember me"), use `Checkbox` instead. The control
+  itself is silent: always pair it with a visible `Label` and let the
+  surrounding text carry the on/off meaning ("Email notifications", not
+  "Enabled?"). Avoid Switch for values with more than two states or for
+  destructive actions that need confirmation.
 ---
 
-import { Default } from '@idcert/ui/components/switch/examples'
+import { Switch } from '@idcert/ui'
+import {
+  Default, WithLabel, Disabled, Controlled, InSettings,
+} from '@idcert/ui/components/switch/examples'
 
 <Hero>
   <Default />
 </Hero>
 
+## Import
+
+<CodeBlock language="tsx">{`import { Switch } from '@idcert/ui'`}</CodeBlock>
+
+## Examples
+
+### With label
+
+Always associate a `Label` with the switch via `htmlFor`/`id`. The label is the
+accessible name and also enlarges the click target — tapping the label toggles
+the switch. Phrase the label as the thing being turned on, not as a question.
+
+<Example name="WithLabel" component="Switch"><WithLabel /></Example>
+
+### Disabled
+
+Use `disabled` when the setting is unavailable in the current context (e.g.,
+Bluetooth in airplane mode). Show both checked and unchecked disabled states so
+users see the current value even when they cannot change it; pair with helper
+text explaining why.
+
+<Example name="Disabled" component="Switch"><Disabled /></Example>
+
+### Controlled
+
+Drive the switch from state with `checked` and `onChange`. Read the next value
+from `event.target.checked`. Use this when the toggle's value lives in a store,
+when you need to confirm or cancel the change, or when the switch mirrors
+remote state that can update from elsewhere.
+
+<Example name="Controlled" component="Switch"><Controlled /></Example>
+
+### In settings rows
+
+The canonical Switch layout: label and helper text on the left, switch on the
+right. Each row stands on its own — changes apply instantly, no save button.
+Keep helper text to one line and avoid stacking more than ~7 toggles in a
+single group; split longer lists into named sections.
+
+<Example name="InSettings" component="Switch"><InSettings /></Example>
+
 ## API Reference
 
 <PropsTable component="Switch" />
+
+## Tokens
+
+<TokenList component="Switch" tokens={[
+  '--primary',
+  '--primary-foreground',
+  '--input',
+  '--background',
+  '--ring',
+  '--radius-md',
+]} />
+
+## Accessibility
+
+- Renders with `role="switch"` and exposes `aria-checked` so assistive tech
+  announces the state as "on"/"off" rather than "checked"/"unchecked". This is
+  the right semantic for instant-apply toggles; for form fields use `Checkbox`.
+- `Space` toggles the switch when it has focus. `Tab` moves focus in and out;
+  `Enter` does not toggle (this matches platform conventions for switch).
+- The focus ring is driven by `--ring` and must remain visible. Do not remove
+  `outline`/`box-shadow` on focus — keyboard users rely on it to see which row
+  is active in a settings list.
+- A label is required. Either render a `<Label htmlFor={id}>` next to the
+  switch, or pass `aria-label`/`aria-labelledby` when the surrounding row text
+  already names the control. Never ship a Switch with no accessible name.
+- Do not use Switch inside a form that requires submit-then-apply semantics
+  (terms acceptance, marketing opt-in at signup). Use `Checkbox` so users
+  understand the choice is pending until they submit.

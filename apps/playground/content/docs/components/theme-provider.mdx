@@ -4,11 +4,21 @@ description: Wraps the app with light/dark theme context.
 component: ThemeProvider
 package: '@idcert/ui'
 category: utility
-status: in-progress
+status: stable
+whenToUse: |
+  Wrap the app root once so every descendant can read and switch theme
+  (light/dark/system). Skip the provider entirely if the app has no theming —
+  components fall back to the default palette. Pair with the `useTheme` hook
+  for runtime toggles (theme switcher buttons, preference menus). SSR-safe via
+  `attribute="class"` plus `suppressHydrationWarning` on `<html>`.
 ---
 
 `ThemeProvider` exposes the active theme to descendants via React context. Place it
-near the root layout so every component has access to the resolved theme.
+near the root layout so every component has access to the resolved theme. It is a
+thin wrapper around `next-themes` with sensible defaults (`attribute="class"`,
+`defaultTheme="system"`, `enableSystem`, `disableTransitionOnChange`).
+
+## Setup
 
 <CodeBlock language="tsx">{`import { ThemeProvider } from '@idcert/ui'
 
@@ -24,6 +34,54 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   )
 }`}</CodeBlock>
 
+## Toggle Theme
+
+Use the `useTheme` hook from `@idcert/ui` to read and update the active theme at
+runtime. The hook returns the resolved theme plus a setter — wire it into a
+button, menu, or settings panel. Mark icon-only toggles with `aria-label` so
+the control is reachable by assistive tech.
+
+<CodeBlock language="tsx">{`'use client'
+
+import { useTheme } from '@idcert/ui'
+import { Button } from '@idcert/ui'
+
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  const next = theme === 'dark' ? 'light' : 'dark'
+
+  return (
+    <Button
+      variant="outline"
+      size="icon"
+      aria-label={\`Switch to \${next} theme\`}
+      onClick={() => setTheme(next)}
+    >
+      {theme === 'dark' ? '☀' : '☾'}
+    </Button>
+  )
+}`}</CodeBlock>
+
 ## API Reference
 
 <PropsTable component="ThemeProvider" />
+
+## Accessibility
+
+- Respects `prefers-color-scheme` when `defaultTheme="system"` and
+  `enableSystem` are set — the OS preference becomes the initial theme without
+  any user action.
+- Toggle controls must be labeled. Icon-only buttons need `aria-label`
+  (e.g. "Switch to dark theme") so screen-reader users know what the control
+  does and what state it switches to.
+- Avoid Flash of Incorrect Theme by keeping `suppressHydrationWarning` on the
+  `<html>` element and using `attribute="class"` so the theme class is applied
+  before React hydrates.
+- Color contrast must hold in both themes. Test every screen in light and dark
+  — a token that passes AA on light surfaces can fail on dark and vice versa.
+- Theme transitions should respect `prefers-reduced-motion`. The default
+  `disableTransitionOnChange` already suppresses the cross-fade on toggle;
+  keep it on for users who opt out of motion.
+- Do not rely on the theme attribute alone to convey state — pair theme-aware
+  imagery (charts, illustrations) with text or patterns so the meaning
+  survives forced-colors and high-contrast modes.
