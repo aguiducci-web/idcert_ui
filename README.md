@@ -17,6 +17,30 @@ pnpm test         # run tutti test
 pnpm dev          # avvia Storybook + playground (interattivo)
 ```
 
+## Documentation
+
+Component docs live in `apps/playground/content/docs` and are served by the playground Next app.
+
+```bash
+pnpm --filter @idcert/ui build           # ensure dist/* exists for examples imports
+pnpm --filter @idcert/playground dev     # http://localhost:3000/docs
+```
+
+Browse:
+
+- `http://localhost:3000/docs/getting-started/installation` — install + theming guide
+- `http://localhost:3000/docs/foundations/colors` — design tokens
+- `http://localhost:3000/docs/components/<slug>` — every `@idcert/ui` component
+
+Press **Cmd+K** (Ctrl+K on Windows/Linux) anywhere in `/docs` to search component docs, foundations, and recipes. Results are grouped by category.
+
+### Docs vs Storybook
+
+- **Docs (`/docs`)** — consumer-facing reference: prose, anatomy, accessibility, tokens, composed examples.
+- **Storybook (`pnpm --filter @idcert/ui storybook`)** — isolated component dev playground: every story in isolation, controls panel, autodocs.
+
+Pages with a blue "Documentation in progress" badge are scaffolded only — Hero + props table — and prose is being filled in incrementally.
+
 ## Setup consumer (Next.js + Tailwind)
 
 In una app Next.js che consuma `@idcert/ui`:
