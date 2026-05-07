@@ -3,21 +3,13 @@ import { resolve } from 'node:path'
 import { primitives } from '../src/primitives.js'
 import { semantic, type SemanticTokens } from '../src/semantic.js'
 
-function hexToRgbChannels(hex: string): string {
-  const cleaned = hex.replace('#', '')
-  const r = parseInt(cleaned.slice(0, 2), 16)
-  const g = parseInt(cleaned.slice(2, 4), 16)
-  const b = parseInt(cleaned.slice(4, 6), 16)
-  return `${r} ${g} ${b}`
-}
-
 function camelToKebab(str: string): string {
   return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 }
 
 function emitColorVars(tokens: SemanticTokens): string {
   return Object.entries(tokens)
-    .map(([name, hex]) => `  --${camelToKebab(name)}: ${hexToRgbChannels(hex)};`)
+    .map(([name, hex]) => `  --${camelToKebab(name)}: ${hex};`)
     .join('\n')
 }
 

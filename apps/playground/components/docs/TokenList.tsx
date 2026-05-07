@@ -29,9 +29,7 @@ export function TokenList({
           <span
             aria-hidden
             style={{
-              backgroundColor: token.startsWith('--color')
-                ? `rgb(${resolved[token] || '128 128 128'})`
-                : 'transparent',
+              backgroundColor: `${resolved[token]}`
             }}
             className="h-4 w-4 rounded border border-border"
           />

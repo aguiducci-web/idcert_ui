@@ -19,7 +19,6 @@ function flatten(toc: TocEntry[], out: TocEntry[] = []): TocEntry[] {
 }
 
 export function TableOfContents({ toc }: { toc: TocEntry[] }) {
-  console.log("🚀 Tripode ~ TableOfContents ~ toc:", toc)
   const flat = React.useMemo(() => flatten(toc), [toc])
   const [active, setActive] = React.useState<string | null>(null)
 

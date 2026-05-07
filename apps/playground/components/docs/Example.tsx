@@ -21,13 +21,7 @@ export function Example({
   return (
     <div className="my-6 overflow-hidden rounded-md border border-border">
       <div
-        className="bg-background p-6"
-        style={{
-          backgroundImage:
-            'linear-gradient(45deg, var(--muted) 25%, transparent 25%, transparent 75%, var(--muted) 75%), linear-gradient(45deg, var(--muted) 25%, transparent 25%, transparent 75%, var(--muted) 75%)',
-          backgroundSize: '20px 20px',
-          backgroundPosition: '0 0, 10px 10px',
-        }}
+        className="bg-card p-6"
       >
         <div className="flex flex-wrap items-center justify-center gap-3 rounded bg-card p-6">
           {children}

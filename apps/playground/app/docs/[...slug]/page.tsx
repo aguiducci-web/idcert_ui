@@ -24,7 +24,7 @@ export default async function DocsPage({
   } catch {
     notFound()
   }
-
+  
   const filePath = path.join(CONTENT_DIR, `${slug}.mdx`)
   const { frontmatter } = await parseDocFile(filePath)
 

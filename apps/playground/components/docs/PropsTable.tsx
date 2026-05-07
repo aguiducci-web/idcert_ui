@@ -1,7 +1,10 @@
+import Link from 'next/link'
 import propsData from '@/public/props.json'
+import glossaryData from '@/public/types-glossary.json'
 import { cn } from '@/lib/cn'
 
-type PropType = { name: string; value?: { value: string }[] }
+type PropType = { name: string; raw?: string; value?: { value: string }[] }
+const glossary = glossaryData as Record<string, unknown>
 
 type PropDoc = {
   name: string
@@ -64,6 +67,16 @@ export function PropsTable({ component }: { component: string }) {
 
 function TypeCell({ type }: { type: PropType }) {
   if (type.name === 'enum' && type.value) {
+    if (type.raw && type.raw in glossary) {
+      return (
+        <Link
+          href={`/docs/foundations/types#${type.raw}`}
+          className="font-mono text-primary underline-offset-2 hover:underline"
+        >
+          {type.raw}
+        </Link>
+      )
+    }
     return (
       <div className="flex flex-wrap gap-1">
         {type.value.map((v) => (

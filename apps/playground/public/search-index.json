@@ -2443,6 +2443,13 @@
     ]
   },
   {
+    "slug": "foundations/types",
+    "title": "Types",
+    "description": "Reference for verbose union types referenced from component PropsTables.",
+    "category": "foundations",
+    "headings": []
+  },
+  {
     "slug": "foundations/typography",
     "title": "Typography",
     "description": "Font families and the type scale used across @idcert/ui components.",

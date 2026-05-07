@@ -67,7 +67,7 @@ function Swatch({ scope, value }: { scope: Scope; value?: string }) {
       <span
         aria-hidden
         className="h-10 w-10 shrink-0 rounded border border-border"
-        style={{ backgroundColor: value ? `rgb(${value})` : undefined }}
+        style={{ backgroundColor: value ? `${value}` : undefined }}
       />
     )
   }
