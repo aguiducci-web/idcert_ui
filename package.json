@@ -1,7 +1,7 @@
 {
   "name": "idcert-ui",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "description": "idcert.io design system monorepo",
   "packageManager": "pnpm@9.12.0",
   "engines": {
