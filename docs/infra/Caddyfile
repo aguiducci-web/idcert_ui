@@ -1,0 +1,28 @@
+localhost:4873 {
+  # local development — no TLS
+  reverse_proxy verdaccio:4873
+  encode gzip
+
+  request_body {
+    max_size 100MB
+  }
+}
+
+# Uncomment for production with Let's Encrypt
+# npm.yourdomain.com {
+#   reverse_proxy verdaccio:4873
+#   encode gzip
+#   request_body {
+#     max_size 100MB
+#   }
+# }
+
+# Uncomment for internal TLS (self-signed)
+# npm.idcert.local {
+#   tls internal
+#   reverse_proxy verdaccio:4873
+#   encode gzip
+#   request_body {
+#     max_size 100MB
+#   }
+# }

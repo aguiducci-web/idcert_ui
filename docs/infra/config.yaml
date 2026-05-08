@@ -1,0 +1,42 @@
+storage: /verdaccio/storage
+plugins: /verdaccio/plugins
+
+web:
+  title: idcert npm
+  enable: true
+
+auth:
+  htpasswd:
+    file: /verdaccio/storage/htpasswd
+    max_users: -1
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+    cache: true
+    timeout: 30s
+
+packages:
+  '@idcert/*':
+    access: $authenticated
+    publish: $authenticated
+    unpublish: $authenticated
+    proxy: npmjs
+  '@*/*':
+    access: $authenticated
+    proxy: npmjs
+  '**':
+    access: $authenticated
+    proxy: npmjs
+
+server:
+  keepAliveTimeout: 60
+
+middlewares:
+  audit:
+    enabled: true
+
+log: { type: stdout, format: pretty, level: warn }
+
+listen:
+  - 0.0.0.0:4873

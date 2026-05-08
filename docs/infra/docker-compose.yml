@@ -1,0 +1,29 @@
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:5
+    container_name: verdaccio
+    restart: unless-stopped
+    expose: ["4873"]
+    volumes:
+      - ./storage:/verdaccio/storage
+      - ./conf:/verdaccio/conf
+      - ./plugins:/verdaccio/plugins
+    networks: [web]
+
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [web]
+
+networks:
+  web:
+
+volumes:
+  caddy_data:
+  caddy_config:
