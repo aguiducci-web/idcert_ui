@@ -93,7 +93,7 @@ export const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
       <nav
         ref={ref}
         aria-label={ariaLabel}
-        className={cn('mx-auto flex w-full justify-center', className)}
+        className={cn('mx-auto flex w-full justify-center not-prose', className)}
         {...props}
       >
         <ul className="flex flex-row items-center gap-1">

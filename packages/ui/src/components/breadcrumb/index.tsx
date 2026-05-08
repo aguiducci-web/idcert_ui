@@ -13,7 +13,7 @@ export const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
       <nav
         ref={ref}
         aria-label="breadcrumb"
-        className={cn(className)}
+        className={cn('not-prose', className)}
         {...props}
       />
     )

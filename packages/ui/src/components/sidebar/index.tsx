@@ -140,7 +140,7 @@ export const SidebarProvider = React.forwardRef<HTMLDivElement, SidebarProviderP
               ...style,
             } as React.CSSProperties
           }
-          className={cn('group/sidebar-wrapper flex min-h-svh w-full', className)}
+          className={cn('group/sidebar-wrapper flex min-h-svh w-full not-prose', className)}
           data-state={state}
           data-mobile={isMobile ? 'true' : undefined}
           {...props}
