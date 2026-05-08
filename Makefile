@@ -2,7 +2,7 @@
 # Makefile for dev + Verdaccio ops + publishing
 
 REGISTRY ?= http://localhost:4873/
-VERDACCIO_DIR ?= /opt/verdaccio
+VERDACCIO_DIR ?= $(HOME)/verdaccio
 DOCKER_COMPOSE = docker compose
 
 .PHONY: help install build test lint typecheck dev \
@@ -93,7 +93,7 @@ verdaccio-clean:
 	echo; \
 	if [[ $$REPLY =~ ^[Yy]$$ ]]; then \
 		cd $(VERDACCIO_DIR) && $(DOCKER_COMPOSE) down; \
-		sudo rm -rf $(VERDACCIO_DIR)/storage/*; \
+		rm -rf $(VERDACCIO_DIR)/storage/*; \
 		echo "✓ Verdaccio cleaned"; \
 	fi
 
