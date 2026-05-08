@@ -10,12 +10,12 @@ describe('Container', () => {
 
   test('applies max-width class for default size', () => {
     render(<Container data-testid="c">Content</Container>)
-    expect(screen.getByTestId('c')).toHaveClass('max-w-screen-xl')
+    expect(screen.getByTestId('c')).toHaveClass('max-w-(--breakpoint-xl)')
   })
 
   test('applies size variant', () => {
     render(<Container size="sm" data-testid="c">X</Container>)
-    expect(screen.getByTestId('c')).toHaveClass('max-w-screen-sm')
+    expect(screen.getByTestId('c')).toHaveClass('max-w-(--breakpoint-sm)')
   })
 
   test('forwards ref', () => {
