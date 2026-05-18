@@ -5,8 +5,12 @@ REGISTRY ?= http://localhost:4873/
 VERDACCIO_DIR ?= $(HOME)/verdaccio
 DOCKER_COMPOSE = docker compose
 
+# Load .env if present (VERDACCIO_USER, VERDACCIO_PASS, VERDACCIO_EMAIL)
+-include .env
+export
+
 .PHONY: help install build test lint typecheck dev \
-	verdaccio-config verdaccio-start verdaccio-stop verdaccio-logs verdaccio-clean \
+	verdaccio-config verdaccio-start verdaccio-stop verdaccio-logs verdaccio-clean verdaccio-login \
 	publish release clean
 
 help:
@@ -24,6 +28,7 @@ help:
 	@echo "  make verdaccio-stop     - stop Verdaccio"
 	@echo "  make verdaccio-logs     - tail Verdaccio logs"
 	@echo "  make verdaccio-clean    - remove Verdaccio data"
+	@echo "  make verdaccio-login    - register/login user via REST, write token to ~/.npmrc"
 	@echo ""
 	@echo "=== Publishing ==="
 	@echo "  make publish       - build + publish to Verdaccio"
@@ -86,6 +91,37 @@ verdaccio-stop:
 
 verdaccio-logs:
 	cd $(VERDACCIO_DIR) && $(DOCKER_COMPOSE) logs --tail=100 -f verdaccio
+
+verdaccio-login:
+	@test -n "$(VERDACCIO_USER)" || (echo "✗ VERDACCIO_USER not set (define in .env)"; exit 1)
+	@test -n "$(VERDACCIO_PASS)" || (echo "✗ VERDACCIO_PASS not set (define in .env)"; exit 1)
+	@test -n "$(VERDACCIO_EMAIL)" || (echo "✗ VERDACCIO_EMAIL not set (define in .env)"; exit 1)
+	@echo "→ Login '$(VERDACCIO_USER)' on $(REGISTRY)"
+	@RESP=$$(curl -s -w "\n__HTTP__%{http_code}" -X PUT \
+		-u "$(VERDACCIO_USER):$(VERDACCIO_PASS)" \
+		-H "Content-Type: application/json" \
+		-d '{"name":"$(VERDACCIO_USER)","password":"$(VERDACCIO_PASS)","email":"$(VERDACCIO_EMAIL)"}' \
+		$(REGISTRY)-/user/org.couchdb.user:$(VERDACCIO_USER)); \
+	BODY=$$(echo "$$RESP" | sed '$$d'); \
+	CODE=$$(echo "$$RESP" | tail -n1 | sed 's/__HTTP__//'); \
+	TOKEN=$$(echo "$$BODY" | sed -n 's/.*"token":[[:space:]]*"\([^"]*\)".*/\1/p'); \
+	if [ -z "$$TOKEN" ]; then \
+		echo "✗ Login failed (HTTP $$CODE)"; \
+		echo "  Response: $$BODY"; \
+		echo "  Hint: user may exist with different password. Delete htpasswd line:"; \
+		echo "    docker exec verdaccio sed -i '/^$(VERDACCIO_USER):/d' /verdaccio/storage/htpasswd"; \
+		exit 1; \
+	fi; \
+	REG_HOST=$$(echo "$(REGISTRY)" | sed 's|^http[s]*:||'); \
+	touch $$HOME/.npmrc; \
+	cp $$HOME/.npmrc $$HOME/.npmrc.bak.$$(date +%s); \
+	grep -vE "^(https?:)?$${REG_HOST}:_authToken=" $$HOME/.npmrc > $$HOME/.npmrc.tmp || true; \
+	grep -v "^@idcert:registry=" $$HOME/.npmrc.tmp > $$HOME/.npmrc.tmp2 || true; \
+	mv $$HOME/.npmrc.tmp2 $$HOME/.npmrc; \
+	rm -f $$HOME/.npmrc.tmp; \
+	echo "$${REG_HOST}:_authToken=$$TOKEN" >> $$HOME/.npmrc; \
+	echo "@idcert:registry=$(REGISTRY)" >> $$HOME/.npmrc; \
+	echo "✓ Token written to ~/.npmrc (HTTP $$CODE)"
 
 verdaccio-clean:
 	@echo "⚠ This will delete all published packages in Verdaccio"
