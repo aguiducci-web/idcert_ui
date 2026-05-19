@@ -1,10 +1,10 @@
 ---
 title: Installation
-description: Install @idcert/ui in a Next.js 14 + Tailwind v4 application.
+description: Install @idcert/ui in a Next.js 14+ Tailwind v4 application.
 category: getting-started
 ---
 
-`@idcert/ui` ships as three packages on the internal Verdaccio registry. The `ui` package is the React component library, `tokens` provides CSS variables, and `tailwind-config` is a Tailwind v4 preset that wires the variables to utility classes.
+`@idcert/ui` ships as three packages on the internal Verdaccio registry. The `ui` package is the React component library; `@idcert/tokens` provides CSS variables; `@idcert/tailwind-config` is a Tailwind v4 preset that wires variables to utility classes. Installing `@idcert/ui` pulls the other two transitively.
 
 ## Prerequisites
 
@@ -14,12 +14,25 @@ category: getting-started
 
 ## 1. Install packages
 
-<CodeBlock language="bash">{`pnpm add @idcert/ui @idcert/tokens
-pnpm add -D @idcert/tailwind-config tailwindcss postcss autoprefixer`}</CodeBlock>
+A single command pulls `@idcert/ui` plus its transitive dependencies (`@idcert/tokens`, `@idcert/tailwind-config`). Peer dependencies (`tailwindcss`, `react`, etc.) auto-install with npm 7+ or pnpm when `auto-install-peers=true`.
 
-## 2. Wire Tailwind
+<CodeBlock language="bash">{`npm i @idcert/ui --registry=http://localhost:4873/`}</CodeBlock>
 
-For Tailwind v4 (CSS-first preset), import the preset into your global stylesheet. There is no `tailwind.config.js` needed — the preset is the configuration.
+Then add the Tailwind v4 PostCSS plugin (required by Next.js):
+
+<CodeBlock language="bash">{`npm i -D @tailwindcss/postcss`}</CodeBlock>
+
+## 2. PostCSS config
+
+Create `postcss.config.mjs` at the project root:
+
+<CodeBlock language="js">{`export default {
+  plugins: { '@tailwindcss/postcss': {} },
+}`}</CodeBlock>
+
+## 3. Wire Tailwind
+
+Tailwind v4 uses a CSS-first preset — no `tailwind.config.js` needed. Import the preset into your global stylesheet.
 
 `app/globals.css`:
 
@@ -29,9 +42,11 @@ For Tailwind v4 (CSS-first preset), import the preset into your global styleshee
 
 @source '../node_modules/@idcert/ui/dist';`}</CodeBlock>
 
-The `@source` directive tells Tailwind to scan the published `dist` for utility usage. Without it, the JIT compiler will purge classes that components use internally.
+The `@source` directive tells Tailwind v4 to scan the published `dist` for utility usage. **Without it, classes used internally by components (e.g. `bg-destructive`) are purged and components render unstyled.** Adjust the relative path if your `globals.css` lives in `src/app/` (`'../../node_modules/@idcert/ui/dist'`).
 
-## 3. Wrap your root layout
+Import order matters: tokens first (defines `--destructive`, `--primary`, …), preset second (maps vars to theme utilities).
+
+## 4. Wrap your root layout
 
 `app/layout.tsx`:
 
@@ -55,13 +70,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 `suppressHydrationWarning` is required because `ThemeProvider` (under the hood: `next-themes`) sets the `class` on `<html>` after hydration.
 
-## 4. First component
+## 5. First component
 
 <CodeBlock language="tsx">{`import { Button } from '@idcert/ui'
 
 export default function Home() {
-  return <Button>Hello world</Button>
+  return <Button variant="destructive">Hello world</Button>
 }`}</CodeBlock>
+
+## Troubleshooting
+
+**Components render unstyled / no background colors**
+Missing `@source` directive in `globals.css`. Tailwind v4 does not scan `node_modules` by default.
+
+**`Cannot find module '@idcert/tokens/styles.css'`**
+Run `npm i` again, or verify `@idcert:registry` points to the right registry.
+
+**Peer dependency warnings on install**
+Install missing peers explicitly: `npm i react-hook-form zod date-fns react-day-picker`.
+
+**Token CSS variables undefined (e.g. `--destructive` empty)**
+Missing `@import '@idcert/tokens/styles.css';` before the preset import — order matters.
 
 ## What's next
 
