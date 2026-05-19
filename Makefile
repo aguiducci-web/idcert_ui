@@ -124,14 +124,13 @@ verdaccio-login:
 	echo "✓ Token written to ~/.npmrc (HTTP $$CODE)"
 
 verdaccio-clean:
-	@echo "⚠ This will delete all published packages in Verdaccio"
-	@read -p "Continue? [y/N] " -n 1 -r; \
-	echo; \
-	if [[ $$REPLY =~ ^[Yy]$$ ]]; then \
-		cd $(VERDACCIO_DIR) && $(DOCKER_COMPOSE) down; \
-		rm -rf $(VERDACCIO_DIR)/storage/*; \
-		echo "✓ Verdaccio cleaned"; \
-	fi
+	@echo "⚠ DESTRUCTIVE: removes ALL packages, htpasswd users, npm proxy cache (docker named volumes)"
+	@printf "Type 'YES' to confirm: "; \
+	read CONFIRM; \
+	if [ "$$CONFIRM" != "YES" ]; then echo "✗ Aborted"; exit 1; fi
+	cd $(VERDACCIO_DIR) && $(DOCKER_COMPOSE) down -v
+	@echo "✓ Containers + volumes removed"
+	@echo "→ Next: make verdaccio-start && make verdaccio-login"
 
 # === Publishing targets ===
 
