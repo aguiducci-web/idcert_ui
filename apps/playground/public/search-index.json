@@ -2475,7 +2475,7 @@
   {
     "slug": "getting-started/installation",
     "title": "Installation",
-    "description": "Install @idcert/ui in a Next.js 14 + Tailwind v4 application.",
+    "description": "Install @idcert/ui in a Next.js 14+ Tailwind v4 application.",
     "category": "getting-started",
     "headings": [
       {
@@ -2489,18 +2489,28 @@
         "level": 2
       },
       {
-        "id": "2-wire-tailwind",
-        "text": "2. Wire Tailwind",
+        "id": "2-postcss-config",
+        "text": "2. PostCSS config",
         "level": 2
       },
       {
-        "id": "3-wrap-your-root-layout",
-        "text": "3. Wrap your root layout",
+        "id": "3-wire-tailwind",
+        "text": "3. Wire Tailwind",
         "level": 2
       },
       {
-        "id": "4-first-component",
-        "text": "4. First component",
+        "id": "4-wrap-your-root-layout",
+        "text": "4. Wrap your root layout",
+        "level": 2
+      },
+      {
+        "id": "5-first-component",
+        "text": "5. First component",
+        "level": 2
+      },
+      {
+        "id": "troubleshooting",
+        "text": "Troubleshooting",
         "level": 2
       },
       {
