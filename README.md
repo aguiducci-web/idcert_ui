@@ -239,8 +239,3 @@ MIT — vedi [LICENSE](./LICENSE).
 - [Verdaccio on company Docker](docs/infra/verdaccio-on-company-docker.md) — deploy registry su server aziendale
 - [VPS + Docker setup](docs/infra/vps-docker-setup.md) — provisioning VPS da zero
 - [Complete setup guide](docs/infra/verdaccio-bitbucket-setup.md) — full workflow Bitbucket + Verdaccio + CI
-
-## Documentazione design system
-
-- Spec design system: `docs/superpowers/specs/2026-05-04-idcert-ui-design.md`
-- Plan foundation: `docs/superpowers/plans/2026-05-04-idcert-ui-foundation.md`
