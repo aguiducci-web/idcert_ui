@@ -136,9 +136,9 @@ verdaccio-clean:
 
 publish: build
 	@echo "Publishing to $(REGISTRY)"
-	pnpm --filter @idcert/ui publish --registry $(REGISTRY)
-	pnpm --filter @idcert/tokens publish --registry $(REGISTRY)
-	pnpm --filter @idcert/tailwind-config publish --registry $(REGISTRY)
+	cd packages/tokens && pnpm publish --registry $(REGISTRY) --no-git-checks
+	cd packages/tailwind-config && pnpm publish --registry $(REGISTRY) --no-git-checks
+	cd packages/ui && pnpm publish --registry $(REGISTRY) --no-git-checks
 	@echo "✓ Packages published"
 
 release:
